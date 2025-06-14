@@ -1,54 +1,97 @@
-# React + TypeScript + Vite
+# プログラミング体験ブース ランディングページ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+夏休みイベントでのプログラミング体験ブースのランディングページです。親子でプログラミングの世界を体験できるArduino LED信号機制作体験や、プロのプログラマーとの相談会を提供しています。
 
-Currently, two official plugins are available:
+## 🎯 プロジェクト概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **イベント**: 夏休みプログラミング体験ブース
+- **ブース番号**: M-14
+- **開催日程**: 2025年8月9日〜11日
+- **会場**: 幕張メッセ
+- **対象**: 親子（プログラミング初心者歓迎）
 
-## Expanding the ESLint configuration
+## 🚀 技術スタック
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** with TypeScript
+- **Vite** - 高速ビルドツール・開発サーバー
+- **Tailwind CSS v4** - CSS変数対応のユーティリティファースト CSS
+- **shadcn/ui** - Radix UI ベースのコンポーネントライブラリ
+- **Lucide React** - アイコンライブラリ
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📁 プロジェクト構成
+
+```
+src/
+├── components/
+│   ├── ui/              # shadcn/ui コンポーネント
+│   ├── HeroSection.tsx  # ヒーローセクション
+│   ├── ConceptSection.tsx
+│   ├── ExperienceSection.tsx
+│   ├── TeamSection.tsx
+│   ├── PricingSection.tsx
+│   └── Footer.tsx
+├── App.tsx             # メインアプリケーション
+└── main.tsx           # エントリーポイント
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ 開発コマンド
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# 開発サーバー起動（ホットリロード対応）
+npm run dev
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+# 本番用ビルド（TypeScript コンパイル + Vite ビルド）
+npm run build
+
+# ESLint でコードチェック
+npm run lint
+
+# 本番ビルドをローカルでプレビュー
+npm run preview
 ```
+
+## 🎨 デザインシステム
+
+### shadcn/ui 設定
+- **スタイル**: "new-york" バリアント
+- **ベースカラー**: neutral
+- **CSS変数**: 有効（テーマ対応）
+- **パスエイリアス**: `@/` → `src/`
+
+### カラーテーマ
+- **ヒーロー・料金セクション**: オレンジ/イエローグラデーション
+- **コンテンツセクション**: ブルー/グリーングラデーション
+- **ブース番号**: 特別なレッド/ピンクグラデーション（目立つデザイン）
+
+## 📝 コンテンツ
+
+### 体験内容
+- Arduino LED信号機プログラミング体験
+- プロのプログラマーとの相談セッション
+- 親子で楽しめるプログラミング入門
+
+### チーム紹介
+- 経験豊富なプログラマー陣のプロフィール
+- 各メンバーの専門分野と経歴
+
+### 料金・申し込み
+- 無料体験の詳細
+- Googleフォーム経由での申し込みシステム
+
+## 🔧 開発時の注意点
+
+- レスポンシブデザイン（モバイルファースト）
+- shadcn/ui コンポーネントの一貫した使用
+- CSS変数を活用したテーマ対応
+- アクセシビリティに配慮したデザイン
+
+## 📱 対応ブラウザ
+
+- Chrome（推奨）
+- Firefox
+- Safari
+- Edge
+
+## 🤝 貢献
+
+このプロジェクトは夏休みイベント用のランディングページです。改善提案やバグ報告がありましたら、Issueを作成してください。
