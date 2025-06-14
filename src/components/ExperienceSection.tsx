@@ -32,7 +32,7 @@ export default function ExperienceSection() {
                 </p>
                 <div className="max-w-2xl mx-auto">
                   <img
-                    src="/src/assets/images/experience-image2.jpg"
+                    src="/images/experience-image2.jpg"
                     alt="子供が信号機キットを操作している様子"
                     className="w-full rounded-xl shadow-lg"
                   />

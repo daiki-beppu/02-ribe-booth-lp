@@ -17,7 +17,7 @@ export default function ConceptSection() {
           </p>
           <div className="max-w-4xl mx-auto">
             <img
-              src="/src/assets/images/programming-image.jpg"
+              src="/images/programming-image.jpg"
               alt="ArduinoのIDEでプログラミングをしている画面"
               className="w-full rounded-xl shadow-xl"
             />

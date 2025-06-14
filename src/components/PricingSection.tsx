@@ -61,7 +61,7 @@ export default function PricingSection() {
 
               <div className="mt-6">
                 <img
-                  src="/src/assets/images/conceptual-experience.png"
+                  src="/images/conceptual-experience.png"
                   alt="親子でArduinoプログラミングを学ぶ理想的な体験風景"
                   className="w-full rounded-xl shadow-lg"
                 />
@@ -116,7 +116,7 @@ export default function PricingSection() {
                 </p>
                 <div className="mb-3">
                   <img
-                    src="/src/assets/images/signal-and-level-crossing.jpg"
+                    src="/images/signal-and-level-crossing.jpg"
                     alt="信号機と踏切システムのハードウェア"
                     className="w-full rounded-lg shadow-md"
                   />
