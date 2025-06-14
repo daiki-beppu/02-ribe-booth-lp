@@ -5,6 +5,8 @@ export type FreeService = {
   title: string;
   description: string;
   borderColor: string;
+  target?: string;
+  image?: Image;
 }
 
 export type Product = {

@@ -57,6 +57,67 @@ export default function HeroSection({ data }: HeroSectionProps) {
           </Card>
         </div>
 
+        {/* キャッチコピー */}
+        {data.catchCopy && (
+          <div className="mb-8 w-full max-w-4xl relative">
+            {/* 温かい光沢エフェクト */}
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-200/40 via-yellow-200/40 to-orange-200/40 rounded-2xl blur-lg"></div>
+            
+            {/* メインコンテナ */}
+            <div className="relative bg-gradient-to-r from-white/95 via-yellow-50/95 to-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-orange-200/50 transform hover:scale-102 transition-all duration-300">
+              
+              {/* 上部装飾ライン */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-400 rounded-t-2xl"></div>
+              
+              {/* 装飾的な要素（控えめ） */}
+              <div className="absolute -top-2 left-8 w-4 h-4 bg-yellow-400 rounded-full shadow-lg opacity-80"></div>
+              <div className="absolute -top-1 right-12 w-3 h-3 bg-orange-400 rounded-full shadow-lg opacity-70"></div>
+              <div className="absolute -bottom-2 left-16 w-3 h-3 bg-red-400 rounded-full shadow-lg opacity-60"></div>
+              <div className="absolute -bottom-1 right-8 w-2 h-2 bg-yellow-500 rounded-full shadow-lg opacity-80"></div>
+              
+              {/* キャッチコピー内容 */}
+              <div className="relative z-10 text-center">
+                {/* メインメッセージ */}
+                <div className="mb-4">
+                  <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 leading-tight">
+                    <span className="inline-block bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent">自由研究提出OK</span>
+                    <span className="inline-block mx-3 text-3xl md:text-4xl text-yellow-600 animate-bounce">→</span>
+                    <span className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">将来のスキルまで！</span>
+                  </p>
+                </div>
+                
+                {/* サブメッセージ - 付箋風 */}
+                <div className="inline-block relative">
+                  {/* 付箋の影 */}
+                  <div className="absolute inset-0 bg-gray-400/30 transform translate-x-1 translate-y-1 blur-sm"></div>
+                  
+                  {/* 付箋本体 */}
+                  <div className="relative bg-yellow-200 px-6 py-4 shadow-lg transform -rotate-2 hover:-rotate-1 transition-transform duration-300 border-l-2 border-yellow-400">
+                    {/* 付箋の角がめくれた効果 */}
+                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-100 transform rotate-45 shadow-sm"></div>
+                    <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-white/50 transform rotate-45"></div>
+                    
+                    {/* テキスト */}
+                    <p className="text-lg md:text-xl font-bold text-gray-800 relative z-10" style={{fontFamily: 'Comic Sans MS, cursive'}}>
+                      ✨ 一石二鳥の学習体験 ✨
+                    </p>
+                    
+                    {/* 付箋の質感 */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/30 to-transparent pointer-events-none"></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* 下部装飾ライン */}
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-400 rounded-b-2xl"></div>
+            </div>
+            
+            {/* サイドの装飾 */}
+            <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 text-3xl animate-bounce opacity-70">📚</div>
+            <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 text-3xl animate-bounce opacity-70" style={{animationDelay: '0.7s'}}>💡</div>
+          </div>
+        )}
+
         {/* CTAボタン */}
         <div className="flex flex-col sm:flex-row gap-4">
           <CTAButton button={data.ctaButton} size="lg" />

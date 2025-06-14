@@ -10,6 +10,7 @@ export type HeroData = {
     poster?: string;
     caption: string;
   };
+  catchCopy?: string;
   ctaButton: Button;
   eventInfo: {
     boothNumber: string;
