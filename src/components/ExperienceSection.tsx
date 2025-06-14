@@ -27,9 +27,16 @@ export default function ExperienceSection() {
                 <CardTitle className="text-2xl mb-4">
                   🚦 LED信号機プログラミング体験
                 </CardTitle>
-                <p className="text-gray-600">
+                <p className="text-gray-600 mb-6">
                   オリジナルキットを使って、実際にプログラムを作って動かす体験ができます
                 </p>
+                <div className="max-w-2xl mx-auto">
+                  <img
+                    src="/src/assets/images/experience-image2.jpg"
+                    alt="子供が信号機キットを操作している様子"
+                    className="w-full rounded-xl shadow-lg"
+                  />
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

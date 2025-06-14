@@ -22,15 +22,28 @@ export default function HeroSection() {
         <div className="mb-8 w-full max-w-4xl">
           <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-2xl">
             <CardContent className="p-6">
-              <div className="aspect-video bg-gray-800 rounded-xl overflow-hidden">
+              <div className="aspect-video rounded-xl overflow-hidden">
+                {/* 仮実装：YouTube動画 - 最終的に assets/movies の動画に置き換え */}
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/O7yoa-hwnkI"
+                  title="プログラミング体験デモ動画"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+                {/* 
+                最終版ではこちらに置き換え：
                 <video
                   className="w-full h-full object-cover"
                   controls
-                  poster="/placeholder-video-poster.jpg"
+                  poster="/src/assets/movies/video-poster.jpg"
                 >
-                  <source src="/your-video.mp4" type="video/mp4" />
+                  <source src="/src/assets/movies/experience-video.mp4" type="video/mp4" />
+                  <source src="/src/assets/movies/experience-video.webm" type="video/webm" />
                   お使いのブラウザは動画再生に対応していません。
                 </video>
+                */}
               </div>
               <p className="text-white/80 text-sm mt-4 text-center">
                 プログラミング体験の様子をご覧ください

@@ -11,10 +11,17 @@ export default function ConceptSection() {
             <span className="text-blue-600">"見て・触れて・動かして"</span><br />
             学ぼう！
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
             お金の勉強フェス2025で、現役プログラマーと一緒に<br className="hidden md:block" />
             Arduino LED信号機を使った本格的なプログラミング体験ができます
           </p>
+          <div className="max-w-4xl mx-auto">
+            <img
+              src="/src/assets/images/programming-image.jpg"
+              alt="ArduinoのIDEでプログラミングをしている画面"
+              className="w-full rounded-xl shadow-xl"
+            />
+          </div>
         </div>
 
         {/* PRポイント */}

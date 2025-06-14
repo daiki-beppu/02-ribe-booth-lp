@@ -9,7 +9,10 @@
       "Bash(rm:*)",
       "Bash(git push:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(pkill:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }

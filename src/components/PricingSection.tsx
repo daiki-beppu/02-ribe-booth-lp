@@ -25,48 +25,49 @@ export default function PricingSection() {
               </Badge>
               <CardTitle className="text-2xl">無料体験・相談会</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-start">
-                <span className="text-green-500 mr-3 mt-1">✓</span>
-                <div>
-                  <h4 className="font-bold text-gray-800">
-                    LED信号機プログラミング体験
+            <CardContent className="space-y-6">
+              <div className="border-l-4 border-green-400 pl-4">
+                <div className="mb-2">
+                  <h4 className="font-bold text-gray-800 text-lg">
+                    🚦 LED信号機プログラミング体験
                   </h4>
-                  <p className="text-gray-600 text-sm">
-                    15分間の本格的な体験（順次案内）
-                  </p>
                 </div>
+                <p className="text-gray-600 text-sm mb-2">
+                  15分間の本格的な体験（順次案内）
+                </p>
               </div>
-              <div className="flex items-start">
-                <span className="text-green-500 mr-3 mt-1">✓</span>
-                <div>
-                  <h4 className="font-bold text-gray-800">
-                    現役プログラマーへの相談会
+
+              <div className="border-l-4 border-blue-400 pl-4">
+                <div className="mb-2">
+                  <h4 className="font-bold text-gray-800 text-lg">
+                    👨‍💻 現役プログラマーへの相談会
                   </h4>
-                  <p className="text-gray-600 text-sm">
-                    30分間の直接相談（1日3回開催）
-                  </p>
                 </div>
+                <p className="text-gray-600 text-sm mb-2">
+                  30分間の直接相談（1日3回開催）
+                </p>
               </div>
-              <div className="flex items-start">
-                <span className="text-green-500 mr-3 mt-1">✓</span>
-                <div>
-                  <h4 className="font-bold text-gray-800">
-                    体験証明書・学習資料
+
+              <div className="border-l-4 border-purple-400 pl-4">
+                <div className="mb-2">
+                  <h4 className="font-bold text-gray-800 text-lg">
+                    📜 体験証明書・学習資料
                   </h4>
-                  <p className="text-gray-600 text-sm">
-                    夏休みの思い出として持ち帰り可能
-                  </p>
                 </div>
+                <p className="text-gray-600 text-sm mb-2">
+                  夏休みの思い出として持ち帰り可能
+                </p>
               </div>
-              <div className="flex items-start">
-                <span className="text-green-500 mr-3 mt-1">✓</span>
-                <div>
-                  <h4 className="font-bold text-gray-800">
-                    アフターサポートチャット招待
-                  </h4>
-                  <p className="text-gray-600 text-sm">継続的な学習サポート</p>
-                </div>
+
+              <div className="mt-6">
+                <img
+                  src="/src/assets/images/conceptual-experience.png"
+                  alt="親子でArduinoプログラミングを学ぶ理想的な体験風景"
+                  className="w-full rounded-xl shadow-lg"
+                />
+                <p className="text-center text-gray-500 text-sm mt-2">
+                  実際の体験風景：親子で楽しくプログラミングを学習
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -82,11 +83,16 @@ export default function PricingSection() {
             <CardContent className="space-y-6">
               <div className="border-l-4 border-green-400 pl-4">
                 <div className="flex justify-between items-center mb-2">
-                  <h4 className="font-bold text-gray-800 text-lg">🌱 スタートキット</h4>
-                  <span className="text-2xl font-bold text-green-600">¥3,000</span>
+                  <h4 className="font-bold text-gray-800 text-lg">
+                    🌱 スタートキット
+                  </h4>
+                  <span className="text-2xl font-bold text-green-600">
+                    ¥3,000
+                  </span>
                 </div>
                 <p className="text-gray-600 text-sm mb-2">
-                  マイコン＋ボード＋信号機キット<br/>
+                  マイコン＋ボード＋信号機キット
+                  <br />
                   基本的なLED制御プログラム付き
                 </p>
                 <Badge className="bg-green-100 text-green-800 text-xs">
@@ -96,13 +102,25 @@ export default function PricingSection() {
 
               <div className="border-l-4 border-orange-400 pl-4">
                 <div className="flex justify-between items-center mb-2">
-                  <h4 className="font-bold text-gray-800 text-lg">🚀 アドベンチャーキット</h4>
-                  <span className="text-2xl font-bold text-orange-600">¥5,000</span>
+                  <h4 className="font-bold text-gray-800 text-lg">
+                    🚀 アドベンチャーキット
+                  </h4>
+                  <span className="text-2xl font-bold text-orange-600">
+                    ¥5,000
+                  </span>
                 </div>
-                <p className="text-gray-600 text-sm mb-2">
-                  スタートキットの全内容<br/>
+                <p className="text-gray-600 text-sm mb-3">
+                  スタートキットの全内容
+                  <br />
                   ＋踏切システム追加＋モーター制御機能
                 </p>
+                <div className="mb-3">
+                  <img
+                    src="/src/assets/images/signal-and-level-crossing.jpg"
+                    alt="信号機と踏切システムのハードウェア"
+                    className="w-full rounded-lg shadow-md"
+                  />
+                </div>
                 <Badge className="bg-orange-100 text-orange-800 text-xs">
                   親子で夏の思い出作り＆本格学習モデル
                 </Badge>
@@ -110,11 +128,16 @@ export default function PricingSection() {
 
               <div className="border-l-4 border-purple-400 pl-4">
                 <div className="flex justify-between items-center mb-2">
-                  <h4 className="font-bold text-gray-800 text-lg">💎 マスターキット</h4>
-                  <span className="text-2xl font-bold text-purple-600">¥10,000</span>
+                  <h4 className="font-bold text-gray-800 text-lg">
+                    💎 マスターキット
+                  </h4>
+                  <span className="text-2xl font-bold text-purple-600">
+                    ¥10,000
+                  </span>
                 </div>
                 <p className="text-gray-600 text-sm mb-2">
-                  アドベンチャーキットの全内容<br/>
+                  アドベンチャーキットの全内容
+                  <br />
                   ＋3種センサー（距離/温度/照度）追加
                 </p>
                 <Badge className="bg-purple-100 text-purple-800 text-xs">
