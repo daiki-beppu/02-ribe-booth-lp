@@ -13,7 +13,8 @@
       "mcp__ide__getDiagnostics",
       "Bash(pkill:*)",
       "Bash(grep:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": []
   }
