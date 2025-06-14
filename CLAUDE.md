@@ -4,10 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Build for production (runs TypeScript compilation + Vite build)
-- `npm run lint` - Run ESLint on the codebase
-- `npm run preview` - Preview the production build locally
+This project uses **bun** as the package manager. Use these commands:
+
+- `bun run dev` - Start development server with hot reload
+- `bun run build` - Build for production (runs TypeScript compilation + Vite build)
+- `bun run lint` - Run ESLint on the codebase
+- `bun run preview` - Preview the production build locally
+
+Alternative with npm:
+- `npm run dev/build/lint/preview` - Same commands work with npm if bun isn't available
 
 ## Project Architecture
 
