@@ -71,55 +71,56 @@ export default function PricingSection() {
             </CardContent>
           </Card>
 
-          {/* 有償サービス */}
+          {/* 物販商品 */}
           <Card className="shadow-2xl">
             <CardHeader className="text-center pb-4">
               <Badge className="bg-blue-500 hover:bg-blue-600 text-lg py-2 px-6 mb-4 mx-auto w-fit">
-                💰 有償オプション
+                🎁 物販商品ラインナップ
               </Badge>
-              <CardTitle className="text-2xl">希望者のみ</CardTitle>
+              <CardTitle className="text-2xl">お持ち帰りキット</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-start">
-                <span className="text-blue-500 mr-3 mt-1">●</span>
-                <div>
-                  <h4 className="font-bold text-gray-800">
-                    オリジナルキット持ち帰り
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    体験で使用したキットをお持ち帰り
-                  </p>
+            <CardContent className="space-y-6">
+              <div className="border-l-4 border-green-400 pl-4">
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-bold text-gray-800 text-lg">🌱 スタートキット</h4>
+                  <span className="text-2xl font-bold text-green-600">¥3,000</span>
                 </div>
+                <p className="text-gray-600 text-sm mb-2">
+                  マイコン＋ボード＋信号機キット<br/>
+                  基本的なLED制御プログラム付き
+                </p>
+                <Badge className="bg-green-100 text-green-800 text-xs">
+                  初心者・お子様向けの入門モデル
+                </Badge>
               </div>
-              <div className="flex items-start">
-                <span className="text-blue-500 mr-3 mt-1">●</span>
-                <div>
-                  <h4 className="font-bold text-gray-800">
-                    特別版キット（高機能版）
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    より高度な機能を搭載したバージョン
-                  </p>
+
+              <div className="border-l-4 border-orange-400 pl-4">
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-bold text-gray-800 text-lg">🚀 アドベンチャーキット</h4>
+                  <span className="text-2xl font-bold text-orange-600">¥5,000</span>
                 </div>
+                <p className="text-gray-600 text-sm mb-2">
+                  スタートキットの全内容<br/>
+                  ＋踏切システム追加＋モーター制御機能
+                </p>
+                <Badge className="bg-orange-100 text-orange-800 text-xs">
+                  親子で夏の思い出作り＆本格学習モデル
+                </Badge>
               </div>
-              <div className="flex items-start">
-                <span className="text-blue-500 mr-3 mt-1">●</span>
-                <div>
-                  <h4 className="font-bold text-gray-800">
-                    個別指導セッション
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    有償版サポート（5000円/H）
-                  </p>
+
+              <div className="border-l-4 border-purple-400 pl-4">
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-bold text-gray-800 text-lg">💎 マスターキット</h4>
+                  <span className="text-2xl font-bold text-purple-600">¥10,000</span>
                 </div>
+                <p className="text-gray-600 text-sm mb-2">
+                  アドベンチャーキットの全内容<br/>
+                  ＋3種センサー（距離/温度/照度）追加
+                </p>
+                <Badge className="bg-purple-100 text-purple-800 text-xs">
+                  副業・転職を目指す本格派モデル
+                </Badge>
               </div>
-              <Card className="bg-blue-50 border-blue-200 mt-6">
-                <CardContent className="p-4">
-                  <p className="text-blue-800 text-sm text-center font-medium">
-                    価格は希望者の方にのみ詳細をご案内いたします
-                  </p>
-                </CardContent>
-              </Card>
             </CardContent>
           </Card>
         </div>
