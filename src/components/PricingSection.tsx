@@ -133,7 +133,7 @@ export default function PricingSection() {
             <div className="grid grid-cols-1 gap-8">
               <div className="text-center">
                 <div className="text-4xl mb-4">🌐</div>
-                <h4 className="font-bold text-white mb-2 text-lg ">
+                <h4 className="font-bold text-white mb-2 text-lg drop">
                   予約フォーム
                 </h4>
                 <p className="text-white/90 mb-4">
