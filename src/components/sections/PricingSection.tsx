@@ -15,10 +15,10 @@ export default function PricingSection({ data }: PricingSectionProps) {
       <div className="container mx-auto px-4">
         {/* 料金体系 */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             {data.title}
           </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto drop-shadow">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             {data.description}
           </p>
         </div>
@@ -84,18 +84,18 @@ export default function PricingSection({ data }: PricingSectionProps) {
         </div>
 
         {/* 申込方法 */}
-        <Card className="bg-white/10 backdrop-blur-sm border-white/20 mb-12">
+        <Card className="bg-white/80 backdrop-blur-sm border-gray-200 mb-12">
           <CardContent className="p-8">
-            <CardTitle className="text-2xl text-white mb-8 text-center drop-shadow-lg">
+            <CardTitle className="text-2xl text-gray-800 mb-8 text-center">
               {data.applicationForm.title}
             </CardTitle>
             <div className="grid grid-cols-1 gap-8">
               <div className="text-center">
                 <div className="text-4xl mb-4">🌐</div>
-                <h4 className="font-bold text-white mb-2 text-lg drop">
+                <h4 className="font-bold text-gray-800 mb-2 text-lg">
                   予約フォーム
                 </h4>
-                <p className="text-white/90 mb-4">
+                <p className="text-gray-600 mb-4">
                   {data.applicationForm.description}
                 </p>
                 <CTAButton button={data.applicationForm.button} />
@@ -106,13 +106,13 @@ export default function PricingSection({ data }: PricingSectionProps) {
 
         {/* 最終CTA */}
         <div className="text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 drop-shadow-lg">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
             {data.finalCta.title}
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CTAButton button={data.finalCta.button} size="lg" className="shadow-2xl" />
           </div>
-          <p className="text-white/80 mt-6 text-lg">
+          <p className="text-gray-700 mt-6 text-lg whitespace-pre-line">
             {data.finalCta.subtitle}
           </p>
         </div>

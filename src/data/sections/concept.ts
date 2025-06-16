@@ -1,32 +1,33 @@
-import type { ConceptData } from '../../types/sections/concept';
+import type { ConceptData } from "../../types/sections/concept";
 
 export const conceptData: ConceptData = {
-  title: 'プログラムを"見て・触れて・動かして"学ぼう！',
-  description: 'お金の勉強フェス2025で、現役プログラマーと一緒にArduino LED信号機を使った本格的なプログラミング体験ができます',
+  title: "今すぐ使える自由研究から、将来に役立つスキルまで！",
+  description: `現役エンジニアチームが作った本格仕様の教材で\n遊びながら本物の力が身につきます。
+エンジニアに必要な要素がぜんぶ詰まった、理想的な学習環境をご提供します`,
   image: {
-    src: '/images/programming-image.jpg',
-    alt: 'ArduinoのIDEでプログラミングをしている画面'
+    src: "/images/programming-image.jpg",
+    alt: "ArduinoのIDEでプログラミングをしている画面",
   },
   features: [
     {
-      icon: '🔰',
-      title: '初心者でも超簡単',
-      description: 'プログラミング未経験でも大丈夫！現役プログラマーが優しく指導します'
+      icon: "📝",
+      title: "自由研究提出OK",
+      description: `夏休みの自由研究として提出可能！\n「そのまま提出できる」\n実用的な成果物が作れます`,
     },
     {
-      icon: '🆓',
-      title: '参加無料',
-      description: '体験も相談会も完全無料！気軽にプログラミングの世界を覗いてみましょう'
+      icon: "🔧",
+      title: "本格仕様の教材",
+      description: `現役エンジニアチームが\n設計した本格的な教材\n遊びながら本物の力が身につきます`,
     },
     {
-      icon: '⚡',
-      title: '即効性抜群',
-      description: '15分でプログラムが動く！すぐに成果が見えるから達成感を感じられます'
+      icon: "📚",
+      title: "継続的サポート",
+      description: `購入後も継続的なサポートで\n学習が加速！\nお子さんの成長を長期的に支援します`,
     },
     {
-      icon: '👨‍👩‍👧‍👦',
-      title: '親子で参加OK',
-      description: '家族みんなで楽しめます。親子のコミュニケーションにも最適です'
-    }
-  ]
+      icon: "👨‍👩‍👧‍👦",
+      title: "親御さんも安心",
+      description: `プロが作った理想的な学習環境で\n安心してお子さんの成長を見守れます`,
+    },
+  ],
 };
