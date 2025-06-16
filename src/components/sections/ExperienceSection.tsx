@@ -31,8 +31,9 @@ export default function ExperienceSection({ data }: ExperienceSectionProps) {
                 <CardTitle className="text-2xl mb-4">
                   🚦 LED信号機プログラミング体験
                 </CardTitle>
-                <p className="text-gray-600 mb-6 whitespace-pre-line">
-                  {data.description}
+                <p className="text-gray-600 mb-6">
+                  実際にArduino基板を組み立てて、LEDライトをプログラムで制御！<br/>
+                  初心者でも安心のテンプレート付きで、すぐに信号機が動き出します。
                 </p>
                 {data.images.map((image, index) => (
                   <div key={index} className="max-w-2xl mx-auto">
