@@ -15,7 +15,7 @@ export default function ExperienceSection({ data }: ExperienceSectionProps) {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             {data.title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto whitespace-pre-line">
             {data.description}
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function ExperienceSection({ data }: ExperienceSectionProps) {
                 <CardTitle className="text-2xl mb-4">
                   🚦 LED信号機プログラミング体験
                 </CardTitle>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-6 whitespace-pre-line">
                   {data.description}
                 </p>
                 {data.images.map((image, index) => (

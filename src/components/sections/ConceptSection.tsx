@@ -14,7 +14,7 @@ export default function ConceptSection({ data }: ConceptSectionProps) {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             <span className="text-blue-600">{data.title}</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 whitespace-pre-line">
             {data.description}
           </p>
           <div className="max-w-4xl mx-auto">
@@ -27,7 +27,7 @@ export default function ConceptSection({ data }: ConceptSectionProps) {
         </div>
 
         {/* PRポイント */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 whitespace-pre-line">
           {data.features.map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
           ))}

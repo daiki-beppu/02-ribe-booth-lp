@@ -85,6 +85,7 @@ export const pricingData: PricingData = {
       variant: "primary",
       external: true,
     },
-    subtitle: "購入後は継続的なサポートで学習が加速！親御さんは安心してお子さんの成長を見守れます",
+    subtitle: `購入後は継続的なサポートで学習が加速！
+親御さんは安心してお子さんの成長を見守れます`,
   },
 };

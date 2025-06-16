@@ -12,20 +12,20 @@ export default function HeroSection({ data }: HeroSectionProps) {
       <div className="container mx-auto px-4 py-16 flex flex-col items-center justify-center min-h-screen text-center">
         {/* メインキャッチコピー */}
         <div className="mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
             {data.title}
           </h1>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
             {data.subtitle}
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 font-medium drop-shadow">
+          <p className="text-xl md:text-2xl text-gray-700 font-medium">
             {data.description}
           </p>
         </div>
 
         {/* 動画セクション */}
         <div className="mb-8 w-full max-w-4xl">
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-2xl">
+          <Card className="bg-white/80 backdrop-blur-sm border-gray-200 shadow-2xl">
             <CardContent className="p-6">
               <div className="aspect-video rounded-xl overflow-hidden">
                 {data.video.youtubeId ? (
@@ -50,7 +50,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
                   </video>
                 )}
               </div>
-              <p className="text-white/80 text-sm mt-4 text-center">
+              <p className="text-gray-600 text-sm mt-4 text-center">
                 {data.video.caption}
               </p>
             </CardContent>
@@ -125,11 +125,11 @@ export default function HeroSection({ data }: HeroSectionProps) {
 
         {/* イベント基本情報 */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl">
-          <Card className="bg-white/20 backdrop-blur-sm border-white/30">
+          <Card className="bg-white/80 backdrop-blur-sm border-gray-200">
             <CardContent className="p-6 text-center">
               <div className="text-4xl mb-3">📅</div>
-              <h3 className="font-bold text-white mb-2 text-lg">開催日程</h3>
-              <p className="text-white/90 text-lg">{data.eventInfo.dates}</p>
+              <h3 className="font-bold text-gray-800 mb-2 text-lg">開催日程</h3>
+              <p className="text-gray-700 text-lg">{data.eventInfo.dates}</p>
             </CardContent>
           </Card>
           <Card className="bg-gradient-to-br from-red-500 to-pink-500 backdrop-blur-sm border-2 border-yellow-300 shadow-2xl transform hover:scale-105 transition-all duration-300">
@@ -141,11 +141,11 @@ export default function HeroSection({ data }: HeroSectionProps) {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-white/20 backdrop-blur-sm border-white/30">
+          <Card className="bg-white/80 backdrop-blur-sm border-gray-200">
             <CardContent className="p-6 text-center">
               <div className="text-4xl mb-3">📍</div>
-              <h3 className="font-bold text-white mb-2 text-lg">会場</h3>
-              <p className="text-white/90 text-lg">{data.eventInfo.venue}</p>
+              <h3 className="font-bold text-gray-800 mb-2 text-lg">会場</h3>
+              <p className="text-gray-700 text-lg">{data.eventInfo.venue}</p>
             </CardContent>
           </Card>
         </div>
