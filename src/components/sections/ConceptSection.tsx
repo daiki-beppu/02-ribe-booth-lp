@@ -7,12 +7,12 @@ interface ConceptSectionProps {
 
 export default function ConceptSection({ data }: ConceptSectionProps) {
   return (
-    <section className="py-16 bg-gradient-to-b from-blue-50 to-green-50">
+    <section className="py-16 bg-gradient-to-b from-[#f0f9fa] to-green-50">
       <div className="container mx-auto px-4">
         {/* メインコンセプト */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-            <span className="text-blue-600">{data.title}</span>
+            <span className="text-[#6cb7c7]">{data.title}</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 whitespace-pre-line">
             {data.description}
