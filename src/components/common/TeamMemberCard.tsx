@@ -10,10 +10,10 @@ interface TeamMemberCardProps {
 export default function TeamMemberCard({ member, className = "" }: TeamMemberCardProps) {
   const colorClasses = {
     orange: {
-      bg: "from-orange-400 to-red-500",
-      border: "border-orange-400",
-      text: "text-orange-500",
-      badgeBg: "bg-orange-500 hover:bg-orange-600"
+      bg: "from-blue-400 to-indigo-500",
+      border: "border-blue-400",
+      text: "text-blue-500",
+      badgeBg: "bg-blue-500 hover:bg-blue-600"
     },
     blue: {
       bg: "from-blue-400 to-indigo-500", 
@@ -34,10 +34,10 @@ export default function TeamMemberCard({ member, className = "" }: TeamMemberCar
       badgeBg: "bg-green-500 hover:bg-green-600"
     },
     yellow: {
-      bg: "from-yellow-400 to-orange-500",
-      border: "border-yellow-400",
-      text: "text-yellow-500",
-      badgeBg: "bg-yellow-500 hover:bg-yellow-600"
+      bg: "from-cyan-400 to-blue-500",
+      border: "border-cyan-400",
+      text: "text-cyan-500",
+      badgeBg: "bg-cyan-500 hover:bg-cyan-600"
     }
   };
 

@@ -22,10 +22,10 @@ export default function ExperienceSection({ data }: ExperienceSectionProps) {
 
         {/* LED信号機プログラミング体験 */}
         <div className="mb-16">
-          <Card className="bg-gradient-to-r from-orange-50 to-yellow-50 border-orange-200">
+          <Card className="bg-gradient-to-r from-[#f0f9fa] to-[#f0f9fa] border-[#a8dee9]">
             <CardContent className="p-8">
               <div className="text-center mb-8">
-                <Badge className={`bg-${data.badge.variant}-500 hover:bg-${data.badge.variant}-600 mb-4`}>
+                <Badge className="bg-[#6cb7c7] hover:bg-[#5aa3b5] mb-4">
                   {data.badge.text}
                 </Badge>
                 <CardTitle className="text-2xl mb-4">

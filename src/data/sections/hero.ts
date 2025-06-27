@@ -1,8 +1,8 @@
 import type { HeroData } from '../../types/sections/hero';
 
 export const heroData: HeroData = {
-  title: '🔰はじめよう！',
-  subtitle: 'プログラムの世界！🆓',
+  title: '親子でプログラム×',
+  subtitle: '光る動くおもちゃ作り！',
   description: '親子で夏休みの思い出作り',
   video: {
     localSrc: '/videos/public-relations.TS.mp4',

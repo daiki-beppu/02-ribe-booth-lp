@@ -25,7 +25,7 @@ export default function TeamSection({ data }: TeamSectionProps) {
           ))}
         </div>
 
-        <Card className="mt-12 bg-gradient-to-r from-indigo-50 to-purple-50 border-indigo-200">
+        <Card className="mt-12 bg-gradient-to-r from-blue-50 to-cyan-50 border-blue-200">
           <CardContent className="p-8 text-center">
             <CardTitle className="text-2xl mb-4">
               {data.finalMessage.title}

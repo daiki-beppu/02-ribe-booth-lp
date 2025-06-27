@@ -11,7 +11,7 @@ interface PricingSectionProps {
 
 export default function PricingSection({ data }: PricingSectionProps) {
   return (
-    <section className="py-16 bg-gradient-to-br from-orange-400 via-yellow-400 to-orange-300">
+    <section className="py-16 bg-gradient-to-br from-[#a8dee9] via-[#bfe4ec] to-[#91d5e0]">
       <div className="container mx-auto px-4">
         {/* 料金体系 */}
         <div className="text-center mb-16">
@@ -27,7 +27,10 @@ export default function PricingSection({ data }: PricingSectionProps) {
           {/* 無料サービス */}
           <Card className="shadow-2xl flex flex-col h-full">
             <CardHeader className="text-center pb-4">
-              <Badge className="bg-green-500 hover:bg-green-600 text-lg py-2 px-6 mb-4 mx-auto w-fit">
+              <Badge 
+                className="text-lg py-2 px-6 mb-4 mx-auto w-fit text-white"
+                style={{ backgroundColor: 'var(--orange-9)' }}
+              >
                 🆓 完全無料
               </Badge>
               <CardTitle className="text-2xl">無料体験・相談会</CardTitle>
@@ -57,7 +60,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
           {/* 物販商品 */}
           <Card className="shadow-2xl flex flex-col h-full">
             <CardHeader className="text-center pb-4">
-              <Badge className="bg-blue-500 hover:bg-blue-600 text-lg py-2 px-6 mb-4 mx-auto w-fit">
+              <Badge className="bg-[#6cb7c7] hover:bg-[#5aa3b5] text-lg py-2 px-6 mb-4 mx-auto w-fit">
                 🎁 物販商品ラインナップ
               </Badge>
               <CardTitle className="text-2xl">お持ち帰りキット</CardTitle>

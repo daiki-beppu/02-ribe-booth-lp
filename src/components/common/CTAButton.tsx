@@ -10,8 +10,18 @@ interface CTAButtonProps {
 export default function CTAButton({ button, size = "default", className = "" }: CTAButtonProps) {
   const baseClasses = "font-bold rounded-full transform hover:scale-105 transition-all duration-200 h-auto";
   const variantClasses = {
-    primary: "bg-blue-600 hover:bg-blue-700 text-white shadow-lg",
-    secondary: "bg-white text-orange-600 hover:bg-gray-100"
+    primary: "text-white shadow-lg hover:scale-105 transition-all duration-200",
+    secondary: "bg-white shadow-lg border-2 hover:scale-105 transition-all duration-200"
+  };
+
+  const primaryStyle = {
+    backgroundColor: 'var(--orange-9)',
+    '--tw-shadow': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
+  };
+
+  const secondaryStyle = {
+    color: 'var(--orange-9)',
+    borderColor: 'var(--orange-9)'
   };
 
   const sizeClasses = {
@@ -20,11 +30,15 @@ export default function CTAButton({ button, size = "default", className = "" }: 
     lg: "px-12 py-5 text-xl"
   };
 
+  const variant = button.variant || 'primary';
+  const buttonStyle = variant === 'primary' ? primaryStyle : secondaryStyle;
+
   return (
     <Button
       asChild
       size={size}
-      className={`${baseClasses} ${variantClasses[button.variant || 'primary']} ${sizeClasses[size]} ${className}`}
+      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      style={buttonStyle}
     >
       <a
         href={button.href}

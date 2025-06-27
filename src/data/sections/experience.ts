@@ -8,7 +8,7 @@ export const experienceData: ExperienceData = {
   お子さんが「かっこいい！」と夢中になります`,
   badge: {
     text: "📝 自由研究対応＆無料体験（15分）",
-    variant: "orange",
+    variant: "blue",
   },
   images: [
     {
