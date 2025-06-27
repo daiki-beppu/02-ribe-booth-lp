@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/member/[^/]+",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
