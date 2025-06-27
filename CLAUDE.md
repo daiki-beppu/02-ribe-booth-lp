@@ -1,58 +1,56 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+このファイルはClaude Codeがこのリポジトリで作業する際のガイダンスを提供します。
 
-## Development Commands
+## 開発コマンド
 
-This project uses **bun** as the package manager. Use these commands:
+このプロジェクトは **bun** を使用：
 
-- `bun run dev` - Start development server with hot reload
-- `bun run build` - Build for production (runs TypeScript compilation + Vite build)
-- `bun run lint` - Run ESLint on the codebase
-- `bun run preview` - Preview the production build locally
+- `bun run dev` - 開発サーバー起動
+- `bun run build` - プロダクションビルド
+- `bun run lint` - ESLintでコードチェック
 
-Alternative with npm:
-- `npm run dev/build/lint/preview` - Same commands work with npm if bun isn't available
+## プロジェクト概要
 
-## Project Architecture
+React + TypeScript + Vite で作られたプログラミングブース用ランディングページ
 
-This is a React + TypeScript + Vite landing page for a programming booth at an event. The architecture is:
+### 技術スタック
+- **React 19** + TypeScript
+- **React Router DOM v7** - ページルーティング
+- **shadcn/ui** - UIコンポーネント（Card, Button, Badge, DropdownMenu, Sheet）
+- **Tailwind CSS v4** - スタイリング
+- **Lucide React** - アイコン
 
-### Main Structure
-- **Single Page Application**: All sections are rendered in `App.tsx` as a single-page landing page
-- **Section-based Layout**: The page is divided into distinct sections (Hero, Concept, Experience, Team, Pricing, Footer)
-- **Component Organization**: Each major section has its own component file in `src/components/`
+### ページ構成
+- `/` - ホームページ（全セクション）
+- `/member/:memberName` - メンバー詳細ページ
 
-### Technology Stack
-- **React 19** with TypeScript
-- **Vite** for build tooling and development server
-- **shadcn/ui** components (Card, Button, Badge, Separator) with Radix UI primitives
-- **Tailwind CSS v4** for styling with CSS variables enabled
-- **Lucide React** for icons
+### ナビゲーション
+- **デスクトップ**: 固定ヘッダー + ドロップダウンメニュー
+- **モバイル**: 右下FAB + ボトムシート
 
-### shadcn/ui Configuration
-- Style: "new-york" variant
-- Base color: neutral
-- CSS variables enabled for theming
-- Components located in `@/components/ui/`
-- Path aliases configured: `@/` points to `src/`
+### チームメンバー
+5名のメンバー、各自に専用カラーテーマ：
+- トムランド (blue)
+- まるの (red) 
+- ももちこ (orange)
+- KOBA (green)
+- snowdrop (yellow)
 
-### Content Structure
-The landing page promotes a programming experience booth with:
-- Arduino LED traffic light programming experience
-- Consultation sessions with professional programmers  
-- Team member profiles with detailed backgrounds
-- Pricing and registration information
+### レスポンシブ対応
+- **ブレークポイント**: sm(640px), md(768px), lg(1024px)
+- **モバイル最適化**: フォントサイズ、パディング、ボタン配置の調整
 
-### Component Dependencies
-All section components use shadcn/ui components consistently:
-- `Card`, `CardContent`, `CardHeader`, `CardTitle` for structured content
-- `Button` for CTAs and navigation
-- `Badge` for labels and status indicators
-- `Separator` for visual divisions
+### データ駆動型開発
+- **セクションデータ**: `src/data/sections/` 配下にセクション別データを分離
+- **型定義**: `src/types/sections/` 配下にTypeScript型定義
+- **propsでのデータ注入**: 各コンポーネントはprops経由でデータを受け取り表示
+- **コンテンツとUIの分離**: デザイン変更とコンテンツ変更を独立して実施可能
 
-### Styling Approach
-- Gradient backgrounds (orange/yellow theme for hero/pricing, blue/green for content sections)
-- Consistent card-based layouts
-- Responsive design with mobile-first approach
-- Color-coded sections for different team members and content types
+## 重要なコンポーネント
+
+- `src/components/common/Header.tsx` - デスクトップヘッダー
+- `src/components/common/MobileMenu.tsx` - モバイルメニュー  
+- `src/components/common/TeamMemberCard.tsx` - メンバーカード
+- `src/components/pages/MemberDetailPage.tsx` - メンバー詳細ページ
+- `src/data/sections/team.ts` - メンバーデータ

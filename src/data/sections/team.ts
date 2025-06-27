@@ -11,7 +11,7 @@ export const teamData: TeamData = {
       skills: ["フルスタック開発", "AI/LLM", "株式投資", "副業"],
       description:
         "フェスのプログラム体験会/相談会を通じて学びの楽しさを伝えたいです！",
-      color: "orange",
+      color: "blue",
       badge: "リーダー",
       avatar: "/images/icons/tomland-icon.png",
       isLeader: true,
@@ -37,7 +37,7 @@ export const teamData: TeamData = {
       experience: "現役プログラマー",
       skills: ["組み込み系", "3Dプリンタ", "ハードウェア"],
       description: "プログラミングで実物が動く楽しさを体験いただきたいです。",
-      color: "blue",
+      color: "red",
       badge: "サブリーダー",
       avatar: "/images/icons/maruno-icon.png",
       details: [
@@ -57,7 +57,7 @@ export const teamData: TeamData = {
       skills: ["Webアプリ開発", "AI開発", "転職支援"],
       description:
         "プログラミングで人生が変わった経験を、次は誰かに届けたいと考えています！",
-      color: "pink",
+      color: "orange",
       avatar: "/images/icons/momochico-icon.jpg",
       details: [
         {
