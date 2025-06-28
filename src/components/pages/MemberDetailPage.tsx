@@ -124,7 +124,7 @@ export default function MemberDetailPage() {
               <div className="text-center lg:text-left w-full min-w-0">
                 <div className="flex flex-col lg:flex-row lg:items-center mb-3 md:mb-4 gap-2 md:gap-0">
                   <CardTitle className="text-2xl md:text-3xl mr-0 lg:mr-4 mb-2 lg:mb-0 break-words">
-                    {member.name}
+                    {member.name === "koba" ? "KOBA" : member.name}
                   </CardTitle>
                   {member.badge && (
                     <Badge
@@ -191,7 +191,7 @@ export default function MemberDetailPage() {
             >
               <CardContent className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">
-                  {`${member.name}からのメッセージ`}
+                  {`${member.name === "koba" ? "KOBA" : member.name}からのメッセージ`}
                 </h3>
                 <p className="text-sm md:text-lg text-gray-700 leading-relaxed break-words">
                   {member.message}
@@ -413,7 +413,7 @@ export default function MemberDetailPage() {
                 .map((otherMember: TeamMember, index) => (
                   <Link
                     key={index}
-                    to={`/member/${otherMember.name.toLowerCase()}`}
+                    to={`/member/${otherMember.name}`}
                     className="block"
                   >
                     <Card className="hover:shadow-lg transition-shadow cursor-pointer">
@@ -434,7 +434,7 @@ export default function MemberDetailPage() {
                           )}
                         </div>
                         <p className="font-medium text-xs md:text-sm break-words">
-                          {otherMember.name}
+                          {otherMember.name === "koba" ? "KOBA" : otherMember.name}
                         </p>
                         <p className="text-xs text-gray-500 mt-1 break-words leading-tight">
                           {otherMember.title}

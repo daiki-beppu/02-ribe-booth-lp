@@ -87,7 +87,7 @@ export default function TeamMemberCard({
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-2">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-center sm:text-left">
                 <CardTitle className="text-lg sm:text-xl">
-                  {member.name}
+                  {member.name === "koba" ? "KOBA" : member.name}
                 </CardTitle>
                 {member.badge && (
                   <Badge className={`${colors.badgeBg} mx-auto sm:mx-0 w-fit`}>
@@ -97,7 +97,7 @@ export default function TeamMemberCard({
               </div>
               {/* デスクトップビューのみボタンを表示 */}
               <div className="hidden sm:block">
-                <Link to={`/member/${member.name.toLowerCase()}`}>
+                <Link to={`/member/${member.name}`}>
                   <Button className={`${colors.badgeBg} px-4 py-2`}>
                     詳細プロフィールを見る
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -133,7 +133,7 @@ export default function TeamMemberCard({
 
         {/* スマホビューのみボタンを表示 */}
         <div className="sm:hidden">
-          <Link to={`/member/${member.name.toLowerCase()}`}>
+          <Link to={`/member/${member.name}`}>
             <Button className={`${colors.badgeBg} w-full py-3`}>
               詳細プロフィールを見る
               <ArrowRight className="ml-2 h-4 w-4" />
