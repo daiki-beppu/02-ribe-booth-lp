@@ -14,9 +14,7 @@ export default function FreeServiceItem({ service }: FreeServiceItemProps) {
         </h4>
       </div>
       <div className="mb-3">
-        <p className="text-gray-600 text-sm mb-1">
-          {service.description}
-        </p>
+        <p className="text-gray-600 text-sm mb-1">{service.description}</p>
       </div>
       {service.image && (
         <div className="mb-3">

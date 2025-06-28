@@ -9,9 +9,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className={`border-l-4 ${product.borderColor} pl-4`}>
       <div className="flex justify-between items-center mb-2">
-        <h4 className="font-bold text-gray-800 text-lg">
-          {product.name}
-        </h4>
+        <h4 className="font-bold text-gray-800 text-lg">{product.name}</h4>
         <span className={`text-2xl font-bold ${product.priceColor}`}>
           ¥{product.price.toLocaleString()}
         </span>

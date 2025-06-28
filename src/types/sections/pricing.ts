@@ -1,4 +1,4 @@
-import type { Image, Button } from '../common';
+import type { Image, Button } from "../common";
 
 export type FreeService = {
   icon: string;
@@ -7,7 +7,7 @@ export type FreeService = {
   borderColor: string;
   target?: string;
   image?: Image;
-}
+};
 
 export type Product = {
   id: string;
@@ -19,7 +19,7 @@ export type Product = {
   priceColor: string;
   badgeColor: string;
   image?: Image;
-}
+};
 
 export type PricingData = {
   title: string;
@@ -37,4 +37,4 @@ export type PricingData = {
     button: Button;
     subtitle: string;
   };
-}
+};

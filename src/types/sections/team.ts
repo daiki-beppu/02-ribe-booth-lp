@@ -1,7 +1,7 @@
 export type DetailItem = {
   icon: string;
   text: string;
-}
+};
 
 export type PortfolioItem = {
   title: string;
@@ -12,7 +12,7 @@ export type PortfolioItem = {
   github?: string;
   technologies: string[];
   type: "service" | "portfolio" | "project";
-}
+};
 
 // ホーム用の簡易プロフィール
 export type TeamMemberBasic = {
@@ -26,14 +26,14 @@ export type TeamMemberBasic = {
   badge?: string;
   isLeader?: boolean;
   colSpan?: number;
-}
+};
 
 // メンバー詳細ページ用の拡張プロフィール
 export type TeamMember = TeamMemberBasic & {
   details: DetailItem[];
   message: string;
   portfolio?: PortfolioItem[];
-}
+};
 
 export type TeamData = {
   title: string;
@@ -43,7 +43,7 @@ export type TeamData = {
     title: string;
     description: string;
   };
-}
+};
 
 // ホーム用のTeamData型
 export type TeamDataBasic = {
@@ -54,4 +54,4 @@ export type TeamDataBasic = {
     title: string;
     description: string;
   };
-}
+};

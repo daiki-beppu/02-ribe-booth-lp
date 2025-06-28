@@ -32,7 +32,8 @@ export default function ExperienceSection({ data }: ExperienceSectionProps) {
                   🚦 LED信号機プログラミング体験
                 </CardTitle>
                 <p className="text-gray-600 mb-6">
-                  実際にArduino基板を組み立てて、LEDライトをプログラムで制御！<br/>
+                  実際にArduino基板を組み立てて、LEDライトをプログラムで制御！
+                  <br />
                   初心者でも安心のテンプレート付きで、すぐに信号機が動き出します。
                 </p>
                 {data.images.map((image, index) => (

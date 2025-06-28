@@ -1,10 +1,10 @@
-import type { Image } from '../common';
+import type { Image } from "../common";
 
 export type StepItem = {
   icon: string;
   title: string;
   description: string;
-}
+};
 
 export type ExperienceData = {
   title: string;
@@ -15,4 +15,4 @@ export type ExperienceData = {
   };
   images: Image[];
   steps: StepItem[];
-}
+};

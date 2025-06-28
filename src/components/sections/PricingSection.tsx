@@ -27,9 +27,9 @@ export default function PricingSection({ data }: PricingSectionProps) {
           {/* 無料サービス */}
           <Card className="shadow-2xl flex flex-col h-full">
             <CardHeader className="text-center pb-4">
-              <Badge 
+              <Badge
                 className="text-lg py-2 px-6 mb-4 mx-auto w-fit text-white"
-                style={{ backgroundColor: 'var(--orange-9)' }}
+                style={{ backgroundColor: "var(--orange-9)" }}
               >
                 🆓 完全無料
               </Badge>
@@ -113,7 +113,11 @@ export default function PricingSection({ data }: PricingSectionProps) {
             {data.finalCta.title}
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton button={data.finalCta.button} size="lg" className="shadow-2xl" />
+            <CTAButton
+              button={data.finalCta.button}
+              size="lg"
+              className="shadow-2xl"
+            />
           </div>
           <p className="text-gray-700 mt-6 text-lg whitespace-pre-line">
             {data.finalCta.subtitle}

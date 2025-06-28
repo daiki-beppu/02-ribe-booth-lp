@@ -38,7 +38,11 @@ export default function Header() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
-                  variant={location.pathname.startsWith("/member") ? "default" : "ghost"}
+                  variant={
+                    location.pathname.startsWith("/member")
+                      ? "default"
+                      : "ghost"
+                  }
                   className="flex items-center space-x-2"
                 >
                   <Users className="h-4 w-4" />
@@ -61,7 +65,9 @@ export default function Header() {
                     <Users className="mr-2 h-4 w-4" />
                     <div className="flex flex-col">
                       <span>まるの</span>
-                      <span className="text-xs text-gray-500">サブリーダー</span>
+                      <span className="text-xs text-gray-500">
+                        サブリーダー
+                      </span>
                     </div>
                   </Link>
                 </DropdownMenuItem>
@@ -70,7 +76,9 @@ export default function Header() {
                     <Users className="mr-2 h-4 w-4" />
                     <div className="flex flex-col">
                       <span>ももちこ</span>
-                      <span className="text-xs text-gray-500">駆け出しプログラマー</span>
+                      <span className="text-xs text-gray-500">
+                        駆け出しプログラマー
+                      </span>
                     </div>
                   </Link>
                 </DropdownMenuItem>
@@ -79,7 +87,9 @@ export default function Header() {
                     <Users className="mr-2 h-4 w-4" />
                     <div className="flex flex-col">
                       <span>KOBA</span>
-                      <span className="text-xs text-gray-500">変態エンジニア</span>
+                      <span className="text-xs text-gray-500">
+                        変態エンジニア
+                      </span>
                     </div>
                   </Link>
                 </DropdownMenuItem>
@@ -88,7 +98,9 @@ export default function Header() {
                     <Users className="mr-2 h-4 w-4" />
                     <div className="flex flex-col">
                       <span>snowdrop</span>
-                      <span className="text-xs text-gray-500">かごバッグ作家</span>
+                      <span className="text-xs text-gray-500">
+                        かごバッグ作家
+                      </span>
                     </div>
                   </Link>
                 </DropdownMenuItem>
