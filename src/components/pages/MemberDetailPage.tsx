@@ -230,57 +230,9 @@ export default function MemberDetailPage() {
                 </div>
               )}
 
-              {/* プロジェクト */}
-              {member.portfolio.some(item => item.type === 'project') && (
-                <div className="mb-6 md:mb-8">
-                  <div className="mb-3 md:mb-4">
-                    <Badge className="bg-orange-500 hover:bg-orange-600 text-white text-sm md:text-base px-4 py-2">
-                      🚀 プロジェクト
-                    </Badge>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    {member.portfolio
-                      .filter(item => item.type === 'project')
-                      .map((item, index) => (
-                        <Card key={index} className="hover:shadow-lg transition-shadow group border-orange-200 overflow-hidden p-0">
-                          {item.headerImage && (
-                            <AspectRatio ratio={16 / 9} className="overflow-hidden">
-                              <img
-                                src={item.headerImage}
-                                alt={item.title}
-                                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                              />
-                            </AspectRatio>
-                          )}
-                          <CardContent className="p-4 md:p-6">
-                            <div className="flex items-start justify-between mb-3">
-                              <CardTitle className="text-base md:text-lg group-hover:text-orange-600 transition-colors flex-1 mr-2">
-                                {item.title}
-                              </CardTitle>
-                              <Badge variant="outline" className="border-orange-500 text-orange-600 text-xs shrink-0">
-                                プロジェクト
-                              </Badge>
-                            </div>
-                            <p className="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
-                              {item.description}
-                            </p>
-                            <div className="flex flex-wrap gap-1 md:gap-2">
-                              {item.technologies.map((tech, techIndex) => (
-                                <Badge key={techIndex} variant="secondary" className="text-xs px-2 py-1">
-                                  {tech}
-                                </Badge>
-                              ))}
-                            </div>
-                          </CardContent>
-                        </Card>
-                      ))}
-                  </div>
-                </div>
-              )}
-
               {/* ポートフォリオ */}
               {member.portfolio.some(item => item.type === 'portfolio') && (
-                <div>
+                <div className="mb-6 md:mb-8">
                   <div className="mb-3 md:mb-4">
                     <Badge className="bg-blue-500 hover:bg-blue-600 text-white text-sm md:text-base px-4 py-2">
                       💼 ポートフォリオ
@@ -307,6 +259,54 @@ export default function MemberDetailPage() {
                               </CardTitle>
                               <Badge variant="outline" className="border-blue-500 text-blue-600 text-xs shrink-0">
                                 ポートフォリオ
+                              </Badge>
+                            </div>
+                            <p className="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
+                              {item.description}
+                            </p>
+                            <div className="flex flex-wrap gap-1 md:gap-2">
+                              {item.technologies.map((tech, techIndex) => (
+                                <Badge key={techIndex} variant="secondary" className="text-xs px-2 py-1">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                  </div>
+                </div>
+              )}
+
+              {/* プロジェクト */}
+              {member.portfolio.some(item => item.type === 'project') && (
+                <div>
+                  <div className="mb-3 md:mb-4">
+                    <Badge className="bg-orange-500 hover:bg-orange-600 text-white text-sm md:text-base px-4 py-2">
+                      🚀 プロジェクト
+                    </Badge>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    {member.portfolio
+                      .filter(item => item.type === 'project')
+                      .map((item, index) => (
+                        <Card key={index} className="hover:shadow-lg transition-shadow group border-orange-200 overflow-hidden p-0">
+                          {item.headerImage && (
+                            <AspectRatio ratio={16 / 9} className="overflow-hidden">
+                              <img
+                                src={item.headerImage}
+                                alt={item.title}
+                                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </AspectRatio>
+                          )}
+                          <CardContent className="p-4 md:p-6">
+                            <div className="flex items-start justify-between mb-3">
+                              <CardTitle className="text-base md:text-lg group-hover:text-orange-600 transition-colors flex-1 mr-2">
+                                {item.title}
+                              </CardTitle>
+                              <Badge variant="outline" className="border-orange-500 text-orange-600 text-xs shrink-0">
+                                プロジェクト
                               </Badge>
                             </div>
                             <p className="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
