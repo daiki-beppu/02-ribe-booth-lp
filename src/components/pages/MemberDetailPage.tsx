@@ -2,15 +2,14 @@ import { useParams, Link } from "react-router-dom";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArrowLeft } from "lucide-react";
-import { teamData } from "../../data/sections/team";
+import { teamData, getMemberByName } from "../../data/sections/team";
 import type { TeamMember } from "../../types/sections/team";
 
 export default function MemberDetailPage() {
   const { memberName } = useParams<{ memberName: string }>();
-  const member = teamData.members.find(
-    (m: TeamMember) => m.name.toLowerCase() === memberName?.toLowerCase()
-  );
+  const member = memberName ? getMemberByName(memberName) : undefined;
 
   if (!member) {
     return (
@@ -172,6 +171,163 @@ export default function MemberDetailPage() {
             </Card>
           </CardContent>
         </Card>
+
+        {/* ポートフォリオセクション */}
+        {member.portfolio && member.portfolio.length > 0 && (
+          <Card className="shadow-xl mb-6 md:mb-8">
+            <CardContent className="p-4 md:p-8">
+              <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">ポートフォリオ・実績</h3>
+              
+              {/* サービス */}
+              {member.portfolio.some(item => item.type === 'service') && (
+                <div className="mb-6 md:mb-8">
+                  <div className="mb-3 md:mb-4">
+                    <Badge className="bg-green-500 hover:bg-green-600 text-white text-sm md:text-base px-4 py-2">
+                      🌟 サービス
+                    </Badge>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    {member.portfolio
+                      .filter(item => item.type === 'service')
+                      .map((item, index) => (
+                        <Card 
+                          key={index} 
+                          className={`hover:shadow-lg transition-shadow group border-green-200 overflow-hidden p-0 ${item.url ? 'cursor-pointer' : ''}`} 
+                          onClick={() => item.url && window.open(item.url, '_blank')}
+                        >
+                          {item.headerImage && (
+                            <AspectRatio ratio={16 / 9} className="overflow-hidden">
+                              <img
+                                src={item.headerImage}
+                                alt={item.title}
+                                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </AspectRatio>
+                          )}
+                          <CardContent className="p-4 md:p-6">
+                            <div className="flex items-start justify-between mb-3">
+                              <CardTitle className="text-base md:text-lg group-hover:text-green-600 transition-colors flex-1 mr-2">
+                                {item.title}
+                              </CardTitle>
+                              <Badge variant="outline" className="border-green-500 text-green-600 text-xs shrink-0">
+                                サービス
+                              </Badge>
+                            </div>
+                            <p className="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
+                              {item.description}
+                            </p>
+                            <div className="flex flex-wrap gap-1 md:gap-2">
+                              {item.technologies.map((tech, techIndex) => (
+                                <Badge key={techIndex} variant="secondary" className="text-xs px-2 py-1">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                  </div>
+                </div>
+              )}
+
+              {/* プロジェクト */}
+              {member.portfolio.some(item => item.type === 'project') && (
+                <div className="mb-6 md:mb-8">
+                  <div className="mb-3 md:mb-4">
+                    <Badge className="bg-orange-500 hover:bg-orange-600 text-white text-sm md:text-base px-4 py-2">
+                      🚀 プロジェクト
+                    </Badge>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    {member.portfolio
+                      .filter(item => item.type === 'project')
+                      .map((item, index) => (
+                        <Card key={index} className="hover:shadow-lg transition-shadow group border-orange-200 overflow-hidden p-0">
+                          {item.headerImage && (
+                            <AspectRatio ratio={16 / 9} className="overflow-hidden">
+                              <img
+                                src={item.headerImage}
+                                alt={item.title}
+                                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </AspectRatio>
+                          )}
+                          <CardContent className="p-4 md:p-6">
+                            <div className="flex items-start justify-between mb-3">
+                              <CardTitle className="text-base md:text-lg group-hover:text-orange-600 transition-colors flex-1 mr-2">
+                                {item.title}
+                              </CardTitle>
+                              <Badge variant="outline" className="border-orange-500 text-orange-600 text-xs shrink-0">
+                                プロジェクト
+                              </Badge>
+                            </div>
+                            <p className="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
+                              {item.description}
+                            </p>
+                            <div className="flex flex-wrap gap-1 md:gap-2">
+                              {item.technologies.map((tech, techIndex) => (
+                                <Badge key={techIndex} variant="secondary" className="text-xs px-2 py-1">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                  </div>
+                </div>
+              )}
+
+              {/* ポートフォリオ */}
+              {member.portfolio.some(item => item.type === 'portfolio') && (
+                <div>
+                  <div className="mb-3 md:mb-4">
+                    <Badge className="bg-blue-500 hover:bg-blue-600 text-white text-sm md:text-base px-4 py-2">
+                      💼 ポートフォリオ
+                    </Badge>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    {member.portfolio
+                      .filter(item => item.type === 'portfolio')
+                      .map((item, index) => (
+                        <Card key={index} className="hover:shadow-lg transition-shadow group border-blue-200 overflow-hidden p-0">
+                          {item.headerImage && (
+                            <AspectRatio ratio={16 / 9} className="overflow-hidden">
+                              <img
+                                src={item.headerImage}
+                                alt={item.title}
+                                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </AspectRatio>
+                          )}
+                          <CardContent className="p-4 md:p-6">
+                            <div className="flex items-start justify-between mb-3">
+                              <CardTitle className="text-base md:text-lg group-hover:text-blue-600 transition-colors flex-1 mr-2">
+                                {item.title}
+                              </CardTitle>
+                              <Badge variant="outline" className="border-blue-500 text-blue-600 text-xs shrink-0">
+                                ポートフォリオ
+                              </Badge>
+                            </div>
+                            <p className="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
+                              {item.description}
+                            </p>
+                            <div className="flex flex-wrap gap-1 md:gap-2">
+                              {item.technologies.map((tech, techIndex) => (
+                                <Badge key={techIndex} variant="secondary" className="text-xs px-2 py-1">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        )}
 
         {/* 他のメンバーへのリンク */}
         <Card className="shadow-xl">
