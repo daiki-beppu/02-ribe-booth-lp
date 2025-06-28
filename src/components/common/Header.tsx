@@ -18,7 +18,7 @@ export default function Header() {
           {/* ロゴ・タイトル */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="text-xl font-bold text-gray-800">
-              リベシティ プログラミングブース
+              リベ大フェス2025 M-14 親子でプログラム× 光る動くおもちゃ作り！
             </div>
           </Link>
 

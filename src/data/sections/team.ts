@@ -114,9 +114,9 @@ const fullMembersData: TeamMember[] = [
       "プログラミングで人生が変わった経験を、次は誰かに届けたいと考えています！",
     portfolio: [
       {
-        title: "未経験からwebエンジニアを目指す方をサポートします！",
+        title: "【リベシティスキルマーケット】未経験からwebエンジニアを目指す方をサポートします！",
         description: "Webエンジニアを目指す初学者向けの伴走型サポートを提供します。私自身が未経験から8ヶ月でエンジニア転職を成功させた経験を活かし、同じ道を歩む方々を全力でサポートします。",
-        headerImage: "/images/portfolio/momochico/momochico-service-support.PNG",
+        headerImage: "/images/portfolio/momochico/service-support.PNG",
         technologies: ["プログラミング学習支援", "転職支援", "伴走型サポート", "未経験者向け"],
         type: "service",
         url: "https://skill.libecity.com/services/27116"
@@ -130,8 +130,17 @@ const fullMembersData: TeamMember[] = [
       {
         title: "このサイトの作成者",
         description: "現在ご覧いただいているプログラミングブースのランディングページを制作しました。チームメンバーの魅力を伝えるため、レスポンシブデザインとユーザビリティを重視した設計になっています。",
+        headerImage: "/images/portfolio/momochico/porfolio-booth-lp.jpg",
         technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
         type: "portfolio"
+      },
+      {
+        title: "Three.js デモサイト",
+        description: "WebGLとThree.jsを使用したインタラクティブな3Dデモサイトです。フロントエンド技術の学習と実践を目的として制作し、3Dグラフィックスの基礎を習得しました。",
+        headerImage: "/images/portfolio/momochico/portfolio-threejs.jpg",
+        technologies: ["Three.js", "WebGL", "JavaScript", "3D Graphics"],
+        type: "portfolio",
+        url: "https://threejs-demo-rose.vercel.app/"
       }
     ]
   },

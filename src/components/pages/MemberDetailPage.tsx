@@ -242,7 +242,11 @@ export default function MemberDetailPage() {
                     {member.portfolio
                       .filter(item => item.type === 'portfolio')
                       .map((item, index) => (
-                        <Card key={index} className="hover:shadow-lg transition-shadow group border-blue-200 overflow-hidden p-0">
+                        <Card 
+                          key={index} 
+                          className={`hover:shadow-lg transition-shadow group border-blue-200 overflow-hidden p-0 ${item.url ? 'cursor-pointer' : ''}`}
+                          onClick={() => item.url && window.open(item.url, '_blank')}
+                        >
                           {item.headerImage && (
                             <AspectRatio ratio={16 / 9} className="overflow-hidden">
                               <img
