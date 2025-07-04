@@ -69,7 +69,7 @@ export default function TeamMemberCard({
       <CardContent className="p-8">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
           <div
-            className={`h-20 w-20 bg-gradient-to-br ${colors.bg} mx-auto flex shrink-0 items-center justify-center overflow-hidden rounded-full sm:mx-0 sm:mr-6`}
+            className={`h-24 w-24 bg-gradient-to-br ${colors.bg} mx-auto flex shrink-0 items-center justify-center overflow-hidden rounded-full sm:mx-0 sm:mr-6 sm:h-28 sm:w-28`}
           >
             {member.avatar ? (
               <img
@@ -78,7 +78,7 @@ export default function TeamMemberCard({
                 src={member.avatar}
               />
             ) : (
-              <span className="font-bold text-2xl text-white">
+              <span className="font-bold text-2xl text-white sm:text-3xl">
                 {member.name.charAt(0)}
               </span>
             )}
