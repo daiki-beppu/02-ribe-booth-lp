@@ -2,6 +2,15 @@
 
 このファイルはClaude Codeがこのリポジトリで作業する際のガイダンスを提供します。
 
+## ルール
+変更を行った際は必ず以下のコマンドを実行してください
+- `bun run lint` - ultracite による lint(biome)
+- `bun run format` - ultracite による format(biome)
+
+サーバー起動確認、ビルドエラーがないかを確認
+- `bun run dev` - 開発サーバー起動
+- `bun run build` - プロダクションビルド
+
 ## 開発コマンド
 
 このプロジェクトは **bun** を使用：

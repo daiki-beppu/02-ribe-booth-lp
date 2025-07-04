@@ -44,7 +44,6 @@ export default function PricingSection({ data }: PricingSectionProps) {
                   />
                 ))}
               </div>
-
             </CardContent>
           </Card>
 
@@ -62,7 +61,6 @@ export default function PricingSection({ data }: PricingSectionProps) {
                   <ProductCard key={product.id} product={product} />
                 ))}
               </div>
-
             </CardContent>
           </Card>
         </div>

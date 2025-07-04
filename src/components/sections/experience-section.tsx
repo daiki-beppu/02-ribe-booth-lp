@@ -37,7 +37,7 @@ export default function ExperienceSection({ data }: ExperienceSectionProps) {
                   <br />
                   初心者でも安心のテンプレート付きで、すぐに信号機が動き出します。
                 </p>
-                <ImageCarousel images={data.images} className="mb-6" />
+                <ImageCarousel className="mb-6" images={data.images} />
               </div>
 
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
