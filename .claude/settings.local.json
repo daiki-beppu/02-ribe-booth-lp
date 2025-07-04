@@ -18,7 +18,8 @@
       "Bash(gh pr create:*)",
       "Bash(node:*)",
       "Bash(mv:*)",
-      "Bash(rg:*)"
+      "Bash(rg:*)",
+      "Bash(git mv:*)"
     ],
     "deny": []
   }
