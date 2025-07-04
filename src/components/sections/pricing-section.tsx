@@ -45,18 +45,6 @@ export default function PricingSection({ data }: PricingSectionProps) {
                 ))}
               </div>
 
-              <div className="mt-auto pt-6">
-                <img
-                  alt={data.freeServicesImage.alt}
-                  className="w-full rounded-xl shadow-lg"
-                  src={data.freeServicesImage.src}
-                />
-                {data.freeServicesImage.caption && (
-                  <p className="mt-2 text-center text-gray-500 text-sm">
-                    {data.freeServicesImage.caption}
-                  </p>
-                )}
-              </div>
             </CardContent>
           </Card>
 
@@ -75,16 +63,6 @@ export default function PricingSection({ data }: PricingSectionProps) {
                 ))}
               </div>
 
-              <div className="mt-auto pt-6">
-                <img
-                  alt="信号機と踏切システムのハードウェア"
-                  className="w-full rounded-xl shadow-lg"
-                  src="/images/signal-and-level-crossing.jpg"
-                />
-                <p className="mt-2 text-center text-gray-500 text-sm">
-                  実際のキット例：信号機と踏切システム
-                </p>
-              </div>
             </CardContent>
           </Card>
         </div>

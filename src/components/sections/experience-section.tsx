@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import type { ExperienceData } from '../../types/sections/experience';
+import ImageCarousel from '../common/image-carousel';
 import StepCard from '../common/step-card';
 
 interface ExperienceSectionProps {
@@ -36,18 +37,7 @@ export default function ExperienceSection({ data }: ExperienceSectionProps) {
                   <br />
                   初心者でも安心のテンプレート付きで、すぐに信号機が動き出します。
                 </p>
-                {data.images.map((image, index) => (
-                  <div
-                    className="mx-auto max-w-2xl"
-                    key={`experience-image-${image.alt}-${index}`}
-                  >
-                    <img
-                      alt={image.alt}
-                      className="w-full rounded-xl shadow-lg"
-                      src={image.src}
-                    />
-                  </div>
-                ))}
+                <ImageCarousel images={data.images} className="mb-6" />
               </div>
 
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

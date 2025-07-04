@@ -67,6 +67,17 @@ React + TypeScript + Vite で作られたプログラミングブース用ラン
 - **Google Maps連携**: 住所クリックでGoogleマップを開く
 - **レスポンシブ対応**: デスクトップ（3カラム）・モバイル（1カラム）自動切り替え
 
+### 画像カルーセル機能
+
+experience-sectionに実装された高機能カルーセル：
+
+- **React View Transitions**: useTransition、startTransition、View Transition API活用
+- **自動再生**: 4秒間隔での自動切り替え（再生/一時停止ボタン付き）
+- **滑らかなアニメーション**: 700msトランジション、アクティブ画像の拡大・明度調整
+- **インタラクティブ操作**: 左右ナビゲーションボタン、ドットナビゲーション
+- **画像管理**: 5枚の体験画像を統一表示（pricing-sectionから移動）
+- **レスポンシブ対応**: 全デバイスで最適な表示とタッチ操作
+
 ### メンバー詳細ページ
 
 各メンバーの詳細情報を表示：
@@ -92,6 +103,7 @@ React + TypeScript + Vite で作られたプログラミングブース用ラン
 - `src/components/common/team-member-card.tsx` - メンバーカード
 - `src/components/common/cta-button.tsx` - CTA（Call to Action）ボタン
 - `src/components/common/feature-card.tsx` - フィーチャーカード
+- `src/components/common/image-carousel.tsx` - 高機能画像カルーセル
 
 ### ページコンポーネント
 
