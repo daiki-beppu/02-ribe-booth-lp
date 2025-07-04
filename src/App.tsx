@@ -1,18 +1,18 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Header from '@/components/common/header';
-import MobileMenu from '@/components/common/mobile-menu';
-import Footer from '@/components/footer';
-import MemberDetailPage from '@/components/pages/member-detail-page';
-import ConceptSection from '@/components/sections/concept-section';
-import ExperienceSection from '@/components/sections/experience-section';
-import HeroSection from '@/components/sections/hero-section';
-import PricingSection from '@/components/sections/pricing-section';
-import TeamSection from '@/components/sections/team-section';
-import { conceptData } from '@/data/sections/concept';
-import { experienceData } from '@/data/sections/experience';
-import { heroData } from '@/data/sections/hero';
-import { pricingData } from '@/data/sections/pricing';
-import { teamData } from '@/data/sections/team';
+import Header from '@/components/common/header.tsx';
+import MobileMenu from '@/components/common/mobile-menu.tsx';
+import Footer from '@/components/footer.tsx';
+import MemberDetailPage from '@/components/pages/member-detail-page.tsx';
+import ConceptSection from '@/components/sections/concept-section.tsx';
+import ExperienceSection from '@/components/sections/experience-section.tsx';
+import HeroSection from '@/components/sections/hero-section.tsx';
+import PricingSection from '@/components/sections/pricing-section.tsx';
+import TeamSection from '@/components/sections/team-section.tsx';
+import { conceptData } from '@/data/sections/concept.ts';
+import { experienceData } from '@/data/sections/experience.ts';
+import { heroData } from '@/data/sections/hero.ts';
+import { pricingData } from '@/data/sections/pricing.ts';
+import { teamData } from '@/data/sections/team.ts';
 
 function HomePage() {
   return (
