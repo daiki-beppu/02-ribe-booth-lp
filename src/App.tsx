@@ -1,18 +1,18 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Header from './components/common/header';
-import MobileMenu from './components/common/mobile-menu';
-import Footer from './components/footer';
-import MemberDetailPage from './components/pages/member-detail-page';
-import ConceptSection from './components/sections/concept-section';
-import ExperienceSection from './components/sections/experience-section';
-import HeroSection from './components/sections/hero-section';
-import PricingSection from './components/sections/pricing-section';
-import TeamSection from './components/sections/team-section';
-import { conceptData } from './data/sections/concept';
-import { experienceData } from './data/sections/experience';
-import { heroData } from './data/sections/hero';
-import { pricingData } from './data/sections/pricing';
-import { teamData } from './data/sections/team';
+import Header from '@/components/common/header';
+import MobileMenu from '@/components/common/mobile-menu';
+import Footer from '@/components/footer';
+import MemberDetailPage from '@/components/pages/member-detail-page';
+import ConceptSection from '@/components/sections/concept-section';
+import ExperienceSection from '@/components/sections/experience-section';
+import HeroSection from '@/components/sections/hero-section';
+import PricingSection from '@/components/sections/pricing-section';
+import TeamSection from '@/components/sections/team-section';
+import { conceptData } from '@/data/sections/concept';
+import { experienceData } from '@/data/sections/experience';
+import { heroData } from '@/data/sections/hero';
+import { pricingData } from '@/data/sections/pricing';
+import { teamData } from '@/data/sections/team';
 
 function HomePage() {
   return (
