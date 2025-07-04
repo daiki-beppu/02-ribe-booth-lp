@@ -29,7 +29,7 @@ function HomePage() {
   );
 }
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Header />
@@ -41,5 +41,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
