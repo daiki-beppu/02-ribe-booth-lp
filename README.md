@@ -15,25 +15,31 @@
 ## 🚀 技術スタック
 
 - **React 19** with TypeScript
+- **React Router DOM v7** - ページルーティング
 - **Vite** - 高速ビルドツール・開発サーバー
 - **Tailwind CSS v4** - CSS変数対応のユーティリティファースト CSS
 - **shadcn/ui** - Radix UI ベースのコンポーネントライブラリ
 - **Lucide React** - アイコンライブラリ
+- **ultracite** - 統一的なlint/formatツール（Biomeベース）
 
 ## 📁 プロジェクト構成
 
 ```
 src/
 ├── components/
-│   ├── ui/              # shadcn/ui コンポーネント
-│   ├── HeroSection.tsx  # ヒーローセクション
-│   ├── ConceptSection.tsx
-│   ├── ExperienceSection.tsx
-│   ├── TeamSection.tsx
-│   ├── PricingSection.tsx
-│   └── Footer.tsx
-├── App.tsx             # メインアプリケーション
-└── main.tsx           # エントリーポイント
+│   ├── ui/                    # shadcn/ui コンポーネント
+│   ├── common/                # 共通コンポーネント
+│   ├── sections/              # セクションコンポーネント
+│   ├── pages/                 # ページコンポーネント
+│   └── access/                # アクセス情報コンポーネント
+├── data/
+│   ├── sections/              # セクション別データ
+│   └── access-info.ts         # アクセス情報データ
+├── types/
+│   ├── sections/              # セクション型定義
+│   └── access-info.ts         # アクセス情報型定義
+├── app.tsx                    # メインアプリケーション
+└── main.tsx                   # エントリーポイント
 ```
 
 ## 🛠️ 開発コマンド
@@ -45,8 +51,11 @@ bun run dev
 # 本番用ビルド（TypeScript コンパイル + Vite ビルド）
 bun run build
 
-# ESLint でコードチェック
+# ultracite でコードチェック（Biomeベース）
 bun run lint
+
+# ultracite でコードフォーマット
+bun run format
 
 # 本番ビルドをローカルでプレビュー
 bun run preview
@@ -71,6 +80,12 @@ bun run preview
 - **コンテンツセクション**: ブルー/グリーングラデーション
 - **ブース番号**: 特別なレッド/ピンクグラデーション（目立つデザイン）
 
+### レスポンシブ対応
+
+- **ブレークポイント**: sm(640px), md(768px), lg(1024px)
+- **ナビゲーション**: デスクトップ（固定ヘッダー）・モバイル（FAB+ボトムシート）
+- **メンバー詳細**: 各メンバーに専用カラーテーマ
+
 ## 📝 コンテンツ
 
 ### 体験内容
@@ -81,13 +96,31 @@ bun run preview
 
 ### チーム紹介
 
-- 経験豊富なプログラマー陣のプロフィール
-- 各メンバーの専門分野と経歴
+5名のメンバー構成：
+- **トムランド** (blue) - 投資おたくエンジニア・リーダー
+- **まるの** (red) - 家電エンジニア・サブリーダー
+- **ももちこ** (orange) - 元鳶職→Webエンジニア
+- **KOBA** (green) - 記憶力としらべ魔の変態エンジニア
+- **snowdrop** (yellow) - ものづくり大好き設計エンジニア
 
 ### 料金・申し込み
 
 - 無料体験の詳細
 - Googleフォーム経由での申し込みシステム
+
+### アクセス情報
+
+- **会場**: 幕張メッセ
+- **電車アクセス**: JR京葉線・総武線・京成千葉線対応
+- **バスアクセス**: 東京駅・羽田空港直通バス情報
+- **Google Maps連携**: 住所クリックで地図表示
+
+## 🗂️ データ駆動型アーキテクチャ
+
+- **セクションデータ**: `src/data/sections/` 配下に分離
+- **型定義**: `src/types/sections/` 配下でTypeScript対応
+- **コンテンツとUIの分離**: デザイン変更とコンテンツ変更を独立実施
+- **メンバー詳細**: 基本データ + 拡張データパターン
 
 ## 🔧 開発時の注意点
 
@@ -95,6 +128,8 @@ bun run preview
 - shadcn/ui コンポーネントの一貫した使用
 - CSS変数を活用したテーマ対応
 - アクセシビリティに配慮したデザイン
+- **ファイル名**: kebab-case統一
+- **array keys**: 意味のあるkeyを使用
 
 ## 📱 対応ブラウザ
 
