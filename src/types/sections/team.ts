@@ -11,7 +11,7 @@ export type PortfolioItem = {
   url?: string;
   github?: string;
   technologies: string[];
-  type: "service" | "portfolio" | "project";
+  type: 'service' | 'portfolio' | 'project';
 };
 
 // ホーム用の簡易プロフィール

@@ -1,4 +1,4 @@
-import type { Button } from "../common";
+import type { Button } from '../common';
 
 export type HeroData = {
   title: string;

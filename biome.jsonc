@@ -1,0 +1,18 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+  "extends": ["ultracite"],
+  "linter": {
+    "rules": {
+      "performance": {
+        "noImgElement": "off",
+        "noNamespaceImport": "off"
+      },
+      "nursery": {
+        "noUnknownAtRule": "off"
+      },
+      "a11y": {
+        "useMediaCaption": "off"
+      }
+    }
+  }
+}

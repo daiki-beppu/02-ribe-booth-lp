@@ -1,4 +1,4 @@
-import type { Image } from "../common";
+import type { Image } from '../common';
 
 export type StepItem = {
   icon: string;

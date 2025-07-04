@@ -1,23 +1,23 @@
-import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { ChevronDown, Home, Users } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Home, Users, ChevronDown } from "lucide-react";
+} from '@/components/ui/dropdown-menu';
 
 export default function Header() {
   const location = useLocation();
 
   return (
-    <header className="hidden md:block bg-white shadow-sm border-b fixed top-0 left-0 right-0 z-40">
+    <header className="fixed top-0 right-0 left-0 z-40 hidden border-b bg-white shadow-sm md:block">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex h-16 items-center justify-between">
           {/* ロゴ・タイトル */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-xl font-bold text-gray-800">
+          <Link className="flex items-center space-x-2" to="/">
+            <div className="font-bold text-gray-800 text-xl">
               リベ大フェス2025 M-14 親子でプログラム× 光る動くおもちゃ作り！
             </div>
           </Link>
@@ -26,8 +26,8 @@ export default function Header() {
           <nav className="flex items-center space-x-4">
             <Link to="/">
               <Button
-                variant={location.pathname === "/" ? "default" : "ghost"}
                 className="flex items-center space-x-2"
+                variant={location.pathname === '/' ? 'default' : 'ghost'}
               >
                 <Home className="h-4 w-4" />
                 <span>ホーム</span>
@@ -38,12 +38,12 @@ export default function Header() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
-                  variant={
-                    location.pathname.startsWith("/member")
-                      ? "default"
-                      : "ghost"
-                  }
                   className="flex items-center space-x-2"
+                  variant={
+                    location.pathname.startsWith('/member')
+                      ? 'default'
+                      : 'ghost'
+                  }
                 >
                   <Users className="h-4 w-4" />
                   <span>メンバー</span>
@@ -52,53 +52,53 @@ export default function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
                 <DropdownMenuItem asChild>
-                  <Link to="/member/トムランド" className="w-full">
+                  <Link className="w-full" to="/member/トムランド">
                     <Users className="mr-2 h-4 w-4" />
                     <div className="flex flex-col">
                       <span>トムランド</span>
-                      <span className="text-xs text-gray-500">リーダー</span>
+                      <span className="text-gray-500 text-xs">リーダー</span>
                     </div>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/member/まるの" className="w-full">
+                  <Link className="w-full" to="/member/まるの">
                     <Users className="mr-2 h-4 w-4" />
                     <div className="flex flex-col">
                       <span>まるの</span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-gray-500 text-xs">
                         サブリーダー
                       </span>
                     </div>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/member/ももちこ" className="w-full">
+                  <Link className="w-full" to="/member/ももちこ">
                     <Users className="mr-2 h-4 w-4" />
                     <div className="flex flex-col">
                       <span>ももちこ</span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-gray-500 text-xs">
                         駆け出しプログラマー
                       </span>
                     </div>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/member/koba" className="w-full">
+                  <Link className="w-full" to="/member/koba">
                     <Users className="mr-2 h-4 w-4" />
                     <div className="flex flex-col">
                       <span>KOBA</span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-gray-500 text-xs">
                         変態エンジニア
                       </span>
                     </div>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/member/snowdrop" className="w-full">
+                  <Link className="w-full" to="/member/snowdrop">
                     <Users className="mr-2 h-4 w-4" />
                     <div className="flex flex-col">
                       <span>snowdrop</span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-gray-500 text-xs">
                         かごバッグ作家
                       </span>
                     </div>

@@ -1,4 +1,4 @@
-import type { Image, Button } from "../common";
+import type { Button, Image } from '../common';
 
 export type FreeService = {
   icon: string;

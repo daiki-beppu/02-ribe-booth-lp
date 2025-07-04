@@ -16,7 +16,9 @@
       "Bash(cp:*)",
       "Bash(git checkout:*)",
       "Bash(gh pr create:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(mv:*)",
+      "Bash(rg:*)"
     ],
     "deny": []
   }

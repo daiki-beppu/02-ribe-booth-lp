@@ -8,6 +8,6 @@ export type Image = {
 export type Button = {
   text: string;
   href: string;
-  variant?: "primary" | "secondary";
+  variant?: 'primary' | 'secondary';
   external?: boolean;
 };
