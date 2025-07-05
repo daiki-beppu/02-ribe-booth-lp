@@ -4,12 +4,15 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { getMemberByName, teamData } from '../../data/sections/team';
+import {
+  getMemberDetailByName,
+  teamDetailData,
+} from '../../data/sections/team-detail';
 import type { TeamMember } from '../../types/sections/team';
 
 export default function MemberDetailPage() {
   const { memberName } = useParams<{ memberName: string }>();
-  const member = memberName ? getMemberByName(memberName) : undefined;
+  const member = memberName ? getMemberDetailByName(memberName) : undefined;
 
   if (!member) {
     return (
@@ -261,7 +264,7 @@ export default function MemberDetailPage() {
                               />
                             </AspectRatio>
                           )}
-                          <CardContent className="p-4 md:p-6">
+                          <CardContent className="flex h-full flex-col p-4 md:p-6">
                             <div className="mb-3 flex items-start justify-between">
                               <CardTitle className="mr-2 flex-1 text-base transition-colors group-hover:text-green-600 md:text-lg">
                                 {item.title}
@@ -273,7 +276,7 @@ export default function MemberDetailPage() {
                                 サービス
                               </Badge>
                             </div>
-                            <p className="mb-4 text-gray-600 text-sm leading-relaxed md:text-base">
+                            <p className="mb-3 flex-grow text-gray-600 text-sm leading-relaxed md:text-base">
                               {item.description}
                             </p>
                             <div className="flex flex-wrap gap-1 md:gap-2">
@@ -325,7 +328,7 @@ export default function MemberDetailPage() {
                               />
                             </AspectRatio>
                           )}
-                          <CardContent className="p-4 md:p-6">
+                          <CardContent className="flex h-full flex-col p-4 md:p-6">
                             <div className="mb-3 flex items-start justify-between">
                               <CardTitle className="mr-2 flex-1 text-base transition-colors group-hover:text-blue-600 md:text-lg">
                                 {item.title}
@@ -337,7 +340,7 @@ export default function MemberDetailPage() {
                                 ポートフォリオ
                               </Badge>
                             </div>
-                            <p className="mb-4 text-gray-600 text-sm leading-relaxed md:text-base">
+                            <p className="mb-3 flex-grow text-gray-600 text-sm leading-relaxed md:text-base">
                               {item.description}
                             </p>
                             <div className="flex flex-wrap gap-1 md:gap-2">
@@ -386,7 +389,7 @@ export default function MemberDetailPage() {
                               />
                             </AspectRatio>
                           )}
-                          <CardContent className="p-4 md:p-6">
+                          <CardContent className="flex h-full flex-col p-4 md:p-6">
                             <div className="mb-3 flex items-start justify-between">
                               <CardTitle className="mr-2 flex-1 text-base transition-colors group-hover:text-orange-600 md:text-lg">
                                 {item.title}
@@ -398,7 +401,7 @@ export default function MemberDetailPage() {
                                 プロジェクト
                               </Badge>
                             </div>
-                            <p className="mb-4 text-gray-600 text-sm leading-relaxed md:text-base">
+                            <p className="mb-3 flex-grow text-gray-600 text-sm leading-relaxed md:text-base">
                               {item.description}
                             </p>
                             <div className="flex flex-wrap gap-1 md:gap-2">
@@ -429,43 +432,48 @@ export default function MemberDetailPage() {
               他のメンバーも見る
             </h3>
             <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
-              {teamData.members
+              {teamDetailData.members
                 .filter((m: TeamMember) => m.name !== member.name)
-                .map((otherMember: TeamMember, index) => (
-                  <Link
-                    className="block"
-                    key={`other-member-${otherMember.name}-${index}`}
-                    to={`/member/${otherMember.name}`}
-                  >
-                    <Card className="h-full cursor-pointer transition-shadow hover:shadow-lg">
-                      <CardContent className="flex h-full flex-col p-3 text-center md:p-4">
-                        <div
-                          className={`h-14 w-14 bg-gradient-to-br md:h-16 md:w-16 ${colorClasses[otherMember.color as keyof typeof colorClasses]?.bg || colorClasses.blue.bg} mx-auto mb-2 flex items-center justify-center overflow-hidden rounded-full md:mb-3`}
-                        >
-                          {otherMember.avatar ? (
-                            <img
-                              alt={`${otherMember.name}のアイコン`}
-                              className="h-full w-full object-cover"
-                              src={otherMember.avatar}
-                            />
-                          ) : (
-                            <span className="font-bold text-base text-white md:text-lg">
-                              {otherMember.name.charAt(0)}
-                            </span>
-                          )}
-                        </div>
-                        <p className="break-words font-medium text-xs md:text-sm">
-                          {otherMember.name === 'koba'
-                            ? 'KOBA'
-                            : otherMember.name}
-                        </p>
-                        <p className="mt-1 min-h-[2.5rem] flex-grow break-words text-gray-500 text-xs leading-tight">
-                          {otherMember.title}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
+                .map((baseMember: TeamMember, index) => {
+                  // 各メンバーの詳細データを取得
+                  const otherMember =
+                    getMemberDetailByName(baseMember.name) || baseMember;
+                  return (
+                    <Link
+                      className="block"
+                      key={`other-member-${otherMember.name}-${index}`}
+                      to={`/member/${otherMember.name}`}
+                    >
+                      <Card className="h-full cursor-pointer transition-shadow hover:shadow-lg">
+                        <CardContent className="flex h-full flex-col p-3 text-center md:p-4">
+                          <div
+                            className={`h-14 w-14 bg-gradient-to-br md:h-16 md:w-16 ${colorClasses[otherMember.color as keyof typeof colorClasses]?.bg || colorClasses.blue.bg} mx-auto mb-2 flex items-center justify-center overflow-hidden rounded-full md:mb-3`}
+                          >
+                            {otherMember.avatar ? (
+                              <img
+                                alt={`${otherMember.name}のアイコン`}
+                                className="h-full w-full object-cover"
+                                src={otherMember.avatar}
+                              />
+                            ) : (
+                              <span className="font-bold text-base text-white md:text-lg">
+                                {otherMember.name.charAt(0)}
+                              </span>
+                            )}
+                          </div>
+                          <p className="break-words font-medium text-xs md:text-sm">
+                            {otherMember.name === 'koba'
+                              ? 'KOBA'
+                              : otherMember.name}
+                          </p>
+                          <p className="mt-1 min-h-[2.5rem] flex-grow break-words text-gray-500 text-xs leading-tight">
+                            {otherMember.title}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  );
+                })}
             </div>
           </CardContent>
         </Card>
