@@ -57,6 +57,24 @@ export default function TeamMemberCard({
       text: 'text-red-500',
       badgeBg: 'bg-red-500 hover:bg-red-600',
     },
+    'maruno-pink': {
+      bg: 'from-pink-300 to-pink-400',
+      border: 'border-pink-300',
+      text: 'text-pink-500',
+      badgeBg: 'bg-pink-400 hover:bg-pink-500',
+    },
+    'snowdrop-blue': {
+      bg: 'from-blue-200 to-blue-300',
+      border: 'border-blue-200',
+      text: 'text-blue-400',
+      badgeBg: 'bg-blue-300 hover:bg-blue-400',
+    },
+    'koba-yellow': {
+      bg: 'from-yellow-300 to-yellow-400',
+      border: 'border-yellow-300',
+      text: 'text-yellow-600',
+      badgeBg: 'bg-yellow-400 hover:bg-yellow-500',
+    },
   };
 
   const colors =
@@ -126,7 +144,7 @@ export default function TeamMemberCard({
         </div>
 
         <div
-          className={`bg-${member.color}-50 border-l-4 ${colors.border} mb-4 rounded p-4`}
+          className={`${member.color.includes('-') ? 'bg-gray-50' : `bg-${member.color}-50`} border-l-4 ${colors.border} mb-4 rounded p-4`}
         >
           <p className="text-gray-700 text-sm">
             <strong>メッセージ：</strong>

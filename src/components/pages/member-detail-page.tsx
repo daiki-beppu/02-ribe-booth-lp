@@ -79,6 +79,27 @@ export default function MemberDetailPage() {
       badgeBg: 'bg-red-500 hover:bg-red-600',
       cardBg: 'from-red-50 to-rose-50',
     },
+    'maruno-pink': {
+      bg: 'from-pink-300 to-pink-400',
+      border: 'border-pink-300',
+      text: 'text-pink-500',
+      badgeBg: 'bg-pink-400 hover:bg-pink-500',
+      cardBg: 'from-pink-50 to-pink-100',
+    },
+    'snowdrop-blue': {
+      bg: 'from-blue-200 to-blue-300',
+      border: 'border-blue-200',
+      text: 'text-blue-400',
+      badgeBg: 'bg-blue-300 hover:bg-blue-400',
+      cardBg: 'from-blue-50 to-blue-100',
+    },
+    'koba-yellow': {
+      bg: 'from-yellow-300 to-yellow-400',
+      border: 'border-yellow-300',
+      text: 'text-yellow-600',
+      badgeBg: 'bg-yellow-400 hover:bg-yellow-500',
+      cardBg: 'from-yellow-50 to-yellow-100',
+    },
   };
 
   const colors =
@@ -416,8 +437,8 @@ export default function MemberDetailPage() {
                     key={`other-member-${otherMember.name}-${index}`}
                     to={`/member/${otherMember.name}`}
                   >
-                    <Card className="cursor-pointer transition-shadow hover:shadow-lg">
-                      <CardContent className="p-3 text-center md:p-4">
+                    <Card className="h-full cursor-pointer transition-shadow hover:shadow-lg">
+                      <CardContent className="flex h-full flex-col p-3 text-center md:p-4">
                         <div
                           className={`h-14 w-14 bg-gradient-to-br md:h-16 md:w-16 ${colorClasses[otherMember.color as keyof typeof colorClasses]?.bg || colorClasses.blue.bg} mx-auto mb-2 flex items-center justify-center overflow-hidden rounded-full md:mb-3`}
                         >
@@ -438,7 +459,7 @@ export default function MemberDetailPage() {
                             ? 'KOBA'
                             : otherMember.name}
                         </p>
-                        <p className="mt-1 break-words text-gray-500 text-xs leading-tight">
+                        <p className="mt-1 min-h-[2.5rem] flex-grow break-words text-gray-500 text-xs leading-tight">
                           {otherMember.title}
                         </p>
                       </CardContent>

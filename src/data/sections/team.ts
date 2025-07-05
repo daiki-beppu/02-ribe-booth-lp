@@ -66,7 +66,7 @@ const fullMembersData: TeamMember[] = [
     experience: '現役プログラマー',
     skills: ['組み込み系', '3Dプリンタ', 'ハードウェア'],
     description: 'プログラミングで実物が動く楽しさを体験いただきたいです。',
-    color: 'red',
+    color: 'maruno-pink',
     badge: 'サブリーダー',
     avatar: '/images/icons/maruno-icon.png',
     details: [
@@ -171,7 +171,7 @@ const fullMembersData: TeamMember[] = [
     skills: ['機械設計', 'VBA', '社内ツール開発'],
     description:
       'どんな変態エンジニアかを知りたい方は、どしどし話し掛けてくださいね！',
-    color: 'green',
+    color: 'koba-yellow',
     avatar: '/images/icons/koba-icon.jpg',
     details: [
       { icon: '💻', text: '本業は機械設計エンジニア' },
@@ -209,7 +209,7 @@ const fullMembersData: TeamMember[] = [
     experience: '2024年6月転職',
     skills: ['機械設計', 'ハンドメイド', 'ものづくり'],
     description: '多彩な活動を通じて、ものづくりの楽しさをお伝えします！',
-    color: 'yellow',
+    color: 'snowdrop-blue',
     avatar: '/images/icons/snowdrop-icon.jpg',
     details: [
       {
@@ -268,6 +268,96 @@ export const basicMembersData: TeamMemberBasic[] = fullMembersData.map(
 
 // メンバー詳細ページ用の拡張データ
 const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
+  まるの: {
+    title: '見た目は大人、中身は子供　童心✖️熱血エンジニア',
+    experience: '電機メーカー　管理職',
+    skills: [
+      '組み込みC言語',
+      'pythonツール開発',
+      'pythonゲーム開発',
+      '機械学習/LLM',
+      '電源回路設計',
+      '３Dプリンタ制作',
+    ],
+    description: 'ものづくりと聞くと、しっぽ振って駆けつける"犬系男子"です🐶✨',
+    details: [
+      {
+        icon: '🐶',
+        text: 'ものづくりと聞くと、しっぽ振って駆けつける"犬系男子"です🐶✨',
+      },
+      {
+        icon: '🔥',
+        text: '頼られるとめちゃ燃える🔥アイデアを一緒にカタチにしたり、「面白くする」ひと工夫が得意です！',
+      },
+      {
+        icon: '🚀',
+        text: '2025年副業開始！ブログ、YOUTUBE、３Dプリンタハンドメイド挑戦中。イラスト副業は収益化達成',
+      },
+      {
+        icon: '🌟',
+        text: '日常では家族と推し活を全力集中！笑　今はSnowMan、人狼系Vtuber',
+      },
+    ],
+    message:
+      '大人になっても"ワクワク"は忘れたくない！\n遊びも仕事も「オモロい」を追求！\nお話しをして、いっしょに「オモロい」アイデアを形にしてみませんか？',
+    portfolio: [
+      {
+        title: 'エンジニア相談・指導サービス',
+        description:
+          '研究開発職や電機メーカーのエンジニア職を目指される大学生の方。興味のあるお子様。お気軽にご相談ください',
+        technologies: ['相談・指導', '研究開発', '電機メーカー', '大学生向け'],
+        type: 'service',
+      },
+      {
+        title: '３Dプリンタ - 学長ライオンハウス',
+        description:
+          'これからも学長ライオン推し活グッズを色々作りたいです！「こんなのオモロいかも！」とアイデア出たらぜひお話ししに来てください！一緒に作りましょう✨',
+        technologies: [
+          '３Dプリンタ',
+          'ハンドメイド',
+          '推し活グッズ',
+          'デザイン',
+        ],
+        type: 'portfolio',
+        url: 'https://furima.libecity.com/products/19758',
+      },
+      {
+        title: '３Dプリンタ - オリジナルキーホルダー',
+        description:
+          '子供の描いた絵をキーホルダーに⭐️身近で人気です✨こちらのブースの物販でもお土産キーホルダーを準備しております！',
+        technologies: [
+          '３Dプリンタ',
+          'オリジナルグッズ',
+          'キーホルダー',
+          '子供向け',
+        ],
+        type: 'portfolio',
+        url: 'https://skill.libecity.com/services/24847',
+      },
+      {
+        title: 'pythonゲーム開発',
+        description:
+          '本ブースにて企画中。カミングスーン。個別で作ってみたい相談など、スキルマーケットで受注させていただきます。詳しくはDMへご連絡ください。過去に作った公開できないゲームも、ブース内でしたらお見せします🤫',
+        technologies: ['Python', 'ゲーム開発', 'カスタム開発', '受注開発'],
+        type: 'portfolio',
+      },
+      {
+        title: 'イラスト副業',
+        description:
+          '週に1回、30分だけのゆる副業！イラスト副業を初めて１ヶ月で0→1を達成した話',
+        technologies: ['イラスト', '副業', '収益化', 'ゆる副業'],
+        type: 'portfolio',
+        url: 'https://library.libecity.com/articles/01JYTJQ8924K0F62ZK2MVC7BN1',
+      },
+      {
+        title: 'オフ会「フェスを語らう会in梅田🦁」の主催',
+        description: '梅田オフィスからフェスを盛り上げる活動を行っております！',
+        technologies: ['オフ会主催', 'コミュニティ', 'フェス企画', '梅田'],
+        type: 'portfolio',
+        url: 'https://libecity.com/room_list?room_id=rd79Od3dcQtscXEJ5Gxe',
+      },
+    ],
+  },
   ももちこ: {
     title: '元鳶職→Webエンジニア',
     experience: '2024年10月未経験転職',
