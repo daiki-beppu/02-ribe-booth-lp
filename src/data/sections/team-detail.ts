@@ -2,6 +2,71 @@ import type { TeamMember } from '../../types/sections/team';
 
 // メンバー詳細ページ用の拡張データ
 const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
+  トムランド: {
+    title: '投資おたくエンジニア',
+    experience: '製造メーカー装置＆システム開発25年フルスタックエンジニア',
+    skills: [
+      'プログラム全般',
+      'AI/LLM',
+      'クラウド',
+      '生産技術',
+      'マイコン',
+      'データ分析',
+    ],
+    description: '現在1次産業の支援事業推進中🍇',
+    details: [
+      {
+        icon: '⚙️',
+        text: '製造メーカー装置＆システム開発25年フルスタックエンジニア(C#/C++/C/Python)',
+      },
+      {
+        icon: '🤝',
+        text: '周囲の人も幸せにする三方良しマインドの他者指向GIVER',
+      },
+      {
+        icon: '💰',
+        text: '投資歴7年→資産4桁・配当3桁達成 → セミナー主催(計200名以上)',
+      },
+      {
+        icon: '🚀',
+        text: '2022年～副業挑戦、動画配信 & コンサル&プログラム開発にて20万円/月収益継続中',
+      },
+    ],
+    message:
+      'AI活用すればプログラムめっちゃ簡単です！皆さんにモノづくりと学ぶ楽しさを伝えたいです！',
+    portfolio: [
+      {
+        title: 'プログラムで副業されたい方・案件取りたい方支援します！',
+        description:
+          'プログラムを使って副業を始めたい方や、案件を取りたい方への支援サービスを提供しています。',
+        technologies: ['プログラム開発', '副業支援', '案件獲得', 'コンサル'],
+        type: 'service',
+        url: 'https://skill.libecity.com/services/28195',
+      },
+      {
+        title: '初心者の株式投資支援します！',
+        description:
+          '投資歴7年で資産4桁・配当3桁を達成した経験をもとに、初心者向けの株式投資サポートを行います。',
+        technologies: ['株式投資', '投資支援', '初心者向け', '資産運用'],
+        type: 'service',
+        url: 'https://skill.libecity.com/services/20096',
+      },
+      {
+        title: '株式分析アプリ',
+        description:
+          '財務諸表分析を支援するアプリケーション。投資判断に必要な情報を効率的に分析できます。',
+        technologies: ['株式分析', '財務諸表', 'データ分析', 'アプリ開発'],
+        type: 'portfolio',
+      },
+      {
+        title: '農業支援システム',
+        description:
+          '1次産業の支援事業として、スマート農業を推進する支援システムを開発しています。',
+        technologies: ['農業支援', 'スマート農業', '1次産業', 'IoT'],
+        type: 'portfolio',
+      },
+    ],
+  },
   まるの: {
     title: '見た目は大人、中身は子供　童心✖️熱血エンジニア',
     experience: '電機メーカー　管理職',
