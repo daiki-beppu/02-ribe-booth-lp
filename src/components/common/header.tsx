@@ -1,4 +1,4 @@
-import { ChevronDown, Home, Users } from 'lucide-react';
+import { ChevronDown, Home, Info, Users } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import {
@@ -31,6 +31,16 @@ export default function Header() {
               >
                 <Home className="h-4 w-4" />
                 <span>ホーム</span>
+              </Button>
+            </Link>
+
+            <Link to="/booth">
+              <Button
+                className="flex items-center space-x-2"
+                variant={location.pathname === '/booth' ? 'default' : 'ghost'}
+              >
+                <Info className="h-4 w-4" />
+                <span>ブース詳細</span>
               </Button>
             </Link>
 

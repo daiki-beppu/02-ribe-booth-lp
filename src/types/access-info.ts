@@ -1,4 +1,4 @@
-export interface AccessInfoData {
+export type AccessInfoData = {
   venue: {
     name: string;
     address: string;
@@ -37,4 +37,4 @@ export interface AccessInfoData {
   };
   eventDates: string;
   contactInfo?: string;
-}
+};

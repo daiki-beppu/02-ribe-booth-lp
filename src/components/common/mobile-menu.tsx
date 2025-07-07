@@ -1,4 +1,4 @@
-import { Home, Menu, Users } from 'lucide-react';
+import { Home, Info, Menu, Users } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -52,6 +52,28 @@ export default function MobileMenu() {
               >
                 <Home className="mr-4 h-6 w-6" />
                 <span>ホーム</span>
+              </Button>
+            </Link>
+
+            {/* ブース詳細ボタン */}
+            <Link
+              className={`block w-full ${
+                location.pathname === '/booth'
+                  ? 'pointer-events-none opacity-50'
+                  : ''
+              }`}
+              onClick={closeMenu}
+              to="/booth"
+            >
+              <Button
+                className="h-14 w-full justify-start text-lg"
+                disabled={location.pathname === '/booth'}
+                variant={
+                  location.pathname === '/booth' ? 'secondary' : 'outline'
+                }
+              >
+                <Info className="mr-4 h-6 w-6" />
+                <span>ブース詳細</span>
               </Button>
             </Link>
 

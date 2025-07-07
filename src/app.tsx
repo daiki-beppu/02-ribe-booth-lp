@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Header from '@/components/common/header.tsx';
 import MobileMenu from '@/components/common/mobile-menu.tsx';
 import Footer from '@/components/footer.tsx';
+import BoothDetailPage from '@/components/pages/booth-detail-page.tsx';
 import MemberDetailPage from '@/components/pages/member-detail-page.tsx';
 import ConceptSection from '@/components/sections/concept-section.tsx';
 import ExperienceSection from '@/components/sections/experience-section.tsx';
@@ -36,6 +37,7 @@ export default function App() {
       <MobileMenu />
       <Routes>
         <Route element={<HomePage />} path="/" />
+        <Route element={<BoothDetailPage />} path="/booth" />
         <Route element={<MemberDetailPage />} path="/member/:memberName" />
       </Routes>
     </Router>
