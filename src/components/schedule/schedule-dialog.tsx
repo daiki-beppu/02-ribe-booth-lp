@@ -62,7 +62,7 @@ export function ScheduleDialog({
           {buttonText}
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-h-[80vh] !max-w-6xl !w-[90vw] md:!w-[80vw] overflow-y-auto">
+      <DialogContent className="!max-w-6xl !w-[90vw] md:!w-[80vw] max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center text-xl">
             <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-indigo-400 to-cyan-500 text-white text-xl">

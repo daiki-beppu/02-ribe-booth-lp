@@ -36,6 +36,15 @@ export type BoothDetailedSchedule = {
   timeSlots: BoothTimeSlot[];
 };
 
+export type ConsultationTarget = {
+  id: 'A' | 'B' | 'C';
+  label: string;
+  target: string;
+  description: string;
+  topics: string[];
+  schedule: string;
+};
+
 export type BoothData = {
   title: string;
   description: string;
@@ -44,6 +53,7 @@ export type BoothData = {
     title: string;
     description: string;
     features: string[];
+    targets: ConsultationTarget[];
   };
   products: BoothProduct[];
   events: BoothGameEvent[];

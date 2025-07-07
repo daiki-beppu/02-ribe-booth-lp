@@ -73,7 +73,7 @@ export default function BoothDetailPage() {
                         <p className="font-semibold text-gray-800 text-sm">
                           30分間・1日9回開催
                         </p>
-                        <p className="text-gray-600 text-xs">事前予約制</p>
+                        <p className="text-gray-600 text-xs">事前予約推奨</p>
                       </div>
                     </div>
                   </div>
@@ -95,9 +95,6 @@ export default function BoothDetailPage() {
                       <h3 className="font-bold text-black text-lg">参加費用</h3>
                       <p className="font-bold text-gray-800 text-lg">
                         完全無料
-                      </p>
-                      <p className="text-gray-600 text-xs">
-                        材料費・指導料込み
                       </p>
                     </div>
                   </div>
@@ -254,10 +251,10 @@ export default function BoothDetailPage() {
 
             {/* 開催情報カード */}
             <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div className="rounded-lg border-2 border-green-300 bg-gradient-to-r from-green-50 to-green-100 p-4 shadow-md">
+              <div className="rounded-lg border-2 border-blue-300 bg-gradient-to-r from-blue-50 to-blue-100 p-4 shadow-md">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
-                    <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white text-xl">
+                    <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-white text-xl">
                       ⏰
                     </div>
                     <div>
@@ -267,7 +264,7 @@ export default function BoothDetailPage() {
                       <p className="font-semibold text-gray-800 text-sm">
                         30分間・1日6回開催
                       </p>
-                      <p className="text-gray-600 text-xs">事前予約制</p>
+                      <p className="text-gray-600 text-xs">事前予約推奨</p>
                     </div>
                   </div>
                 </div>
@@ -295,18 +292,106 @@ export default function BoothDetailPage() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-              {boothData.consultation.features.map((feature) => (
-                <div
-                  className="flex items-center rounded-lg bg-green-50 p-3"
-                  key={`consultation-feature-${feature}`}
-                >
-                  <span className="mr-3 text-green-500 text-lg">📋</span>
-                  <span className="text-gray-700 text-sm md:text-base">
-                    {feature}
-                  </span>
-                </div>
-              ))}
+
+            {/* 相談会ABC詳細 */}
+            <div className="space-y-6">
+              <h3 className="mb-4 font-bold text-lg md:text-xl">
+                相談会ABC - ターゲット別詳細
+              </h3>
+
+              <div className="grid grid-cols-1 gap-6">
+                {boothData.consultation.targets.map((target) => {
+                  const getTargetColor = (id: string) => {
+                    switch (id) {
+                      case 'A':
+                        return {
+                          bg: 'bg-emerald-50',
+                          border: 'border-emerald-200',
+                          text: 'text-emerald-800',
+                          accent: 'bg-emerald-500',
+                        };
+                      case 'B':
+                        return {
+                          bg: 'bg-orange-50',
+                          border: 'border-orange-200',
+                          text: 'text-orange-800',
+                          accent: 'bg-orange-500',
+                        };
+                      case 'C':
+                        return {
+                          bg: 'bg-pink-50',
+                          border: 'border-pink-200',
+                          text: 'text-pink-800',
+                          accent: 'bg-pink-500',
+                        };
+                      default:
+                        return {
+                          bg: 'bg-gray-50',
+                          border: 'border-gray-200',
+                          text: 'text-gray-800',
+                          accent: 'bg-gray-500',
+                        };
+                    }
+                  };
+
+                  const colors = getTargetColor(target.id);
+
+                  return (
+                    <Card
+                      className={`${colors.border} ${colors.bg} border-2`}
+                      key={`consultation-target-${target.id}`}
+                    >
+                      <CardContent className="p-4 md:p-6">
+                        <div className="mb-4 flex items-center">
+                          <div
+                            className={`mr-3 flex h-10 w-10 items-center justify-center rounded-full ${colors.accent} font-bold text-white text-xl`}
+                          >
+                            {target.id}
+                          </div>
+                          <div>
+                            <CardTitle className={`text-lg ${colors.text}`}>
+                              {target.label}
+                            </CardTitle>
+                            <p className={`text-sm ${colors.text}`}>
+                              {target.target}
+                            </p>
+                          </div>
+                        </div>
+
+                        <p className="mb-4 text-gray-700 text-sm">
+                          {target.description}
+                        </p>
+
+                        <div className="mb-4 rounded-lg bg-white/50 p-3">
+                          <p className="flex items-center font-bold text-gray-800 text-sm">
+                            <Clock className="mr-2 h-4 w-4" />
+                            開催時間: {target.schedule}
+                          </p>
+                        </div>
+
+                        <div className="space-y-2">
+                          <h4 className="font-bold text-gray-800 text-sm">
+                            相談トピック:
+                          </h4>
+                          {target.topics.map((topic) => (
+                            <div
+                              className="flex items-start"
+                              key={`topic-${target.id}-${topic}`}
+                            >
+                              <span className={`mr-2 ${colors.text} text-sm`}>
+                                •
+                              </span>
+                              <span className="text-gray-700 text-xs">
+                                {topic}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
             </div>
           </CardContent>
         </Card>
