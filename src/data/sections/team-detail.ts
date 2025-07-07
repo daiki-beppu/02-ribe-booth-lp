@@ -131,7 +131,8 @@ const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
           '【リベシティスキルマーケット】未経験からwebエンジニアを目指す方をサポートします！',
         description:
           'Webエンジニアを目指す初学者向けの伴走型サポートを提供します。私自身が未経験から8ヶ月でエンジニア転職を成功させた経験を活かし、同じ道を歩む方々を全力でサポートします。',
-        headerImage: '/images/portfolio/momochico/service-support.PNG',
+        headerImage:
+          '/images/portfolio/momochico/portfolio-service-support.PNG',
         technologies: [
           'プログラミング学習支援',
           '転職支援',
@@ -268,18 +269,12 @@ const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
       'プログラミングは、「ひみつの会社づくり」！\nアイデアを考えて、調べて、作り方を決めて、コードを書いて、ちゃんと動くかチェックする。\nまるで社長もエンジニアも自分一人でやる、ものづくりの大冒険です！\nプログラミングを学ぶと、【考える力】、【作る力】、【調べる力】、【やりぬく力】が自然と身に付きます！\n皆さんの大きなチャレンジの第一歩になれるようにお手伝いいたします⭐',
     portfolio: [
       {
-        title: 'CADスキル',
-        description:
-          'CADを使用した機械設計を行なっています！CADオペレータや設計業務に興味のある方はぜひご相談ください。',
-        technologies: ['機械設計', '空調機設計', '2次元CAD', '3次元CAD'],
-        type: 'service',
-      },
-      {
         title: '空調機外形図',
         description:
           '空調機の外形設計を行なっています。ミリ単位での精密な設計が得意分野です。',
         technologies: ['機械設計', '空調機設計', '外形図', '精密設計'],
         type: 'portfolio',
+        headerImage: '/images/portfolio/koba/portfolio-air-conditioner.png',
       },
       {
         title: '2次元CAD図',
@@ -287,6 +282,7 @@ const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
           '2次元CADソフトをメインで使用した図面作成を行なっています。詳細図面の作成が得意です。',
         technologies: ['2次元CAD', '図面作成', '詳細図面', 'CADオペレータ'],
         type: 'portfolio',
+        headerImage: '/images/portfolio/koba/portfolio-2d-cad.png',
       },
       {
         title: '3次元CAD',
@@ -294,20 +290,9 @@ const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
           '最近は3次元CADも学習中！立体的な設計やレイアウト設計にチャレンジしています。',
         technologies: ['3次元CAD', '立体設計', 'レイアウト設計', 'ブース設計'],
         type: 'portfolio',
+        headerImage: '/images/portfolio/koba/portfolio-3d-cad.png',
       },
-      {
-        title: '制作ツール紹介',
-        description:
-          'VBA・Python・Windowsバッチファイルなどを利用したツール開発、その他AI等を使用したPC業務効率化を行なっています。お困りごとがあれば、何でもご相談ください。',
-        technologies: [
-          'VBA',
-          'Python',
-          'Windowsバッチファイル',
-          'AI活用',
-          '業務効率化',
-        ],
-        type: 'service',
-      },
+
       {
         title: '業務効率化ツール',
         description:
@@ -319,6 +304,8 @@ const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
           '手配漏れ削減',
         ],
         type: 'project',
+        headerImage:
+          '/images/portfolio/koba/portfolio-business-efficiency-tool.png',
       },
       {
         title: '社内不良閲覧ツール',
@@ -332,6 +319,8 @@ const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
           'トラブルシューティング',
         ],
         type: 'project',
+        headerImage:
+          '/images/portfolio/koba/portfolio-Internal-viewing-tool.png',
       },
       {
         title: 'その他制作ツール',
