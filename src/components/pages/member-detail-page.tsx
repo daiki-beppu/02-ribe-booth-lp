@@ -47,6 +47,13 @@ export default function MemberDetailPage() {
       badgeBg: 'bg-blue-500 hover:bg-blue-600',
       cardBg: 'from-blue-50 to-indigo-50',
     },
+    'tomland-green': {
+      bg: 'from-green-400 to-emerald-500',
+      border: 'border-green-400',
+      text: 'text-green-500',
+      badgeBg: 'bg-green-500 hover:bg-green-600',
+      cardBg: 'from-green-50 to-emerald-50',
+    },
     pink: {
       bg: 'from-pink-400 to-purple-500',
       border: 'border-pink-400',

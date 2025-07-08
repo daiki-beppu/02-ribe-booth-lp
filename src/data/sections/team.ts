@@ -14,7 +14,7 @@ const fullMembersData: TeamMember[] = [
     skills: ['フルスタック開発', 'AI/LLM', '株式投資', '副業'],
     description:
       'フェスのプログラム体験会/相談会を通じて学びの楽しさを伝えたいです！',
-    color: 'blue',
+    color: 'tomland-green',
     badge: 'リーダー',
     avatar: '/images/icons/tomland-icon.png',
     isLeader: true,

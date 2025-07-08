@@ -3,8 +3,8 @@ import type { TeamMember } from '../../types/sections/team';
 // メンバー詳細ページ用の拡張データ
 const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
   トムランド: {
-    title: '投資おたくエンジニア',
-    experience: '製造メーカー装置＆システム開発25年フルスタックエンジニア',
+    title: '投資💹おたくエンジニア🤖',
+    experience: '本ブース統括、運営指針：三方良し×最強エンジニアシナジー効果',
     skills: [
       'プログラム全般',
       'AI/LLM',
@@ -13,15 +13,16 @@ const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
       'マイコン',
       'データ分析',
     ],
-    description: '現在1次産業の支援事業推進中🍇',
+    description:
+      '製造メーカー歴25年装置🤖＆システム開発🆕フルスタックエンジニア(C#/C++/C/Python)',
     details: [
       {
         icon: '⚙️',
-        text: '製造メーカー装置＆システム開発25年フルスタックエンジニア(C#/C++/C/Python)',
+        text: '製造メーカー歴25年装置🤖＆システム開発🆕フルスタックエンジニア(C#/C++/C/Python)',
       },
       {
         icon: '🤝',
-        text: '周囲の人も幸せにする三方良しマインドの他者指向GIVER',
+        text: '周囲の人も幸せにする三方良し🔄️マインドの他者指向GIVER💡',
       },
       {
         icon: '💰',
@@ -29,41 +30,67 @@ const extendedMemberData: { [key: string]: Partial<TeamMember> } = {
       },
       {
         icon: '🚀',
-        text: '2022年～副業挑戦、動画配信 & コンサル&プログラム開発にて20万円/月収益継続中',
+        text: '2022年～副業挑戦、動画配信🎦 & コンサル😟 & プログラム受託⌨️にて20万円/月収益継続中',
+      },
+      {
+        icon: '🍇',
+        text: '2024年～1次産業の支援事業開始、2024年7月～ブドウ農家支援システム稼働予定',
       },
     ],
-    message:
-      'AI活用すればプログラムめっちゃ簡単です！皆さんにモノづくりと学ぶ楽しさを伝えたいです！',
+    message: '皆さんにモノづくりと学びの楽しさを伝えたいです✨',
     portfolio: [
       {
-        title: 'プログラムで副業されたい方・案件取りたい方支援します！',
+        title: 'プログラム開発無料相談🆓',
         description:
-          'プログラムを使って副業を始めたい方や、案件を取りたい方への支援サービスを提供しています。',
-        technologies: ['プログラム開発', '副業支援', '案件獲得', 'コンサル'],
+          '皆さんの悩み相談は無料対応🆓！迷ったらまずご相談下さい🙇‍♂️\nリンクはこれから準備',
+        technologies: ['プログラム開発', '無料相談', '悩み相談', '初心者向け'],
+        type: 'service',
+      },
+      {
+        title: 'お子様プログラム教育支援🧒',
+        description:
+          '将来有望なお子様へより深い学びと楽しさを提供します⌨️\n本ブース体験内容の応用編👆となります\nリンクはこれから準備',
+        technologies: ['プログラム教育', '子供向け', '学習支援', '応用編'],
+        type: 'service',
+      },
+      {
+        title: 'プログラム学習始めたい方・案件取りたい方支援します！',
+        description: '現役プログラムがあなたのプログラム学習をサポートします💪',
+        technologies: ['プログラム学習', '案件獲得', '学習支援', 'サポート'],
         type: 'service',
         url: 'https://skill.libecity.com/services/28195',
       },
       {
-        title: '初心者の株式投資支援します！',
-        description:
-          '投資歴7年で資産4桁・配当3桁を達成した経験をもとに、初心者向けの株式投資サポートを行います。',
-        technologies: ['株式投資', '投資支援', '初心者向け', '資産運用'],
+        title: '株式投資支援サービス💹',
+        description: '皆さんの株式投資経験＆スキルに合わせて支援します💰',
+        technologies: ['株式投資', '投資支援', '経験別サポート', '資産運用'],
         type: 'service',
         url: 'https://skill.libecity.com/services/20096',
       },
       {
-        title: '株式分析アプリ',
+        title: '農園管理システム🍇',
         description:
-          '財務諸表分析を支援するアプリケーション。投資判断に必要な情報を効率的に分析できます。',
-        technologies: ['株式分析', '財務諸表', 'データ分析', 'アプリ開発'],
+          '本ブース体験応用したスマート農業支援システム⌨️\n本業生産技術ノウハウ導入🏭、24年7月～ブドウ農家さんと運用開始🍇\n各種補助金の活用ノウハウも含めて支援💡',
+        technologies: ['農業支援', 'スマート農業', '生産技術', '補助金活用'],
         type: 'portfolio',
+        headerImage:
+          '/images/portfolio/tomland/porfolio-agricultural-support.png',
       },
       {
-        title: '農業支援システム',
+        title: '株式分析アプリ💹',
         description:
-          '1次産業の支援事業として、スマート農業を推進する支援システムを開発しています。',
-        technologies: ['農業支援', 'スマート農業', '1次産業', 'IoT'],
+          '財務諸表🧾を投資家目線👀で分析支援\nPER・ROE・自己資本比率等分析～条件フィルタリング出力',
+        technologies: ['株式分析', '財務諸表', 'データ分析', 'フィルタリング'],
         type: 'portfolio',
+        headerImage: '/images/portfolio/tomland/portfolio-stock-analysis.png',
+      },
+      {
+        title: '笑顔😄カウンターアプリ🔢',
+        description:
+          '本ブース企画、AI活用顔認証モデル採用(Python+VS Code)\nソフトだけではなくハード的な光学設計ノウハウも有り',
+        technologies: ['AI', '顔認証', 'Python', 'VS Code', '光学設計'],
+        type: 'portfolio',
+        headerImage: '/images/portfolio/tomland/portfolio-smile-count.png',
       },
     ],
   },
