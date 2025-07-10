@@ -27,7 +27,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
         </div>
 
         {/* 動画セクション */}
-        <div className="mb-8 w-full max-w-4xl">
+        <div className="mb-8 w-full">
           <Card className="border-gray-200 bg-white/80 shadow-2xl backdrop-blur-sm">
             <CardContent className="p-6">
               <div className="aspect-video overflow-hidden rounded-xl">
@@ -62,7 +62,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
 
         {/* キャッチコピー */}
         {data.catchCopy && (
-          <div className="relative mb-8 w-full max-w-4xl">
+          <div className="relative mb-8 w-full max-w-6xl">
             {/* 温かい光沢エフェクト */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#a8dee9]/40 via-[#bfe4ec]/40 to-[#a8dee9]/40 blur-lg" />
 
@@ -140,12 +140,11 @@ export default function HeroSection({ data }: HeroSectionProps) {
         )}
 
         {/* CTAボタン */}
-        <div className="flex flex-col gap-4 sm:flex-row">
-          <CTAButton button={data.ctaButton} size="lg" />
-        </div>
+
+        <CTAButton button={data.ctaButton} size="lg" />
 
         {/* イベント基本情報 */}
-        <div className="mt-12 grid w-full max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="mt-12 grid w-full max-w-6xl grid-cols-1 gap-4 md:grid-cols-3">
           <Card className="border-gray-200 bg-white/80 backdrop-blur-sm">
             <CardContent className="p-6 text-center">
               <div className="mb-3 text-4xl">📅</div>

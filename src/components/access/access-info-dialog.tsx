@@ -1,6 +1,7 @@
 import { Bus, Clock, MapPin, Train } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { cn } from '@/lib/utils.ts';
 import type { AccessInfoData } from '../../types/access-info';
 
 interface AccessInfoDialogProps {
@@ -61,13 +62,17 @@ export default function AccessInfoDialog({ data }: AccessInfoDialogProps) {
                     }`}
                     key={`train-route-${route.line}-${index}`}
                   >
-                    {index === 0 && (
-                      <div className="mb-2 text-center">
-                        <Badge className="bg-green-500 text-white text-xs">
-                          最短ルート
-                        </Badge>
-                      </div>
-                    )}
+                    <div className="mb-2 text-center">
+                      <Badge
+                        className={cn(
+                          'bg-green-500 text-white text-xs',
+                          index !== 0 ? 'invisible' : ''
+                        )}
+                      >
+                        最短ルート
+                      </Badge>
+                    </div>
+
                     <div className="text-center">
                       <Badge
                         className="mb-3 border-blue-500 font-medium text-blue-600 text-sm"

@@ -42,7 +42,6 @@ export type ConsultationTarget = {
   target: string;
   description: string;
   topics: string[];
-  schedule: string;
 };
 
 export type BoothData = {

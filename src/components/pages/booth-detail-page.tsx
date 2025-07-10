@@ -7,6 +7,8 @@ import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { boothData } from '../../data/sections/booth';
 
+const LIMITED_REGEX = /【限定(\d+)個】/;
+
 export default function BoothDetailPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50">
@@ -293,10 +295,10 @@ export default function BoothDetailPage() {
               </div>
             </div>
 
-            {/* 相談会ABC詳細 */}
+            {/* 相談会詳細 */}
             <div className="space-y-6">
               <h3 className="mb-4 font-bold text-lg md:text-xl">
-                相談会ABC - ターゲット別詳細
+                エンジニア相談会
               </h3>
 
               <div className="grid grid-cols-1 gap-6">
@@ -362,13 +364,6 @@ export default function BoothDetailPage() {
                           {target.description}
                         </p>
 
-                        <div className="mb-4 rounded-lg bg-white/50 p-3">
-                          <p className="flex items-center font-bold text-gray-800 text-sm">
-                            <Clock className="mr-2 h-4 w-4" />
-                            開催時間: {target.schedule}
-                          </p>
-                        </div>
-
                         <div className="space-y-2">
                           <h4 className="font-bold text-gray-800 text-sm">
                             相談トピック:
@@ -381,7 +376,7 @@ export default function BoothDetailPage() {
                               <span className={`mr-2 ${colors.text} text-sm`}>
                                 •
                               </span>
-                              <span className="text-gray-700 text-xs">
+                              <span className="text-gray-700 text-sm">
                                 {topic}
                               </span>
                             </div>
@@ -408,42 +403,83 @@ export default function BoothDetailPage() {
                 <p className="text-gray-600">プログラミング関連グッズを販売</p>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              {boothData.products.map((product) => (
-                <Card
-                  className="border-orange-200 bg-orange-50"
-                  key={`product-${product.name}`}
-                >
-                  <CardContent className="p-4 md:p-6">
-                    <div className="mb-3 flex items-center justify-between">
-                      <CardTitle className="text-lg md:text-xl">
-                        {product.name}
-                      </CardTitle>
-                      <Badge className="bg-orange-500 text-white hover:bg-orange-600">
-                        {product.price}
-                      </Badge>
-                    </div>
-                    <p className="mb-4 text-gray-600 text-sm md:text-base">
-                      {product.description}
-                    </p>
-                    <div className="space-y-2">
-                      {product.features.map((feature) => (
-                        <div
-                          className="flex items-start"
-                          key={`product-feature-${product.name}-${feature}`}
-                        >
-                          <span className="mr-2 text-orange-500 text-sm">
-                            •
-                          </span>
-                          <span className="text-gray-700 text-sm">
-                            {feature}
-                          </span>
+            <div className="grid grid-cols-1 gap-6">
+              {boothData.products.map((product, index) => {
+                const getProductColor = (idx: number) => {
+                  const colors = [
+                    {
+                      bg: 'bg-green-50',
+                      border: 'border-green-200',
+                      badge: 'bg-green-500 hover:bg-green-600',
+                      dot: 'text-green-500',
+                    },
+                    {
+                      bg: 'bg-blue-50',
+                      border: 'border-blue-200',
+                      badge: 'bg-blue-500 hover:bg-blue-600',
+                      dot: 'text-blue-500',
+                    },
+                    {
+                      bg: 'bg-purple-50',
+                      border: 'border-purple-200',
+                      badge: 'bg-purple-500 hover:bg-purple-600',
+                      dot: 'text-purple-500',
+                    },
+                    {
+                      bg: 'bg-yellow-50',
+                      border: 'border-yellow-200',
+                      badge: 'bg-yellow-500 hover:bg-yellow-600',
+                      dot: 'text-yellow-600',
+                    },
+                  ];
+                  return colors[idx % colors.length];
+                };
+                const colors = getProductColor(index);
+                return (
+                  <Card
+                    className={`${colors.border} ${colors.bg}`}
+                    key={`product-${product.name}`}
+                  >
+                    <CardContent className="p-4 md:p-6">
+                      <div className="mb-3 flex items-center justify-between">
+                        <CardTitle className="text-lg md:text-xl">
+                          {product.name}
+                        </CardTitle>
+                        <div className="flex gap-2">
+                          {product.description.includes('【限定') && (
+                            <Badge className="bg-red-500 text-white hover:bg-red-600">
+                              {LIMITED_REGEX.exec(product.description)?.[1]
+                                ? `限定${LIMITED_REGEX.exec(product.description)?.[1]}`
+                                : '限定'}
+                            </Badge>
+                          )}
+                          <Badge className={`${colors.badge} text-white`}>
+                            {product.price}
+                          </Badge>
                         </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                      </div>
+                      <p className="mb-4 text-gray-600 text-sm md:text-base">
+                        {product.description}
+                      </p>
+                      <div className="space-y-2">
+                        {product.features.map((feature) => (
+                          <div
+                            className="flex items-start"
+                            key={`product-feature-${product.name}-${feature}`}
+                          >
+                            <span className={`mr-2 ${colors.dot} text-sm`}>
+                              •
+                            </span>
+                            <span className="text-gray-700 text-sm">
+                              {feature}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </CardContent>
         </Card>

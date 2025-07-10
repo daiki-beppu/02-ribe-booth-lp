@@ -109,7 +109,7 @@ export function ScheduleDialog({
           <div className="rounded-lg bg-indigo-50 p-4">
             <div className="flex items-start">
               <Calendar className="mt-1 mr-3 h-5 w-5 flex-shrink-0 text-indigo-600" />
-              <div>
+              <div className="flex-grow">
                 <h4 className="font-bold text-base text-indigo-800">
                   事前予約のお申し込み
                 </h4>
@@ -117,6 +117,19 @@ export function ScheduleDialog({
                   事前予約推奨です。当日参加も可能ですが、混雑時はお待ちいただく場合があります。
                   予約フォームからお申し込みください。
                 </p>
+                <div className="mt-3">
+                  <Button
+                    className="bg-indigo-600 text-white hover:bg-indigo-700"
+                    onClick={() =>
+                      window.open(
+                        'https://docs.google.com/forms/d/e/1FAIpQLSczxo5c082Y6JTdNPmzM_lczjt8hvsga08G8WPtkv2S858rrg/viewform',
+                        '_blank'
+                      )
+                    }
+                  >
+                    予約フォームを開く
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

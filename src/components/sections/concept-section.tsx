@@ -14,10 +14,10 @@ export default function ConceptSection({ data }: ConceptSectionProps) {
           <h2 className="mb-6 font-bold text-3xl text-gray-800 md:text-4xl">
             <span className="text-[#6cb7c7]">{data.title}</span>
           </h2>
-          <p className="mx-auto mb-8 max-w-3xl whitespace-pre-line text-gray-600 text-lg leading-relaxed">
+          <p className="mx-auto mb-8 text-gray-600 text-lg leading-relaxed">
             {data.description}
           </p>
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto">
             <img
               alt={data.image.alt}
               className="w-full rounded-xl shadow-xl"
@@ -27,7 +27,7 @@ export default function ConceptSection({ data }: ConceptSectionProps) {
         </div>
 
         {/* PRポイント */}
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto">
           <div className="grid grid-cols-1 gap-6 whitespace-pre-line md:grid-cols-2">
             {data.features.map((feature, index) => (
               <FeatureCard
