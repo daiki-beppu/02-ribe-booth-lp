@@ -2,10 +2,15 @@ import type { ExperienceData } from '../../types/sections/experience';
 
 export const experienceData: ExperienceData = {
   title: '自由研究完成！体験内容・サービス紹介',
-  description: `
-  夏休みの自由研究として提出できる成果物を15分で作成！
+  description: {
+    desktop: `夏休みの自由研究として提出できる成果物を作成！
   Arduino LED信号機を使った本格的なプログラミング体験で
   お子さんが「かっこいい！」と夢中になります`,
+
+    mobile: `夏休みの自由研究で提出できる成果物を作成！
+  本格的なプログラミング体験で
+  お子さんが「かっこいい！」と夢中になります`,
+  },
   badge: {
     text: '📝 自由研究対応＆無料体験（15分）',
     variant: 'blue',

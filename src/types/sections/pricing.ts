@@ -1,9 +1,10 @@
 import type { Button, Image } from '../common';
+import type { TextOrResponsive } from '../common/responsive-text';
 
 export type FreeService = {
   icon: string;
   title: string;
-  description: string;
+  description: TextOrResponsive;
   borderColor: string;
   target?: string;
   image?: Image;

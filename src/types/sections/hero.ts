@@ -1,20 +1,21 @@
 import type { Button } from '../common';
+import type { TextOrResponsive } from '../common/responsive-text';
 
 export type HeroData = {
-  title: string;
-  subtitle: string;
-  description: string;
+  title: TextOrResponsive;
+  subtitle: TextOrResponsive;
+  description: TextOrResponsive;
   video: {
     youtubeId?: string;
     localSrc?: string;
     poster?: string;
-    caption: string;
+    caption: TextOrResponsive;
   };
-  catchCopy?: string;
+  catchCopy?: TextOrResponsive;
   ctaButton: Button;
   eventInfo: {
-    boothNumber: string;
-    dates: string;
-    venue: string;
+    boothNumber: TextOrResponsive;
+    dates: TextOrResponsive;
+    venue: TextOrResponsive;
   };
 };

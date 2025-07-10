@@ -1,4 +1,5 @@
 import type { ConceptData } from '../../types/sections/concept';
+import { renderResponsiveText } from '../../utils/responsive-text';
 import FeatureCard from '../common/feature-card';
 
 interface ConceptSectionProps {
@@ -12,11 +13,15 @@ export default function ConceptSection({ data }: ConceptSectionProps) {
         {/* メインコンセプト */}
         <div className="mb-16 text-center">
           <h2 className="mb-6 font-bold text-3xl text-gray-800 md:text-4xl">
-            <span className="text-[#6cb7c7]">{data.title}</span>
+            <span className="text-[#6cb7c7]">
+              {renderResponsiveText(data.title)}
+            </span>
           </h2>
-          <p className="mx-auto mb-8 text-gray-600 text-lg leading-relaxed">
-            {data.description}
-          </p>
+          {renderResponsiveText(
+            data.description,
+            'mx-auto mb-8 whitespace-pre-wrap text-gray-600 text-lg leading-relaxed',
+            'p'
+          )}
           <div className="mx-auto">
             <img
               alt={data.image.alt}

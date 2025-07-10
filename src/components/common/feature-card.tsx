@@ -1,5 +1,6 @@
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import type { FeatureItem } from '../../types/sections/concept';
+import { renderResponsiveText } from '../../utils/responsive-text';
 
 interface FeatureCardProps {
   feature: FeatureItem;
@@ -16,8 +17,14 @@ export default function FeatureCard({
     >
       <CardContent className="p-6">
         <div className="mb-4 text-4xl">{feature.icon}</div>
-        <CardTitle className="mb-2">{feature.title}</CardTitle>
-        <p className="text-gray-600 text-sm">{feature.description}</p>
+        <CardTitle className="mb-2">
+          {renderResponsiveText(feature.title)}
+        </CardTitle>
+        {renderResponsiveText(
+          feature.description,
+          'text-gray-600 text-sm',
+          'p'
+        )}
       </CardContent>
     </Card>
   );

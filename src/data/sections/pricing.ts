@@ -3,27 +3,33 @@ import type { PricingData } from '../../types/sections/pricing';
 export const pricingData: PricingData = {
   title: '料金・お申し込み',
   description:
-    '自由研究から将来のスキルまで！体験無料、継続学習で一石二鳥の成長体験',
+    '自由研究から将来のスキルまで！\n体験無料、継続学習で一石二鳥の成長体験',
   freeServices: [
     {
       icon: '🚦',
       title: 'Arduino LED信号機プログラミング体験',
-      description:
-        '夏休みの自由研究として提出できる成果物を15分で作成！お子さんが「かっこいい！」と夢中になる本格体験',
+      description: {
+        mobile: '15分で自由研究完成！',
+        desktop: '15分で自由研究完成！夢中になる本格体験',
+      },
       borderColor: 'border-green-400',
     },
     {
       icon: '👨‍💻',
       title: '現役エンジニアへの相談会',
-      description:
-        '現役エンジニアチームが直接お答えします（30分間・1日6回開催・事前予約推奨）',
+      description: {
+        mobile: '現役エンジニアが直接回答',
+        desktop: '現役エンジニアが直接回答（30分・事前予約推奨）',
+      },
       borderColor: 'border-blue-400',
     },
     {
       icon: '🎮',
       title: '大交流会イベント',
-      description:
-        'オリジナルゲームで大会を開催！他の参加者やスタッフと楽しく交流しましょう（18:30〜19:00・当日参加OK）',
+      description: {
+        mobile: 'ゲーム大会で交流',
+        desktop: 'ゲーム大会で参加者・スタッフと交流（18:30〜19:00）',
+      },
       borderColor: 'border-purple-400',
     },
   ],
@@ -38,10 +44,9 @@ export const pricingData: PricingData = {
       name: '🌱 スタートキット',
       price: 2980,
       description: [
-        '🚦 Arduino UNO互換ボード + LEDライト信号機キット',
-        '🔧 基本的なLED制御プログラム（サンプルコード10種類）',
-        '📝 自由研究レポート作成ガイド付き（テンプレート込み）',
-        '💻 Arduino IDE セットアップガイド',
+        '🚦 Arduino UNO互換ボード + LED信号機キット',
+        '🔧 LED制御プログラム（サンプルコード10種類）',
+        '📝 自由研究レポート作成ガイド',
       ],
       target: '学習支援',
       borderColor: 'border-green-400',
@@ -50,13 +55,12 @@ export const pricingData: PricingData = {
     },
     {
       id: 'adventurekit',
-      name: '🚀 アドベンチャーキット',
+      name: '【限定10個】🚀 アドベンチャーキット',
       price: 4980,
       description: [
-        '【限定10個】自由研究グレードアップ！親子で本格学習モデル。',
+        '自由研究グレードアップ！親子で本格学習',
         '🌱 スタートキットの全内容',
-        '🚃 踏切システム追加（サーボモーター制御）',
-        '⚙️ モーター制御機能',
+        '🚃 踏切システム（モーター制御）',
       ],
       target: '学習支援',
       borderColor: 'border-orange-400',
@@ -65,12 +69,12 @@ export const pricingData: PricingData = {
     },
     {
       id: 'masterkit',
-      name: '💎 マスターキット',
+      name: '【限定5個】💎 マスターキット',
       price: 9980,
       description: [
-        '【限定5個】自由研究→将来スキル！副業・転職を目指す本格派。',
+        '自由研究→将来スキル！本格派モデル',
         '🚀 アドベンチャーキットの全内容',
-        '🌡️ 3種センサー追加（距離センサー・温度センサー・照度センサー）',
+        '🌡️ 3種センサー追加（距離・温度・照度）',
       ],
       target: '学習支援',
       borderColor: 'border-purple-400',
@@ -104,12 +108,11 @@ export const pricingData: PricingData = {
   finalCta: {
     title: '体験から始まる、本気の学びをどうぞ！',
     button: {
-      text: '🎯 今すぐ無料体験に申し込む',
+      text: '今すぐ無料体験に申し込む',
       href: 'https://docs.google.com/forms/d/e/1FAIpQLSczxo5c082Y6JTdNPmzM_lczjt8hvsga08G8WPtkv2S858rrg/viewform',
       variant: 'primary',
       external: true,
     },
-    subtitle: `購入後は継続的なサポートで学習が加速！
-親御さんは安心してお子さんの成長を見守れます`,
+    subtitle: '継続サポートで学習加速！安心して成長を見守れます',
   },
 };

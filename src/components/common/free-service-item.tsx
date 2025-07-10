@@ -1,5 +1,7 @@
 import { Badge } from '@/components/ui/badge';
+import { isResponsiveText } from '../../types/common/responsive-text';
 import type { FreeService } from '../../types/sections/pricing';
+import ResponsiveText from './responsive-text';
 
 interface FreeServiceItemProps {
   service: FreeService;
@@ -14,7 +16,16 @@ export default function FreeServiceItem({ service }: FreeServiceItemProps) {
         </h4>
       </div>
       <div className="mb-3">
-        <p className="mb-1 text-gray-600 text-sm">{service.description}</p>
+        {isResponsiveText(service.description) ? (
+          <ResponsiveText
+            as="p"
+            className="mb-1 text-gray-600 text-sm"
+            desktop={service.description.desktop}
+            mobile={service.description.mobile}
+          />
+        ) : (
+          <p className="mb-1 text-gray-600 text-sm">{service.description}</p>
+        )}
       </div>
       {service.image && (
         <div className="mb-3">

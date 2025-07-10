@@ -227,7 +227,7 @@ export const basicMembersData: TeamMemberBasic[] = fullMembersData.map(
 
 // ホーム用のteamData
 export const teamDataBasic: TeamDataBasic = {
-  title: '現役プログラマー陣が直接指導',
+  title: '現役エンジニアが直接指導',
   description:
     '異業種の現役専門家が集結！\n動画や書籍では学べない生きた情報とスキルアップのコツをお伝えします！',
   members: basicMembersData,
@@ -240,13 +240,17 @@ export const teamDataBasic: TeamDataBasic = {
 
 // メンバー詳細ページ用のteamData
 export const teamData: TeamData = {
-  title: '現役プログラマー陣が直接指導',
+  title: '現役が直接指導',
   description:
     '異業種の現役専門家が集結！\n動画や書籍では学べない生きた情報とスキルアップのコツをお伝えします！',
   members: fullMembersData,
   finalMessage: {
     title: 'リベシティの魅力とつながる楽しさを共有したい！',
-    description: `
-    日常生活では絶対に出会えない人と知り合い\n一緒に何かを成し遂げる仲間との出会いを大切にしています。\nプログラミングを通じて、新しいつながりと可能性を一緒に見つけましょう！`,
+    description: {
+      desktop:
+        '日常生活では絶対に出会えない人と知り合い\n一緒に何かを成し遂げる仲間との出会いを大切にしています。\nプログラミングを通じて、新しいつながりと可能性を一緒に見つけましょう！',
+      mobile:
+        '日常では出会えない人と知り合い\n一緒に何かを成し遂げる仲間との\n出会いを大切にしています\nプログラミングを通じて、新しいつながり\n新たな可能性を見つけましょう！',
+    },
   },
 };

@@ -18,7 +18,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
           <h2 className="mb-6 font-bold text-3xl text-gray-800 md:text-4xl">
             {data.title}
           </h2>
-          <p className="mx-auto max-w-3xl text-gray-700 text-xl">
+          <p className="mx-auto max-w-3xl whitespace-pre-wrap text-gray-700 text-xl">
             {data.description}
           </p>
         </div>
@@ -66,27 +66,6 @@ export default function PricingSection({ data }: PricingSectionProps) {
             </CardContent>
           </Card>
         </div>
-
-        {/* 申込方法 */}
-        <Card className="mb-12 border-gray-200 bg-white/80 backdrop-blur-sm">
-          <CardContent className="p-8">
-            <CardTitle className="mb-8 text-center text-2xl text-gray-800">
-              {data.applicationForm.title}
-            </CardTitle>
-            <div className="grid grid-cols-1 gap-8">
-              <div className="text-center">
-                <div className="mb-4 text-4xl">🌐</div>
-                <h4 className="mb-2 font-bold text-gray-800 text-lg">
-                  予約フォーム
-                </h4>
-                <p className="mb-4 text-gray-600">
-                  {data.applicationForm.description}
-                </p>
-                <CTAButton button={data.applicationForm.button} />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
         {/* 最終CTA */}
         <div className="text-center">

@@ -1,11 +1,13 @@
+import type { TextOrResponsive } from '../common/responsive-text';
+
 export type DetailItem = {
   icon: string;
-  text: string;
+  text: TextOrResponsive;
 };
 
 export type PortfolioItem = {
-  title: string;
-  description: string;
+  title: TextOrResponsive;
+  description: TextOrResponsive;
   image?: string;
   headerImage?: string;
   url?: string;
@@ -17,10 +19,10 @@ export type PortfolioItem = {
 // ホーム用の簡易プロフィール
 export type TeamMemberBasic = {
   name: string;
-  title: string;
-  experience: string;
+  title: TextOrResponsive;
+  experience: TextOrResponsive;
   skills: string[];
-  description: string;
+  description: TextOrResponsive;
   avatar?: string;
   color: string;
   badge?: string;
@@ -31,27 +33,27 @@ export type TeamMemberBasic = {
 // メンバー詳細ページ用の拡張プロフィール
 export type TeamMember = TeamMemberBasic & {
   details: DetailItem[];
-  message: string;
+  message: TextOrResponsive;
   portfolio?: PortfolioItem[];
 };
 
 export type TeamData = {
-  title: string;
-  description: string;
+  title: TextOrResponsive;
+  description: TextOrResponsive;
   members: TeamMember[];
   finalMessage: {
-    title: string;
-    description: string;
+    title: TextOrResponsive;
+    description: TextOrResponsive;
   };
 };
 
 // ホーム用のTeamData型
 export type TeamDataBasic = {
-  title: string;
-  description: string;
+  title: TextOrResponsive;
+  description: TextOrResponsive;
   members: TeamMemberBasic[];
   finalMessage: {
-    title: string;
-    description: string;
+    title: TextOrResponsive;
+    description: TextOrResponsive;
   };
 };

@@ -2,6 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { accessInfoData } from '../../data/access-info';
 import type { HeroData } from '../../types/sections/hero';
+import { renderResponsiveText } from '../../utils/responsive-text';
 import AccessInfoDialog from '../access/access-info-dialog';
 import CTAButton from '../common/cta-button';
 
@@ -15,15 +16,21 @@ export default function HeroSection({ data }: HeroSectionProps) {
       <div className="container mx-auto flex min-h-screen flex-col items-center justify-center px-4 py-16 text-center">
         {/* メインキャッチコピー */}
         <div className="mb-8">
-          <h1 className="mb-4 font-bold text-4xl text-gray-800 md:text-6xl">
-            {data.title}
-          </h1>
-          <h2 className="mb-6 font-bold text-3xl text-gray-800 md:text-5xl">
-            {data.subtitle}
-          </h2>
-          <p className="font-medium text-slate-700 text-xl md:text-2xl">
-            {data.description}
-          </p>
+          {renderResponsiveText(
+            data.title,
+            'mb-4 font-bold text-4xl text-gray-800 md:text-6xl',
+            'h1'
+          )}
+          {renderResponsiveText(
+            data.subtitle,
+            'mb-6 font-bold text-3xl text-gray-800 md:text-5xl',
+            'h2'
+          )}
+          {renderResponsiveText(
+            data.description,
+            'font-medium text-slate-700 text-xl md:text-2xl',
+            'p'
+          )}
         </div>
 
         {/* 動画セクション */}
@@ -32,7 +39,6 @@ export default function HeroSection({ data }: HeroSectionProps) {
             <CardContent className="p-6">
               <div className="aspect-video overflow-hidden rounded-xl">
                 {data.video.youtubeId ? (
-                  // 仮実装：YouTube動画 - 最終的に assets/movies の動画に置き換え
                   <iframe
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -53,9 +59,11 @@ export default function HeroSection({ data }: HeroSectionProps) {
                   </video>
                 )}
               </div>
-              <p className="mt-4 text-center text-gray-600 text-sm">
-                {data.video.caption}
-              </p>
+              {renderResponsiveText(
+                data.video.caption,
+                'mt-4 text-center text-gray-600 text-sm',
+                'p'
+              )}
             </CardContent>
           </Card>
         </div>
@@ -67,7 +75,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#a8dee9]/40 via-[#bfe4ec]/40 to-[#a8dee9]/40 blur-lg" />
 
             {/* メインコンテナ */}
-            <div className="relative transform rounded-2xl border border-[#a8dee9]/50 bg-gradient-to-r from-white/95 via-[#a8dee9]/20 to-white/95 p-8 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-102">
+            <div className="relative transform rounded-2xl border border-[#a8dee9]/50 bg-gradient-to-r from-white/95 via-[#a8dee9]/20 to-white/95 p-4 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-102 md:p-8">
               {/* 上部装飾ライン */}
               <div className="absolute top-0 left-0 h-1 w-full rounded-t-2xl bg-gradient-to-r from-[#a8dee9] via-[#bfe4ec] to-[#a8dee9]" />
 
@@ -149,16 +157,22 @@ export default function HeroSection({ data }: HeroSectionProps) {
             <CardContent className="p-6 text-center">
               <div className="mb-3 text-4xl">📅</div>
               <h3 className="mb-2 font-bold text-gray-800 text-lg">開催日程</h3>
-              <p className="text-gray-700 text-lg">{data.eventInfo.dates}</p>
+              {renderResponsiveText(
+                data.eventInfo.dates,
+                'text-gray-700 text-lg',
+                'p'
+              )}
             </CardContent>
           </Card>
           <Card className="transform border-2 border-orange-300 bg-gradient-to-br from-orange-400 to-orange-600 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105">
             <CardContent className="p-6 text-center">
               <div className="mb-3 animate-bounce text-4xl">🏪</div>
               <h3 className="mb-2 font-bold text-lg text-white">ブース番号</h3>
-              <p className="inline-block rounded-full border-4 border-[#a8dee9] bg-[#6cb7c7] px-4 py-2 font-extrabold text-4xl text-white drop-shadow-lg">
-                {data.eventInfo.boothNumber}
-              </p>
+              {renderResponsiveText(
+                data.eventInfo.boothNumber,
+                'inline-block rounded-full border-4 border-[#a8dee9] bg-[#6cb7c7] px-4 py-2 font-extrabold text-4xl text-white drop-shadow-lg',
+                'p'
+              )}
             </CardContent>
           </Card>
           <Dialog>
@@ -167,9 +181,11 @@ export default function HeroSection({ data }: HeroSectionProps) {
                 <CardContent className="p-6 text-center">
                   <div className="mb-3 text-4xl">📍</div>
                   <h3 className="mb-2 font-bold text-gray-800 text-lg">会場</h3>
-                  <p className="text-gray-700 text-lg">
-                    {data.eventInfo.venue}
-                  </p>
+                  {renderResponsiveText(
+                    data.eventInfo.venue,
+                    'text-gray-700 text-lg',
+                    'p'
+                  )}
                   <p className="mt-2 text-gray-500 text-xs">
                     クリックでアクセス情報を見る
                   </p>

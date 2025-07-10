@@ -435,6 +435,33 @@ export default function BoothDetailPage() {
                   return colors[idx % colors.length];
                 };
                 const colors = getProductColor(index);
+
+                // 商品名から限定数部分を分離して色付け
+                const nameMatch = LIMITED_REGEX.exec(product.name);
+                const renderProductName = () => {
+                  if (nameMatch) {
+                    const [fullMatch] = nameMatch;
+                    const beforeLimited = product.name.substring(
+                      0,
+                      product.name.indexOf(fullMatch)
+                    );
+                    const afterLimited = product.name.substring(
+                      product.name.indexOf(fullMatch) + fullMatch.length
+                    );
+
+                    return (
+                      <>
+                        <span className="font-extrabold text-red-600">
+                          {fullMatch}
+                        </span>
+                        {beforeLimited}
+                        {afterLimited}
+                      </>
+                    );
+                  }
+                  return product.name;
+                };
+
                 return (
                   <Card
                     className={`${colors.border} ${colors.bg}`}
@@ -443,7 +470,7 @@ export default function BoothDetailPage() {
                     <CardContent className="p-4 md:p-6">
                       <div className="mb-3 flex items-center justify-between">
                         <CardTitle className="text-lg md:text-xl">
-                          {product.name}
+                          {renderProductName()}
                         </CardTitle>
                         <div className="flex gap-2">
                           {product.description.includes('【限定') && (

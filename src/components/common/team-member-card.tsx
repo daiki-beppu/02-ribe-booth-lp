@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import type { TeamMember } from '../../types/sections/team';
+import { renderResponsiveText } from '../../utils/responsive-text';
 
 interface TeamMemberCardProps {
   member: TeamMember;
@@ -84,7 +85,7 @@ export default function TeamMemberCard({
 
   return (
     <Card className={`shadow-xl ${colSpanClass} ${className}`}>
-      <CardContent className="p-8">
+      <CardContent className="p-4 md:p-8">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
           <div
             className={`h-24 w-24 bg-gradient-to-br ${colors.bg} mx-auto flex shrink-0 items-center justify-center overflow-hidden rounded-full sm:mx-0 sm:mr-6 sm:h-28 sm:w-28`}
@@ -123,9 +124,11 @@ export default function TeamMemberCard({
                 </Link>
               </div>
             </div>
-            <p className="text-center font-medium text-gray-600 text-sm sm:text-left sm:text-base">
-              {member.title}
-            </p>
+            {renderResponsiveText(
+              member.title,
+              'text-center font-medium text-gray-600 text-sm sm:text-left sm:text-base',
+              'p'
+            )}
           </div>
         </div>
 
@@ -138,7 +141,7 @@ export default function TeamMemberCard({
               <span className={`${colors.text} mt-0.5 mr-3`}>
                 {detail.icon}
               </span>
-              <span>{detail.text}</span>
+              <span>{renderResponsiveText(detail.text)}</span>
             </div>
           ))}
         </div>
@@ -148,7 +151,7 @@ export default function TeamMemberCard({
         >
           <p className="text-gray-700 text-sm">
             <strong>メッセージ：</strong>
-            {member.message}
+            {renderResponsiveText(member.message)}
           </p>
         </div>
 

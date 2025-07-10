@@ -41,7 +41,7 @@ export default function CTAButton({
   const sizeClasses = {
     default: 'px-8 py-4 text-lg',
     sm: 'px-6 py-3',
-    lg: 'px-16 py-6 text-2xl font-extrabold',
+    lg: 'px-8 py-6 text-xl md:px-16 md:text-2xl font-extrabold',
   };
 
   const variant = button.variant || 'primary';

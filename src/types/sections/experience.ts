@@ -1,16 +1,17 @@
 import type { Image } from '../common';
+import type { TextOrResponsive } from '../common/responsive-text';
 
 export type StepItem = {
   icon: string;
-  title: string;
-  description: string;
+  title: TextOrResponsive;
+  description: TextOrResponsive;
 };
 
 export type ExperienceData = {
-  title: string;
-  description: string;
+  title: TextOrResponsive;
+  description: TextOrResponsive;
   badge: {
-    text: string;
+    text: TextOrResponsive;
     variant: string;
   };
   images: Image[];

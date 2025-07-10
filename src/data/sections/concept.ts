@@ -2,8 +2,9 @@ import type { ConceptData } from '../../types/sections/concept';
 
 export const conceptData: ConceptData = {
   title: '今すぐ使える自由研究から、将来に役立つスキルまで！',
-  description: `現役エンジニアチームが作った本格仕様の教材で\n遊びながら本物の力が身につきます。
-エンジニアに必要な要素がぜんぶ詰まった、理想的な学習環境をご提供します`,
+  description:
+    '現役エンジニアチームが作った本格的な教材で\n遊びながら本物の力が身につきます。\nエンジニアに必要な要素がぜんぶ詰まった、理想的な学習環境をご提供します',
+
   image: {
     src: '/images/programming-image.jpg',
     alt: 'ArduinoのIDEでプログラミングをしている画面',
