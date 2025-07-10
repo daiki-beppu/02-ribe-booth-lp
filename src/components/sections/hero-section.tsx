@@ -168,11 +168,9 @@ export default function HeroSection({ data }: HeroSectionProps) {
             <CardContent className="p-6 text-center">
               <div className="mb-3 animate-bounce text-4xl">🏪</div>
               <h3 className="mb-2 font-bold text-lg text-white">ブース番号</h3>
-              {renderResponsiveText(
-                data.eventInfo.boothNumber,
-                'inline-block rounded-full border-4 border-[#a8dee9] bg-[#6cb7c7] px-4 py-2 font-extrabold text-4xl text-white drop-shadow-lg',
-                'p'
-              )}
+              <p className="mx-auto block w-fit rounded-full border-4 border-[#a8dee9] bg-[#6cb7c7] px-4 py-2 font-extrabold text-4xl text-white drop-shadow-lg">
+                M-14
+              </p>
             </CardContent>
           </Card>
           <Dialog>

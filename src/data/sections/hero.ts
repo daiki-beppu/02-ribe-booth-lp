@@ -32,10 +32,8 @@ export const heroData: HeroData = {
     external: true,
   },
   eventInfo: {
-    boothNumber: {
-      mobile: 'M-14',
-      desktop: 'M-14',
-    },
+    boothNumber: 'M-14',
+
     dates: {
       mobile: '8月9日〜11日',
       desktop: '2025年8月9日〜11日',
