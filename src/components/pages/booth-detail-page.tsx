@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { boothData } from '../../data/sections/booth';
+import { renderResponsiveText } from '../../utils/responsive-text';
 
 const LIMITED_REGEX = /【限定(\d+)個】/;
 
@@ -30,15 +31,19 @@ export default function BoothDetailPage() {
           <CardContent className="p-6 text-center md:p-8">
             <div className="mb-4 flex justify-center">
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 text-4xl text-white md:h-24 md:w-24 md:text-5xl">
-                🎪
+                {boothData.headerIcon}
               </div>
             </div>
-            <CardTitle className="mb-3 text-2xl md:text-3xl">
-              {boothData.title}
-            </CardTitle>
-            <p className="text-gray-600 text-lg md:text-xl">
-              {boothData.description}
-            </p>
+            {renderResponsiveText(
+              boothData.title,
+              'mb-3 text-2xl md:text-3xl font-bold',
+              'h1'
+            )}
+            {renderResponsiveText(
+              boothData.description,
+              'text-gray-600 text-lg md:text-xl',
+              'p'
+            )}
           </CardContent>
         </Card>
 
@@ -48,15 +53,19 @@ export default function BoothDetailPage() {
             <div className="mb-6">
               <div className="mb-4 flex items-center">
                 <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 text-2xl text-white">
-                  💻
+                  {boothData.sections.experience.icon}
                 </div>
                 <div>
-                  <h2 className="font-bold text-xl md:text-2xl">
-                    プログラム体験
-                  </h2>
-                  <p className="text-gray-600">
-                    実際にプログラミングを体験できます
-                  </p>
+                  {renderResponsiveText(
+                    boothData.sections.experience.title,
+                    'font-bold text-xl md:text-2xl',
+                    'h2'
+                  )}
+                  {renderResponsiveText(
+                    boothData.sections.experience.description,
+                    'text-gray-600',
+                    'p'
+                  )}
                 </div>
               </div>
 
@@ -104,133 +113,85 @@ export default function BoothDetailPage() {
               </div>
             </div>
             {/* 体験のポイント */}
-            <div className="mb-6 space-y-4">
-              <h3 className="mb-4 font-bold text-lg md:text-xl">
-                体験のポイント
-              </h3>
-
-              {/* 自由研究対応 */}
-              <div className="rounded-lg border-2 border-emerald-200 bg-emerald-50 p-4">
-                <div className="flex items-start">
-                  <div className="mr-3 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
-                    📝
+            {boothData.activities[0].points && (
+              <div className="mb-6 space-y-4">
+                <h3 className="mb-4 font-bold text-lg md:text-xl">
+                  体験のポイント
+                </h3>
+                {boothData.activities[0].points.map((point, index) => (
+                  <div
+                    className={`rounded-lg border-2 border-${point.color}-200 bg-${point.color}-50 p-4`}
+                    key={`point-${point.icon}-${index}`}
+                  >
+                    <div className="flex items-start">
+                      <div
+                        className={`mr-3 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-${point.color}-500 text-white`}
+                      >
+                        {point.icon}
+                      </div>
+                      <div>
+                        {renderResponsiveText(
+                          point.title,
+                          'mb-2 font-bold text-base text-black',
+                          'h4'
+                        )}
+                        {renderResponsiveText(
+                          point.description,
+                          `text-${point.color}-700 text-sm`,
+                          'p'
+                        )}
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="mb-2 font-bold text-base text-black">
-                      自由研究として提出可能
-                    </h4>
-                    <p className="text-emerald-700 text-sm">
-                      夏休みの宿題にそのまま使える実用的な成果物が完成します。レポート作成のサポートも充実しています。
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
-
-              {/* プロ仕様の教材 */}
-              <div className="rounded-lg border-2 border-orange-200 bg-orange-50 p-4">
-                <div className="flex items-start">
-                  <div className="mr-3 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-orange-500 text-white">
-                    🔧
-                  </div>
-                  <div>
-                    <h4 className="mb-2 font-bold text-base text-black">
-                      現役エンジニア設計の本格教材
-                    </h4>
-                    <p className="text-orange-700 text-sm">
-                      製造メーカーで25年の経験を持つ現役エンジニアチームが設計した、遊びながら本物の力が身につく教材です。
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* 親子体験 */}
-              <div className="rounded-lg border-2 border-pink-200 bg-pink-50 p-4">
-                <div className="flex items-start">
-                  <div className="mr-3 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-pink-500 text-white">
-                    👨‍👩‍👧‍👦
-                  </div>
-                  <div>
-                    <h4 className="mb-2 font-bold text-base text-black">
-                      親子で一緒に楽しめる
-                    </h4>
-                    <p className="text-pink-700 text-sm">
-                      お子様だけでなく、親御さんも一緒に参加できます。家族みんなでプログラミングの楽しさを体験してください。
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            )}
 
             {/* ステップフロー図 */}
-            <div className="mb-6">
-              <h3 className="mb-4 font-bold text-lg md:text-xl">体験の流れ</h3>
-              <div className="space-y-4">
-                {/* Step 1 */}
-                <div className="relative">
-                  <div className="flex items-center">
-                    <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-white">
-                      <span className="font-bold text-lg leading-none">1</span>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="rounded-lg border-2 border-blue-200 bg-blue-50 p-4">
-                        <h4 className="mb-2 font-bold text-black text-lg">
-                          🔧 Arduino基板とLEDライトの配線
-                        </h4>
-                        <p className="text-gray-700 text-sm">
-                          自由研究の実験装置完成！現役エンジニアが丁寧にサポートします
-                        </p>
+            {boothData.activities[0].steps && (
+              <div className="mb-6">
+                <h3 className="mb-4 font-bold text-lg md:text-xl">
+                  体験の流れ
+                </h3>
+                <div className="space-y-4">
+                  {boothData.activities[0].steps.map((step, index) => (
+                    <div
+                      className="relative"
+                      key={`step-${step.icon}-${index}`}
+                    >
+                      <div className="flex items-center">
+                        <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-white">
+                          <span className="font-bold text-lg leading-none">
+                            {index + 1}
+                          </span>
+                        </div>
+                        <div className="flex-grow">
+                          <div className="rounded-lg border-2 border-blue-200 bg-blue-50 p-4">
+                            {renderResponsiveText(
+                              step.title,
+                              'mb-2 font-bold text-black text-lg',
+                              'h4'
+                            )}
+                            {renderResponsiveText(
+                              step.description,
+                              'text-gray-700 text-sm',
+                              'p'
+                            )}
+                          </div>
+                        </div>
                       </div>
+                      {/* 矢印 */}
+                      {index <
+                        (boothData.activities[0].steps?.length ?? 0) - 1 && (
+                        <div className="my-2 flex justify-center">
+                          <ArrowDown className="h-6 w-6 text-gray-400" />
+                        </div>
+                      )}
                     </div>
-                  </div>
-                  {/* 矢印 */}
-                  <div className="my-2 flex justify-center">
-                    <ArrowDown className="h-6 w-6 text-gray-400" />
-                  </div>
-                </div>
-
-                {/* Step 2 */}
-                <div className="relative">
-                  <div className="flex items-center">
-                    <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-white">
-                      <span className="font-bold text-lg leading-none">2</span>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="rounded-lg border-2 border-blue-200 bg-blue-50 p-4">
-                        <h4 className="mb-2 font-bold text-black text-lg">
-                          💻 テンプレート準備で初心者も安心
-                        </h4>
-                        <p className="text-gray-700 text-sm">
-                          信号機の制御ロジックを学習。AI活用でプログラミングが簡単に！
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* 矢印 */}
-                  <div className="my-2 flex justify-center">
-                    <ArrowDown className="h-6 w-6 text-gray-400" />
-                  </div>
-                </div>
-
-                {/* Step 3 */}
-                <div className="relative">
-                  <div className="flex items-center">
-                    <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-white">
-                      <span className="font-bold text-lg leading-none">3</span>
-                    </div>
-                    <div className="flex-grow">
-                      <div className="rounded-lg border-2 border-blue-200 bg-blue-50 p-4">
-                        <h4 className="mb-2 font-bold text-black text-lg">
-                          🚦 LED信号機を実際に制御
-                        </h4>
-                        <p className="text-gray-700 text-sm">
-                          自由研究レポートの材料が完成！そのまま提出できる実用的な成果物
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
-            </div>
+            )}
           </CardContent>
         </Card>
 
@@ -242,12 +203,16 @@ export default function BoothDetailPage() {
                 🤝
               </div>
               <div>
-                <h2 className="font-bold text-xl md:text-2xl">
-                  {boothData.consultation.title}
-                </h2>
-                <p className="text-gray-600">
-                  {boothData.consultation.description}
-                </p>
+                {renderResponsiveText(
+                  boothData.consultation.title,
+                  'font-bold text-xl md:text-2xl',
+                  'h2'
+                )}
+                {renderResponsiveText(
+                  boothData.consultation.description,
+                  'text-gray-600',
+                  'p'
+                )}
               </div>
             </div>
 
@@ -287,9 +252,6 @@ export default function BoothDetailPage() {
                   <div>
                     <h3 className="font-bold text-black text-lg">参加費用</h3>
                     <p className="font-bold text-gray-800 text-lg">完全無料</p>
-                    <p className="text-gray-600 text-xs">
-                      個別相談・質問無制限
-                    </p>
                   </div>
                 </div>
               </div>
@@ -351,18 +313,24 @@ export default function BoothDetailPage() {
                             {target.id}
                           </div>
                           <div>
-                            <CardTitle className={`text-lg ${colors.text}`}>
-                              {target.label}
-                            </CardTitle>
-                            <p className={`text-sm ${colors.text}`}>
-                              {target.target}
-                            </p>
+                            {renderResponsiveText(
+                              target.label,
+                              `text-lg ${colors.text}`,
+                              'h3'
+                            )}
+                            {renderResponsiveText(
+                              target.target,
+                              `text-sm ${colors.text}`,
+                              'p'
+                            )}
                           </div>
                         </div>
 
-                        <p className="mb-4 text-gray-700 text-sm">
-                          {target.description}
-                        </p>
+                        {renderResponsiveText(
+                          target.description,
+                          'mb-4 text-gray-700 text-sm',
+                          'p'
+                        )}
 
                         <div className="space-y-2">
                           <h4 className="font-bold text-gray-800 text-sm">
@@ -396,11 +364,19 @@ export default function BoothDetailPage() {
           <CardContent className="p-6 md:p-8">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-red-500 text-2xl text-white">
-                🛍️
+                {boothData.sections.products.icon}
               </div>
               <div>
-                <h2 className="font-bold text-xl md:text-2xl">物販</h2>
-                <p className="text-gray-600">プログラミング関連グッズを販売</p>
+                {renderResponsiveText(
+                  boothData.sections.products.title,
+                  'font-bold text-xl md:text-2xl',
+                  'h2'
+                )}
+                {renderResponsiveText(
+                  boothData.sections.products.description,
+                  'text-gray-600',
+                  'p'
+                )}
               </div>
             </div>
             <div className="grid grid-cols-1 gap-6">
@@ -476,7 +452,9 @@ export default function BoothDetailPage() {
                           {product.description.includes('【限定') && (
                             <Badge className="bg-red-500 text-white hover:bg-red-600">
                               {LIMITED_REGEX.exec(product.description)?.[1]
-                                ? `限定${LIMITED_REGEX.exec(product.description)?.[1]}`
+                                ? `限定${
+                                    LIMITED_REGEX.exec(product.description)?.[1]
+                                  }`
                                 : '限定'}
                             </Badge>
                           )}
@@ -516,15 +494,19 @@ export default function BoothDetailPage() {
           <CardContent className="p-6 md:p-8">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-400 to-pink-500 text-2xl text-white">
-                🎮
+                {boothData.sections.events.icon}
               </div>
               <div>
-                <h2 className="font-bold text-xl md:text-2xl">
-                  大交流会イベント
-                </h2>
-                <p className="text-gray-600">
-                  ゲーム大会で盛り上がりましょう！
-                </p>
+                {renderResponsiveText(
+                  boothData.sections.events.title,
+                  'font-bold text-xl md:text-2xl',
+                  'h2'
+                )}
+                {renderResponsiveText(
+                  boothData.sections.events.description,
+                  'text-gray-600',
+                  'p'
+                )}
               </div>
             </div>
 
