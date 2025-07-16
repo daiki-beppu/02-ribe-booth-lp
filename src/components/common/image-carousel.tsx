@@ -51,15 +51,6 @@ export default function ImageCarousel({
     });
   }, [transitionToImage, images.length]);
 
-  const goToImage = useCallback(
-    (index: number) => {
-      transitionToImage(() => {
-        setCurrentIndex(index);
-      });
-    },
-    [transitionToImage]
-  );
-
   const toggleAutoPlay = () => {
     setIsAutoPlaying((prev) => !prev);
   };
@@ -107,7 +98,9 @@ export default function ImageCarousel({
       {/* カルーセルコンテナ */}
       <div className="relative overflow-hidden rounded-xl shadow-lg">
         <div
-          className={`flex transition-all duration-700 ease-out ${isPending ? 'opacity-90' : 'opacity-100'}`}
+          className={`flex transition-all duration-700 ease-out ${
+            isPending ? 'opacity-90' : 'opacity-100'
+          }`}
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
             viewTransitionName: 'carousel-container',
@@ -185,51 +178,6 @@ export default function ImageCarousel({
         <p className="mt-2 text-center text-gray-500 text-sm">
           {images[currentIndex].caption}
         </p>
-      )}
-
-      {/* ドットナビゲーション（画像が複数ある場合のみ表示） */}
-      {images.length > 1 && (
-        <div className="mt-4 flex justify-center space-x-2">
-          {images.map((image, index) => (
-            <button
-              className={`h-2 w-2 rounded-full transition-colors ${
-                index === currentIndex
-                  ? 'bg-[#6cb7c7]'
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-              key={`carousel-dot-${image.src}-${index}`}
-              onClick={() => goToImage(index)}
-              type="button"
-            />
-          ))}
-        </div>
-      )}
-
-      {/* 画像カウンターと自動再生ステータス */}
-      {images.length > 1 && (
-        <div className="mt-2 flex items-center justify-center space-x-4 text-center text-gray-500 text-sm">
-          <span>
-            {currentIndex + 1} / {images.length}
-          </span>
-          {isAutoPlaying && isInViewport && (
-            <span className="flex items-center space-x-1">
-              <span className="h-1 w-1 animate-pulse rounded-full bg-[#6cb7c7]" />
-              <span className="text-xs">自動再生中</span>
-            </span>
-          )}
-          {isAutoPlaying && !isInViewport && (
-            <span className="flex items-center space-x-1">
-              <span className="h-1 w-1 rounded-full bg-gray-400" />
-              <span className="text-xs">一時停止中</span>
-            </span>
-          )}
-          {!isAutoPlaying && (
-            <span className="flex items-center space-x-1">
-              <span className="h-1 w-1 rounded-full bg-red-400" />
-              <span className="text-xs">停止中</span>
-            </span>
-          )}
-        </div>
       )}
     </div>
   );

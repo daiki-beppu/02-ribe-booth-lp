@@ -1,4 +1,5 @@
 // ブース詳細の型定義
+import type { TextOrResponsive } from '../common/responsive-text';
 
 export type BoothProduct = {
   name: string;
@@ -17,11 +18,26 @@ export type BoothGameEvent = {
 };
 
 export type BoothActivity = {
-  title: string;
-  description: string;
+  title: TextOrResponsive;
+  description: TextOrResponsive;
   icon: string;
   details: string[];
   image?: string;
+  points?: BoothPoint[];
+  steps?: BoothStep[];
+};
+
+export type BoothPoint = {
+  icon: string;
+  title: TextOrResponsive;
+  description: TextOrResponsive;
+  color: string;
+};
+
+export type BoothStep = {
+  title: TextOrResponsive;
+  description: TextOrResponsive;
+  icon: string;
 };
 
 export type BoothTimeSlot = {
@@ -38,19 +54,31 @@ export type BoothDetailedSchedule = {
 
 export type ConsultationTarget = {
   id: 'A' | 'B' | 'C';
-  label: string;
-  target: string;
-  description: string;
+  label: TextOrResponsive;
+  target: TextOrResponsive;
+  description: TextOrResponsive;
   topics: string[];
 };
 
+export type BoothSectionInfo = {
+  title: TextOrResponsive;
+  description: TextOrResponsive;
+  icon: string;
+};
+
 export type BoothData = {
-  title: string;
-  description: string;
+  title: TextOrResponsive;
+  description: TextOrResponsive;
+  headerIcon: string;
+  sections: {
+    experience: BoothSectionInfo;
+    products: BoothSectionInfo;
+    events: BoothSectionInfo;
+  };
   activities: BoothActivity[];
   consultation: {
-    title: string;
-    description: string;
+    title: TextOrResponsive;
+    description: TextOrResponsive;
     features: string[];
     targets: ConsultationTarget[];
   };

@@ -1,4 +1,4 @@
-import type { Image } from '../common';
+import type { Button, Image } from '../common';
 import type { TextOrResponsive } from '../common/responsive-text';
 
 export type FeatureItem = {
@@ -12,4 +12,5 @@ export type ConceptData = {
   description: TextOrResponsive;
   image: Image;
   features: FeatureItem[];
+  detailButton?: Button;
 };

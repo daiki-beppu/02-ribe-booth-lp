@@ -55,7 +55,7 @@ export default function ExperienceSection({ data }: ExperienceSectionProps) {
               <ImageCarousel className="mb-12" images={data.images} />
 
               {/* ステップカード */}
-              <div className="space-y-6">
+              <div className="space-y-6 ">
                 <h3 className="mb-8 font-bold text-2xl md:text-3xl">
                   体験の流れ
                 </h3>
@@ -63,23 +63,35 @@ export default function ExperienceSection({ data }: ExperienceSectionProps) {
                   {data.steps.map((step, index) => (
                     <Card
                       className="border-blue-200 bg-gradient-to-r from-blue-50 to-cyan-50 shadow-lg"
-                      key={`step-${getTextString(step.title).slice(0, 10)}-${index}`}
+                      key={`step-${getTextString(step.title).slice(
+                        0,
+                        10
+                      )}-${index}`}
                     >
                       <CardContent className="p-4 md:p-6">
                         <div className="flex items-start">
                           <div className="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 font-bold text-lg text-white shadow-lg md:mr-6 md:h-16 md:w-16 md:text-xl">
                             {index + 1}
                           </div>
-                          <div className="flex-grow">
-                            {renderResponsiveText(
-                              step.title,
-                              'mb-2 md:mb-3 font-bold text-gray-800 text-lg md:text-xl lg:text-2xl',
-                              'h4'
-                            )}
-                            {renderResponsiveText(
-                              step.description,
-                              'text-gray-600 text-sm md:text-lg leading-relaxed',
-                              'p'
+                          <div className="flex flex-grow items-center">
+                            <div className="flex-grow">
+                              {renderResponsiveText(
+                                step.title,
+                                'mb-2 md:mb-3 font-bold text-gray-800 text-lg md:text-xl lg:text-2xl',
+                                'h4'
+                              )}
+                              {renderResponsiveText(
+                                step.description,
+                                'text-gray-600 text-sm md:text-lg leading-relaxed',
+                                'p'
+                              )}
+                            </div>
+                            {step.decorativeIcon && (
+                              <div className="ml-4 hidden flex-shrink-0 items-center justify-center md:flex">
+                                <span className="text-2xl opacity-60 md:text-3xl">
+                                  {step.decorativeIcon}
+                                </span>
+                              </div>
                             )}
                           </div>
                         </div>

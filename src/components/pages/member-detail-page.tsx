@@ -1,4 +1,5 @@
 import { ArrowLeft } from 'lucide-react';
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Badge } from '@/components/ui/badge';
@@ -13,6 +14,11 @@ import type { TeamMember } from '../../types/sections/team';
 export default function MemberDetailPage() {
   const { memberName } = useParams<{ memberName: string }>();
   const member = memberName ? getMemberDetailByName(memberName) : undefined;
+
+  // ページ遷移時に最上部にスクロール
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!member) {
     return (

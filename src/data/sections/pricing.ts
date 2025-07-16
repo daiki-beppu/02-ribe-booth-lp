@@ -45,8 +45,8 @@ export const pricingData: PricingData = {
       price: 2980,
       description: [
         '🚦 Arduino UNO互換ボード + LED信号機キット',
-        '🔧 LED制御プログラム（サンプルコード10種類）',
-        '📝 自由研究レポート作成ガイド',
+        '🔧 LED制御プログラム',
+        '📝 自由研究レポート',
       ],
       target: '学習支援',
       borderColor: 'border-green-400',
@@ -55,7 +55,7 @@ export const pricingData: PricingData = {
     },
     {
       id: 'adventurekit',
-      name: '【限定10個】🚀 アドベンチャーキット',
+      name: '🚀 アドベンチャーキット',
       price: 4980,
       description: [
         '自由研究グレードアップ！親子で本格学習',
@@ -66,10 +66,14 @@ export const pricingData: PricingData = {
       borderColor: 'border-orange-400',
       priceColor: 'text-orange-600',
       badgeColor: 'bg-orange-100 text-orange-800',
+      badge: {
+        text: '限定5個',
+        color: 'bg-orange-500 text-white hover:bg-orange-600',
+      },
     },
     {
       id: 'masterkit',
-      name: '【限定5個】💎 マスターキット',
+      name: '💎 マスターキット',
       price: 9980,
       description: [
         '自由研究→将来スキル！本格派モデル',
@@ -80,6 +84,10 @@ export const pricingData: PricingData = {
       borderColor: 'border-purple-400',
       priceColor: 'text-purple-600',
       badgeColor: 'bg-purple-100 text-purple-800',
+      badge: {
+        text: '限定1個',
+        color: 'bg-red-500 text-white hover:bg-red-600',
+      },
     },
     {
       id: 'ledheadband',
@@ -106,13 +114,13 @@ export const pricingData: PricingData = {
     },
   },
   finalCta: {
-    title: '体験から始まる、本気の学びをどうぞ！',
+    title: '体験から始まる、本気の学び！',
     button: {
       text: '今すぐ無料体験に申し込む',
       href: 'https://docs.google.com/forms/d/e/1FAIpQLSczxo5c082Y6JTdNPmzM_lczjt8hvsga08G8WPtkv2S858rrg/viewform',
       variant: 'primary',
       external: true,
     },
-    subtitle: '継続サポートで学習加速！安心して成長を見守れます',
+    subtitle: '継続サポートで学習加速！\n安心して成長を見守れます',
   },
 };

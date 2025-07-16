@@ -11,7 +11,7 @@ export default function TeamSection({ data }: TeamSectionProps) {
   return (
     <section className="bg-gradient-to-b from-gray-50 to-blue-50 py-16">
       <div className="container mx-auto px-4">
-        <div className="mb-16 text-center">
+        <div className="mb-16 whitespace-pre-wrap text-center">
           {renderResponsiveText(
             data.title,
             'mb-6 font-bold text-3xl text-gray-800 md:text-4xl',

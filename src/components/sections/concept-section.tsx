@@ -1,5 +1,6 @@
 import type { ConceptData } from '../../types/sections/concept';
 import { renderResponsiveText } from '../../utils/responsive-text';
+import CTAButton from '../common/cta-button';
 import FeatureCard from '../common/feature-card';
 
 interface ConceptSectionProps {
@@ -42,6 +43,13 @@ export default function ConceptSection({ data }: ConceptSectionProps) {
             ))}
           </div>
         </div>
+
+        {/* 詳細ページボタン */}
+        {data.detailButton && (
+          <div className="mt-12 text-center">
+            <CTAButton button={data.detailButton} size="lg" />
+          </div>
+        )}
       </div>
     </section>
   );

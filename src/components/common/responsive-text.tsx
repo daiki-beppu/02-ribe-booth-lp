@@ -13,8 +13,10 @@ export default function ResponsiveText({
 }: ResponsiveTextProps) {
   return (
     <>
-      <Component className={`md:hidden ${className}`}>{mobile}</Component>
-      <Component className={`hidden md:block ${className}`}>
+      <Component className={`whitespace-pre-line md:hidden ${className}`}>
+        {mobile}
+      </Component>
+      <Component className={`hidden whitespace-pre-line md:block ${className}`}>
         {desktop}
       </Component>
     </>

@@ -5,6 +5,7 @@ export type StepItem = {
   icon: string;
   title: TextOrResponsive;
   description: TextOrResponsive;
+  decorativeIcon?: string;
 };
 
 export type ExperienceData = {

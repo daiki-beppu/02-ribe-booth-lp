@@ -11,6 +11,23 @@ interface TeamMemberCardProps {
   className?: string;
 }
 
+function getBackgroundColor(color: string): string {
+  const backgroundColors: Record<string, string> = {
+    'maruno-pink': 'bg-pink-50',
+    'snowdrop-blue': 'bg-blue-50',
+    'koba-yellow': 'bg-yellow-50',
+    orange: 'bg-orange-50',
+    blue: 'bg-blue-50',
+    pink: 'bg-pink-50',
+    green: 'bg-green-50',
+    yellow: 'bg-cyan-50',
+    purple: 'bg-purple-50',
+    red: 'bg-red-50',
+  };
+
+  return backgroundColors[color] || 'bg-gray-50';
+}
+
 export default function TeamMemberCard({
   member,
   className = '',
@@ -88,7 +105,7 @@ export default function TeamMemberCard({
       <CardContent className="p-4 md:p-8">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
           <div
-            className={`h-24 w-24 bg-gradient-to-br ${colors.bg} mx-auto flex shrink-0 items-center justify-center overflow-hidden rounded-full sm:mx-0 sm:mr-6 sm:h-28 sm:w-28`}
+            className={`h-48 w-48 bg-gradient-to-br ${colors.bg} mx-auto flex shrink-0 items-center justify-center overflow-hidden rounded-full sm:mx-0 sm:mr-6 sm:h-28 sm:w-28`}
           >
             {member.avatar ? (
               <img
@@ -147,7 +164,7 @@ export default function TeamMemberCard({
         </div>
 
         <div
-          className={`${member.color.includes('-') ? 'bg-gray-50' : `bg-${member.color}-50`} border-l-4 ${colors.border} mb-4 rounded p-4`}
+          className={`${getBackgroundColor(member.color)} border-l-4 ${colors.border} mb-4 rounded p-4`}
         >
           <p className="text-gray-700 text-sm">
             <strong>メッセージ：</strong>

@@ -19,6 +19,10 @@ export type Product = {
   borderColor: string;
   priceColor: string;
   badgeColor: string;
+  badge?: {
+    text: string;
+    color: string;
+  };
   image?: Image;
 };
 

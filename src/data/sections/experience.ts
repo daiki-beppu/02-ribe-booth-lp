@@ -1,7 +1,10 @@
 import type { ExperienceData } from '../../types/sections/experience';
 
 export const experienceData: ExperienceData = {
-  title: '自由研究完成！体験内容・サービス紹介',
+  title: {
+    desktop: '自由研究完成！体験内容・サービス紹介',
+    mobile: '自由研究完成！\n 体験内容・サービス紹介',
+  },
   description: {
     desktop: `夏休みの自由研究として提出できる成果物を作成！
   Arduino LED信号機を使った本格的なプログラミング体験で
@@ -46,17 +49,26 @@ export const experienceData: ExperienceData = {
     {
       icon: '🔧',
       title: 'Step 1: キット組み立て',
-      description: 'Arduino基板とLEDライトの配線\n自由研究の実験装置完成！',
+      description: 'Arduino基板とLEDライトの配線',
+      decorativeIcon: '⚙️',
     },
     {
       icon: '💻',
       title: 'Step 2: プログラム作成',
-      description: 'テンプレート準備で初心者も安心\n信号機の制御ロジックを学習',
+      description: '信号機の制御ロジックを学習',
+      decorativeIcon: '👨‍💻',
     },
     {
       icon: '📝',
-      title: 'Step 3: 成果まとめ',
-      description: 'LED信号機を実際に制御\n自由研究レポートの材料が完成！',
+      title: 'Step 3: プログラム書き込み',
+      description: '作成したプログラムをキットに反映',
+      decorativeIcon: '⬇️',
+    },
+    {
+      icon: '📝',
+      title: 'Step 4: プログラム実行',
+      description: 'LED信号機を実際に制御',
+      decorativeIcon: '🚦',
     },
   ],
 };
