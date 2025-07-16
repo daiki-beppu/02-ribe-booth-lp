@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Header from '@/components/common/header.tsx';
 import MobileMenu from '@/components/common/mobile-menu.tsx';
@@ -40,6 +41,7 @@ export default function App() {
         <Route element={<BoothDetailPage />} path="/booth" />
         <Route element={<MemberDetailPage />} path="/member/:memberName" />
       </Routes>
+      <Analytics />
     </Router>
   );
 }

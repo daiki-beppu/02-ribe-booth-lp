@@ -240,9 +240,9 @@ export const teamDataBasic: TeamDataBasic = {
 
 // メンバー詳細ページ用のteamData
 export const teamData: TeamData = {
-  title: '現役が直接指導',
+  title: '現役エンジニアが直接指導',
   description:
-    '異業種の現役専門家が集結！\n動画や書籍では学べない生きた情報とスキルアップのコツをお伝えします！',
+    '異業種の現役専門家が集結！\n動画や書籍では学べない生きた情報をお伝えします！',
   members: fullMembersData,
   finalMessage: {
     title: 'リベシティの魅力とつながる楽しさを共有したい！',

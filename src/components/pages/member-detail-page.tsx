@@ -10,6 +10,7 @@ import {
   teamDetailData,
 } from '../../data/sections/team-detail';
 import type { TeamMember } from '../../types/sections/team';
+import { renderResponsiveText } from '../../utils/responsive-text';
 
 export default function MemberDetailPage() {
   const { memberName } = useParams<{ memberName: string }>();
@@ -171,12 +172,16 @@ export default function MemberDetailPage() {
                     </Badge>
                   )}
                 </div>
-                <p className="mb-2 break-words font-medium text-gray-600 text-lg md:text-xl">
-                  {member.title}
-                </p>
-                <p className="break-words text-base text-gray-500 md:text-lg">
-                  {member.experience}
-                </p>
+                {renderResponsiveText(
+                  member.title,
+                  'mb-2 break-words font-medium text-gray-600 text-lg md:text-xl',
+                  'p'
+                )}
+                {renderResponsiveText(
+                  member.experience,
+                  'break-words text-base text-gray-500 md:text-lg',
+                  'p'
+                )}
               </div>
             </div>
 
@@ -214,9 +219,9 @@ export default function MemberDetailPage() {
                     >
                       {detail.icon}
                     </span>
-                    <span className="break-words text-sm leading-relaxed md:text-lg">
-                      {detail.text}
-                    </span>
+                    <div className="break-words text-sm leading-relaxed md:text-lg">
+                      {renderResponsiveText(detail.text)}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -230,9 +235,11 @@ export default function MemberDetailPage() {
                 <h3 className="mb-3 font-bold text-lg md:mb-4 md:text-xl">
                   {`${member.name === 'koba' ? 'KOBA' : member.name}からのメッセージ`}
                 </h3>
-                <p className="break-words text-gray-700 text-sm leading-relaxed md:text-lg">
-                  {member.message}
-                </p>
+                {renderResponsiveText(
+                  member.message,
+                  'break-words text-gray-700 text-sm leading-relaxed md:text-lg',
+                  'p'
+                )}
               </CardContent>
             </Card>
           </CardContent>
@@ -279,9 +286,13 @@ export default function MemberDetailPage() {
                           )}
                           <CardContent className="flex h-full flex-col p-4 md:p-6">
                             <div className="mb-3 flex items-start justify-between">
-                              <CardTitle className="mr-2 flex-1 text-base transition-colors group-hover:text-green-600 md:text-lg">
-                                {item.title}
-                              </CardTitle>
+                              <div className="mr-2 flex-1">
+                                {renderResponsiveText(
+                                  item.title,
+                                  'text-base transition-colors group-hover:text-green-600 md:text-lg',
+                                  'h4'
+                                )}
+                              </div>
                               <Badge
                                 className="shrink-0 border-green-500 text-green-600 text-xs"
                                 variant="outline"
@@ -289,9 +300,11 @@ export default function MemberDetailPage() {
                                 サービス
                               </Badge>
                             </div>
-                            <p className="mb-3 flex-grow text-gray-600 text-sm leading-relaxed md:text-base">
-                              {item.description}
-                            </p>
+                            {renderResponsiveText(
+                              item.description,
+                              'mb-3 flex-grow text-gray-600 text-sm leading-relaxed md:text-base',
+                              'p'
+                            )}
                             <div className="flex flex-wrap gap-1 md:gap-2">
                               {item.technologies.map((tech) => (
                                 <Badge
@@ -343,9 +356,13 @@ export default function MemberDetailPage() {
                           )}
                           <CardContent className="flex h-full flex-col p-4 md:p-6">
                             <div className="mb-3 flex items-start justify-between">
-                              <CardTitle className="mr-2 flex-1 text-base transition-colors group-hover:text-blue-600 md:text-lg">
-                                {item.title}
-                              </CardTitle>
+                              <div className="mr-2 flex-1">
+                                {renderResponsiveText(
+                                  item.title,
+                                  'text-base transition-colors group-hover:text-blue-600 md:text-lg',
+                                  'h4'
+                                )}
+                              </div>
                               <Badge
                                 className="shrink-0 border-blue-500 text-blue-600 text-xs"
                                 variant="outline"
@@ -353,9 +370,11 @@ export default function MemberDetailPage() {
                                 ポートフォリオ
                               </Badge>
                             </div>
-                            <p className="mb-3 flex-grow text-gray-600 text-sm leading-relaxed md:text-base">
-                              {item.description}
-                            </p>
+                            {renderResponsiveText(
+                              item.description,
+                              'mb-3 flex-grow text-gray-600 text-sm leading-relaxed md:text-base',
+                              'p'
+                            )}
                             <div className="flex flex-wrap gap-1 md:gap-2">
                               {item.technologies.map((tech) => (
                                 <Badge
@@ -404,9 +423,13 @@ export default function MemberDetailPage() {
                           )}
                           <CardContent className="flex h-full flex-col p-4 md:p-6">
                             <div className="mb-3 flex items-start justify-between">
-                              <CardTitle className="mr-2 flex-1 text-base transition-colors group-hover:text-orange-600 md:text-lg">
-                                {item.title}
-                              </CardTitle>
+                              <div className="mr-2 flex-1">
+                                {renderResponsiveText(
+                                  item.title,
+                                  'text-base transition-colors group-hover:text-orange-600 md:text-lg',
+                                  'h4'
+                                )}
+                              </div>
                               <Badge
                                 className="shrink-0 border-orange-500 text-orange-600 text-xs"
                                 variant="outline"
@@ -414,9 +437,11 @@ export default function MemberDetailPage() {
                                 プロジェクト
                               </Badge>
                             </div>
-                            <p className="mb-3 flex-grow text-gray-600 text-sm leading-relaxed md:text-base">
-                              {item.description}
-                            </p>
+                            {renderResponsiveText(
+                              item.description,
+                              'mb-3 flex-grow text-gray-600 text-sm leading-relaxed md:text-base',
+                              'p'
+                            )}
                             <div className="flex flex-wrap gap-1 md:gap-2">
                               {item.technologies.map((tech) => (
                                 <Badge
@@ -479,9 +504,9 @@ export default function MemberDetailPage() {
                               ? 'KOBA'
                               : otherMember.name}
                           </p>
-                          <p className="mt-1 min-h-[2.5rem] flex-grow break-words text-gray-500 text-xs leading-tight">
-                            {otherMember.title}
-                          </p>
+                          <div className="mt-1 min-h-[2.5rem] flex-grow break-words text-gray-500 text-xs leading-tight">
+                            {renderResponsiveText(otherMember.title)}
+                          </div>
                         </CardContent>
                       </Card>
                     </Link>
