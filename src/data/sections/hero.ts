@@ -2,8 +2,8 @@ import type { HeroData } from '../../types/sections/hero';
 
 export const heroData: HeroData = {
   title: {
-    mobile: '親子でプログラム×',
-    desktop: '親子でプログラム×',
+    mobile: '親子でプログラム\n×',
+    desktop: '親子でプログラム\n×',
   },
   subtitle: {
     mobile: '光る動くおもちゃ作り！',

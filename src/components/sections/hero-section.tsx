@@ -18,17 +18,17 @@ export default function HeroSection({ data }: HeroSectionProps) {
         <div className="mb-8">
           {renderResponsiveText(
             data.title,
-            'mb-4 font-bold text-4xl text-gray-800 md:text-6xl',
+            'mb-4 font-bold text-4xl text-gray-800 md:text-6xl whitespace-pre-line',
             'h1'
           )}
           {renderResponsiveText(
             data.subtitle,
-            'mb-6 font-bold text-3xl text-gray-800 md:text-5xl',
+            'mb-6 font-bold text-3xl text-gray-800 md:text-5xl whitespace-pre-line',
             'h2'
           )}
           {renderResponsiveText(
             data.description,
-            'font-medium text-slate-700 text-xl md:text-2xl',
+            'font-medium text-slate-700 text-xl md:text-2xl whitespace-pre-line',
             'p'
           )}
         </div>
@@ -89,7 +89,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
               <div className="relative z-10 text-center">
                 {/* メインメッセージ */}
                 <div className="mb-4">
-                  <p className="font-bold text-2xl text-gray-800 leading-tight md:text-3xl lg:text-4xl">
+                  <p className="whitespace-pre-line font-bold text-2xl text-gray-800 leading-tight md:text-3xl lg:text-4xl">
                     <span className="inline-block bg-gradient-to-r from-[#6cb7c7] to-[#5aa3b5] bg-clip-text text-transparent">
                       自由研究提出OK
                     </span>
@@ -101,6 +101,10 @@ export default function HeroSection({ data }: HeroSectionProps) {
                     </span>
                     <span className="inline-block bg-gradient-to-r from-[#6cb7c7] to-[#7bbfce] bg-clip-text text-transparent">
                       将来のスキルまで！
+                    </span>
+                    <br />
+                    <span className="inline-block bg-gradient-to-r from-[#6cb7c7] to-[#7bbfce] bg-clip-text text-transparent">
+                      一石二鳥の学習体験
                     </span>
                   </p>
                 </div>
