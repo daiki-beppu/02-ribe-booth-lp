@@ -33,9 +33,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
               >
                 🆓 完全無料
               </Badge>
-              <CardTitle className="text-2xl">
-                無料体験・相談会・ 大交流会イベント
-              </CardTitle>
+              <CardTitle className="text-2xl">無料体験・おしゃべり会</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-grow flex-col space-y-6">
               <div className="space-y-6">

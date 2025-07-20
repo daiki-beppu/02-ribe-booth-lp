@@ -38,11 +38,11 @@ export const boothData: BoothData = {
     events: {
       title: {
         desktop: '大交流会イベント',
-        mobile: '大交流会\nイベント',
+        mobile: '大交流会イベント',
       },
       description: {
-        desktop: 'ゲーム大会で盛り上がりましょう！',
-        mobile: 'ゲーム大会で\n盛り上がりましょう！',
+        desktop: 'メンバーが作ったオリジナルゲームやLT会で盛り上がりましょう！',
+        mobile: 'メンバーが作ったオリジナルゲームやLT会盛り上がりましょう！',
       },
       icon: '🎮',
     },
@@ -157,83 +157,60 @@ export const boothData: BoothData = {
       desktop: '現役エンジニアとお話しましょう😆',
       mobile: '現役エンジニアとお話しましょう😆',
     },
-    features: [
-      '🎯 プログラミング学習の進め方 - 初心者から上級者まで最適なロードマップをご提案',
-      '💼 キャリアチェンジに関する相談 - 元鳶職→Webエンジニアの実体験談もお聞きできます',
-      '🔧 技術的な質問・疑問の解決 - AI/LLM、クラウド、マイコン、データ分析など幅広く対応',
-      '💰 副業・案件獲得のアドバイス - 実際に20万円/月収益継続中のノウハウを伝授',
-      '📈 投資・資産運用の相談 - 投資歴7年→資産4桁・配当3桁達成の実績ベースでアドバイス',
-      '🏢 転職・就職活動のサポート - 現役管理職エンジニアによる業界動向解説',
-      '📚 継続学習のコツ - 学習モチベーション維持から実践的なスキルアップまで',
-      '⏰ 相談時間：30分間（1日6回開催・事前予約推奨）',
-      '💰 参加費：完全無料',
-    ],
     targets: [
       {
         id: 'A',
         label: {
-          desktop: '相談会A',
-          mobile: '相談会A',
+          desktop: 'おしゃべり会A',
+          mobile: 'おしゃべり会A',
         },
         target: {
-          desktop: '👨‍👩‍👧‍👦 親御さん向け（小学生・中学生・高校生・大学生）',
-          mobile: '👨‍👩‍👧‍👦 親御さん向け',
+          desktop: '👨‍👩‍👧‍👦 小中学校向け（小学生・中学生）',
+          mobile: '👨‍👩‍👧‍👦 小中学校向け',
         },
         description: {
           desktop:
-            'お子さんの将来とプログラミング学習について一緒に考えましょう',
+            'エンジニアの仕事内容、進路選択、子どもの未来スキル育成について一緒におしゃべりしましょう',
           mobile:
-            'お子さんの将来と\nプログラミング学習について\n一緒に考えましょう',
+            'エンジニアの仕事、進路、\n子どもの未来スキル育成について\n一緒におしゃべりしましょう',
         },
-        topics: [
-          '🎯 プログラミング学習の進め方 - 初心者向けロードマップ',
-          '🏢 転職・就職活動のサポート - エンジニア業界への道のり',
-          '💼 キャリアチェンジに関する相談 - 未経験からの転職体験談',
-          '📚 継続学習のコツ - お子さんの未来スキル育成法',
-        ],
+        topics: ['🚀 エンジニアってどんな仕事？未来のおしごと教えて！'],
       },
       {
         id: 'B',
         label: {
-          desktop: '相談会B',
-          mobile: '相談会B',
+          desktop: 'おしゃべり会B',
+          mobile: 'おしゃべり会B',
         },
         target: {
-          desktop: '🔧 専門職向け（キャリアチェンジ希望者・事業者・副業者）',
-          mobile: '🔧 専門職向け',
+          desktop: '📚 中高生・大学生向け（中学生・高校生・大学生）',
+          mobile: '📚 中高生・大学生向け',
         },
         description: {
-          desktop: '製造業・技術職の方のスキルアップと効率化をサポート',
-          mobile: '製造業・技術職の方の\nスキルアップと効率化をサポート',
+          desktop:
+            'エンジニアの仕事内容、キャリアチェンジ、副業・収益化についておしゃべりしましょう',
+          mobile:
+            'エンジニアの仕事、キャリアチェンジ、\n副業・収益化について\nおしゃべりしましょう',
         },
-        topics: [
-          '🔧 技術的な質問・疑問の解決 - AI/LLM、システム開発など',
-          '💰 副業・案件獲得のアドバイス - 実際の収益化ノウハウ',
-          '💼 キャリアチェンジに関する相談 - 専門職からエンジニアへ',
-          '🎯 プログラミング学習の進め方 - 実務に活かせるスキル習得',
-        ],
+        topics: ['🎯 エンジニアになるには？進路＆就職なんでもおしゃべり会'],
       },
       {
         id: 'C',
         label: {
-          desktop: '相談会C',
-          mobile: '相談会C',
+          desktop: 'おしゃべり会C',
+          mobile: 'おしゃべり会C',
         },
         target: {
-          desktop:
-            '💼 経営者・マネジメント向け（保護者・ママパパ・女性エンジニア応援枠）',
-          mobile: '💼 経営者・マネジメント向け',
+          desktop: '👨‍👩‍👧‍👦 親御さん向け（保護者・ママパパ）',
+          mobile: '👨‍👩‍👧‍👦 親御さん向け',
         },
         description: {
-          desktop: '出店の先にある面白いテーマ探し・今後の収益活動について',
-          mobile: '面白いテーマ探し・\n今後の収益活動について',
+          desktop:
+            'エンジニアの仕事、キャリア選択、子どもの未来スキル育成についておしゃべりしましょう',
+          mobile:
+            'エンジニアの仕事、キャリア、\n子どもの未来スキル育成について',
         },
-        topics: [
-          '📈 投資・資産運用の相談 - 実績ベースでのアドバイス',
-          '🏢 転職・就職活動のサポート - 管理職エンジニアの業界解説',
-          '👩‍💼 私にもできる？女性エンジニアの世界をのぞいてみよう！',
-          '📚 継続学習のコツ - 学習モチベーション維持とスキルアップ',
-        ],
+        topics: ['👨‍👩子どもにどんな学びをさせたい？未来スキルの育て方'],
       },
     ],
   },
@@ -288,7 +265,7 @@ export const boothData: BoothData = {
   ],
   events: [
     {
-      name: '🎮 大交流会イベント',
+      name: '🎮 オリジナルゲーム大会',
       description:
         'とあるゲームをパクっ...ではなくオマージュしたオリジナルゲームで大会を開催！他の参加者やスタッフと楽しく交流しましょう！',
       prizes: ['🥇 優勝：QUOカード 500円分, オリジナル景品'],
@@ -302,28 +279,138 @@ export const boothData: BoothData = {
       ],
       schedule: '18:30〜19:00（30分間・当日参加OK）',
     },
+    {
+      name: '🌙 夜LT会',
+      description:
+        '夜の特別企画！現役エンジニアたちが様々なテーマでライトニングトーク（短いプレゼン）を行います。予約不要でお気軽にご参加ください！',
+      themes: [
+        '🤖 AIって何ができるの？生成AI・業務効率化・活用術',
+        '🎯 未経験からでもOK？リアルな転職体験と学習の道のり',
+        '💼 事業をもっと面白く！IT×ものづくりで売上アップ作戦会議',
+        '💰 "好き"を形に！遊びと技術の交差点で副業に挑戦しよう',
+        '👩‍💼 私にもできる？女性エンジニアの世界をのぞいてみよう！',
+      ],
+
+      schedule: '19:30〜21:00（90分間・予約不要）',
+    },
   ],
   detailedSchedule: {
     title: '📅 詳細タイムスケジュール',
     description:
-      'ブースM-14の1日のスケジュールです。事前予約推奨ですが、当日参加も可能です。',
+      'ブースM-14のおしゃべり会スケジュール（8/9-8/11）です。事前予約推奨ですが、当日参加も可能です。',
     timeSlots: [
-      { time: '10:00-10:30', activity: '体験会1', type: 'experience' },
-      { time: '10:30-11:00', activity: '体験会2', type: 'experience' },
-      { time: '11:00-11:30', activity: '相談会A1', type: 'consultation' },
-      { time: '11:30-12:00', activity: '相談会A2', type: 'consultation' },
-      { time: '12:00-12:30', activity: '体験会3', type: 'experience' },
-      { time: '12:30-13:00', activity: '体験会4', type: 'experience' },
-      { time: '13:00-13:30', activity: '体験会5', type: 'experience' },
-      { time: '13:30-14:00', activity: '体験会6', type: 'experience' },
-      { time: '14:00-14:30', activity: '相談会B1', type: 'consultation' },
-      { time: '14:30-15:00', activity: '相談会B2', type: 'consultation' },
-      { time: '15:00-15:30', activity: '体験会7', type: 'experience' },
-      { time: '15:30-16:00', activity: '体験会8', type: 'experience' },
-      { time: '16:00-16:30', activity: '相談会C1', type: 'consultation' },
-      { time: '16:30-17:00', activity: '相談会C2', type: 'consultation' },
-      { time: '17:00-17:30', activity: '体験会9', type: 'experience' },
-      { time: '17:30-20:00', activity: '大交流会', type: 'event' },
+      {
+        time: '8/9(土) 11:00-11:30',
+        activity: 'トークテーマ①（将来）',
+        type: 'consultation',
+        status: '◯',
+        theme: '将来',
+      },
+      {
+        time: '8/9(土) 11:30-12:00',
+        activity: 'トークテーマ②（進路）',
+        type: 'consultation',
+        status: '◯',
+        theme: '進路',
+      },
+      {
+        time: '8/9(土) 14:00-14:30',
+        activity: 'トークテーマ④（事業）',
+        type: 'consultation',
+        status: '△',
+        theme: '事業',
+      },
+      {
+        time: '8/9(土) 14:30-15:00',
+        activity: 'トークテーマ③（教育）',
+        type: 'consultation',
+        status: '◯',
+        theme: '教育',
+      },
+      {
+        time: '8/9(土) 16:00-16:30',
+        activity: 'トークテーマ①（将来）',
+        type: 'consultation',
+        status: '◯',
+        theme: '将来',
+      },
+      {
+        time: '8/9(土) 16:30-17:00',
+        activity: 'トークテーマ②（進路）',
+        type: 'consultation',
+        status: '◯',
+        theme: '進路',
+      },
+      {
+        time: '8/10(日) 11:00-11:30',
+        activity: 'トークテーマ③（教育）',
+        type: 'consultation',
+        status: '◯',
+        theme: '教育',
+      },
+      {
+        time: '8/10(日) 11:30-12:00',
+        activity: 'トークテーマ①（将来）',
+        type: 'consultation',
+        status: '◯',
+        theme: '将来',
+      },
+      {
+        time: '8/10(日) 14:00-14:30',
+        activity: 'トークテーマ③（教育）',
+        type: 'consultation',
+        status: '△',
+        theme: '教育',
+      },
+      {
+        time: '8/10(日) 14:30-15:00',
+        activity: 'トークテーマ①（将来）',
+        type: 'consultation',
+        status: '◯',
+        theme: '将来',
+      },
+      {
+        time: '8/10(日) 16:00-16:30',
+        activity: 'トークテーマ②（進路）',
+        type: 'consultation',
+        status: '◯',
+        theme: '進路',
+      },
+      {
+        time: '8/10(日) 16:30-17:00',
+        activity: 'トークテーマ③（教育）',
+        type: 'consultation',
+        status: '◯',
+        theme: '教育',
+      },
+      {
+        time: '8/11(月) 11:00-11:30',
+        activity: 'トークテーマ④（事業）',
+        type: 'consultation',
+        status: '◯',
+        theme: '事業',
+      },
+      {
+        time: '8/11(月) 11:30-12:00',
+        activity: 'トークテーマ③（教育）',
+        type: 'consultation',
+        status: '◯',
+        theme: '教育',
+      },
+      {
+        time: '8/11(月) 14:00-14:30',
+        activity: 'トークテーマ①（将来）',
+        type: 'consultation',
+        status: '△',
+        theme: '将来',
+      },
+      {
+        time: '8/11(月) 14:30-15:00',
+        activity: 'トークテーマ②（進路）',
+        type: 'consultation',
+        status: '◯',
+        theme: '進路',
+      },
     ],
   },
 };

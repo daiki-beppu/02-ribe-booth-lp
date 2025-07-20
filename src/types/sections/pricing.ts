@@ -30,13 +30,7 @@ export type PricingData = {
   title: string;
   description: string;
   freeServices: FreeService[];
-  freeServicesImage: Image;
   products: Product[];
-  applicationForm: {
-    title: string;
-    description: string;
-    button: Button;
-  };
   finalCta: {
     title: string;
     button: Button;

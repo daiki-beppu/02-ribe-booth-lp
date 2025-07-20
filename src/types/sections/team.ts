@@ -46,14 +46,3 @@ export type TeamData = {
     description: TextOrResponsive;
   };
 };
-
-// ホーム用のTeamData型
-export type TeamDataBasic = {
-  title: TextOrResponsive;
-  description: TextOrResponsive;
-  members: TeamMemberBasic[];
-  finalMessage: {
-    title: TextOrResponsive;
-    description: TextOrResponsive;
-  };
-};

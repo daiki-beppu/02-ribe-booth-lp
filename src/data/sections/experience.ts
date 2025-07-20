@@ -16,7 +16,6 @@ export const experienceData: ExperienceData = {
   },
   badge: {
     text: '📝 自由研究対応＆無料体験（15分）',
-    variant: 'blue',
   },
   images: [
     {
@@ -47,25 +46,21 @@ export const experienceData: ExperienceData = {
   ],
   steps: [
     {
-      icon: '🔧',
       title: 'Step 1: キット組み立て',
       description: 'Arduino基板とLEDライトの配線',
       decorativeIcon: '⚙️',
     },
     {
-      icon: '💻',
       title: 'Step 2: プログラム作成',
       description: '信号機の制御ロジックを学習',
       decorativeIcon: '👨‍💻',
     },
     {
-      icon: '📝',
       title: 'Step 3: プログラム書き込み',
       description: '作成したプログラムをキットに反映',
       decorativeIcon: '⬇️',
     },
     {
-      icon: '📝',
       title: 'Step 4: プログラム実行',
       description: 'LED信号機を実際に制御',
       decorativeIcon: '🚦',

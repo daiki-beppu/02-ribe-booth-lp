@@ -7,7 +7,7 @@ export const pricingData: PricingData = {
   freeServices: [
     {
       icon: '🚦',
-      title: 'Arduino LED信号機プログラミング体験',
+      title: '信号機プログラミング体験',
       description: {
         mobile: '15分で自由研究完成！',
         desktop: '15分で自由研究完成！夢中になる本格体験',
@@ -16,10 +16,12 @@ export const pricingData: PricingData = {
     },
     {
       icon: '👨‍💻',
-      title: '現役エンジニアへの相談会',
+      title: '現役エンジニアとおしゃべり会',
       description: {
-        mobile: '現役エンジニアが直接回答',
-        desktop: '現役エンジニアが直接回答（30分・事前予約推奨）',
+        mobile:
+          '現役エンジニアが直接回答\nトークテーマ\nA：小中学生向け（将来・学習・体験）\nB：中高生・大学生向け（将来・進路・大学）\nC：親御さん向け（将来・進路・教育）',
+        desktop:
+          '現役エンジニアが直接回答（30分・事前予約推奨）\nトークテーマ：A.小中学生向け B.中高生・大学生向け C.親御さん向け（8/9-8/11開催）',
       },
       borderColor: 'border-blue-400',
     },
@@ -33,11 +35,6 @@ export const pricingData: PricingData = {
       borderColor: 'border-purple-400',
     },
   ],
-  freeServicesImage: {
-    src: '/images/conceptual-experience.png',
-    alt: '親子でArduinoプログラミングを学ぶ理想的な体験風景',
-    caption: '実際の体験風景：親子で楽しくプログラミングを学習',
-  },
   products: [
     {
       id: 'starterkit',
@@ -103,16 +100,6 @@ export const pricingData: PricingData = {
       badgeColor: 'bg-blue-100 text-blue-800',
     },
   ],
-  applicationForm: {
-    title: 'お申し込み・お問い合わせ',
-    description: '事前予約推奨（当日参加も可能）',
-    button: {
-      text: '予約フォームへ →',
-      href: 'https://docs.google.com/forms/d/e/1FAIpQLSczxo5c082Y6JTdNPmzM_lczjt8hvsga08G8WPtkv2S858rrg/viewform',
-      variant: 'secondary',
-      external: true,
-    },
-  },
   finalCta: {
     title: '体験から始まる、本気の学び！',
     button: {

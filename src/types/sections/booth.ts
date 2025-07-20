@@ -12,9 +12,11 @@ export type BoothProduct = {
 export type BoothGameEvent = {
   name: string;
   description: string;
-  prizes: string[];
-  rules: string[];
+  prizes?: string[];
+  rules?: string[];
   schedule?: string;
+  themes?: string[];
+  features?: string[];
 };
 
 export type BoothActivity = {
@@ -44,6 +46,8 @@ export type BoothTimeSlot = {
   time: string;
   activity: string;
   type: 'preparation' | 'experience' | 'consultation' | 'event' | 'cleanup';
+  status: string;
+  theme?: string;
 };
 
 export type BoothDetailedSchedule = {
@@ -79,7 +83,6 @@ export type BoothData = {
   consultation: {
     title: TextOrResponsive;
     description: TextOrResponsive;
-    features: string[];
     targets: ConsultationTarget[];
   };
   products: BoothProduct[];

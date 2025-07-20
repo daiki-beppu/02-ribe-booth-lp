@@ -1,10 +1,9 @@
-import { ArrowDown, ArrowLeft, Clock, Gift, Trophy, Users } from 'lucide-react';
+import { ArrowDown, ArrowLeft, Clock, Trophy, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ScheduleDialog } from '@/components/schedule/schedule-dialog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { boothData } from '../../data/sections/booth';
 import { renderResponsiveText } from '../../utils/responsive-text';
 
@@ -260,7 +259,7 @@ export default function BoothDetailPage() {
             {/* 相談会詳細 */}
             <div className="space-y-6">
               <h3 className="mb-4 font-bold text-lg md:text-xl">
-                エンジニア相談会
+                エンジニアおしゃべり会
               </h3>
 
               <div className="grid grid-cols-1 gap-6">
@@ -334,7 +333,7 @@ export default function BoothDetailPage() {
 
                         <div className="space-y-2">
                           <h4 className="font-bold text-gray-800 text-sm">
-                            相談トピック:
+                            トークテーマ:
                           </h4>
                           {target.topics.map((topic) => (
                             <div
@@ -510,8 +509,11 @@ export default function BoothDetailPage() {
               </div>
             </div>
 
-            {boothData.events.map((event) => (
-              <div key={`event-${event.name}`}>
+            {boothData.events.map((event, index) => (
+              <div
+                className={index > 0 ? 'mt-6' : ''}
+                key={`event-${event.name}`}
+              >
                 <Card className="border-purple-200 bg-purple-50">
                   <CardContent className="p-4 md:p-6">
                     <div className="mb-4 flex items-center">
@@ -533,47 +535,47 @@ export default function BoothDetailPage() {
                       </div>
                     )}
 
-                    <div className="mb-4">
-                      <h4 className="mb-2 flex items-center font-bold text-base">
-                        <Gift className="mr-2 h-4 w-4 text-purple-600" />
-                        景品
-                      </h4>
-                      <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-                        {event.prizes.map((prize) => (
-                          <div
-                            className="flex items-center rounded-lg bg-purple-100 p-2"
-                            key={`prize-${event.name}-${prize}`}
-                          >
-                            <span className="mr-2 text-purple-500">🏆</span>
-                            <span className="text-purple-700 text-sm">
-                              {prize}
-                            </span>
-                          </div>
-                        ))}
+                    {event.themes && (
+                      <div className="mb-4">
+                        <h4 className="mb-2 flex items-center font-bold text-base">
+                          <Users className="mr-2 h-4 w-4 text-purple-600" />
+                          LTテーマ
+                        </h4>
+                        <div className="space-y-2">
+                          {event.themes.map((theme: string) => (
+                            <div
+                              className="flex items-start"
+                              key={`theme-${event.name}-${theme}`}
+                            >
+                              <span className="mr-2 text-purple-500 text-sm">
+                                •
+                              </span>
+                              <span className="text-purple-700 text-sm">
+                                {theme}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
 
-                    <Separator className="mb-4" />
-
-                    <div>
-                      <h4 className="mb-2 flex items-center font-bold text-base">
-                        <Users className="mr-2 h-4 w-4 text-purple-600" />
-                        参加ルール
-                      </h4>
-                      <div className="space-y-2">
-                        {event.rules.map((rule) => (
-                          <div
-                            className="flex items-start"
-                            key={`rule-${event.name}-${rule}`}
-                          >
-                            <span className="mr-2 text-purple-500 text-sm">
-                              •
-                            </span>
-                            <span className="text-gray-700 text-sm">
-                              {rule}
-                            </span>
-                          </div>
-                        ))}
+                    {/* ゲーム画像 */}
+                    <div className="mt-6">
+                      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                        <div className="overflow-hidden rounded-lg border-2 border-purple-200">
+                          <img
+                            alt="動物進化ゲーム画面1"
+                            className="h-auto w-full object-cover"
+                            src="/images/gameFes/animal-evo-1.png"
+                          />
+                        </div>
+                        <div className="overflow-hidden rounded-lg border-2 border-purple-200">
+                          <img
+                            alt="動物進化ゲーム画面2"
+                            className="h-auto w-full object-cover"
+                            src="/images/gameFes/animal-evo-2.png"
+                          />
+                        </div>
                       </div>
                     </div>
                   </CardContent>
