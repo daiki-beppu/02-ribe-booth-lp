@@ -28,9 +28,14 @@ export default function HeroSection({ data }: HeroSectionProps) {
           )}
           {renderResponsiveText(
             data.description,
-            'font-medium text-slate-700 text-xl md:text-2xl whitespace-pre-line',
+            'mb-6 font-medium text-slate-700 text-xl md:text-2xl whitespace-pre-line',
             'p'
           )}
+
+          {/* CTAボタン */}
+          <div className="mt-6">
+            <CTAButton button={data.ctaButton} size="lg" />
+          </div>
         </div>
 
         {/* 動画セクション */}
@@ -151,52 +156,80 @@ export default function HeroSection({ data }: HeroSectionProps) {
           </div>
         )}
 
-        {/* CTAボタン */}
-
-        <CTAButton button={data.ctaButton} size="lg" />
-
         {/* イベント基本情報 */}
-        <div className="mt-12 grid w-full max-w-6xl grid-cols-1 gap-4 md:grid-cols-3">
-          <Card className="border-gray-200 bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 text-center">
-              <div className="mb-3 text-4xl">📅</div>
-              <h3 className="mb-2 font-bold text-gray-800 text-lg">開催日程</h3>
-              {renderResponsiveText(
-                data.eventInfo.dates,
-                'text-gray-700 text-lg',
-                'p'
-              )}
-            </CardContent>
-          </Card>
-          <Card className="transform border-2 border-orange-300 bg-gradient-to-br from-orange-400 to-orange-600 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105">
-            <CardContent className="p-6 text-center">
-              <div className="mb-3 animate-bounce text-4xl">🏪</div>
-              <h3 className="mb-2 font-bold text-lg text-white">ブース番号</h3>
-              <p className="mx-auto block w-fit rounded-full border-4 border-[#a8dee9] bg-[#6cb7c7] px-4 py-2 font-extrabold text-4xl text-white drop-shadow-lg">
-                M-14
-              </p>
-            </CardContent>
-          </Card>
+        <div className="mt-12 grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
           <Dialog>
             <DialogTrigger asChild>
-              <Card className="cursor-pointer border-gray-200 bg-white/80 backdrop-blur-sm transition-shadow duration-300 hover:bg-white/90 hover:shadow-lg">
-                <CardContent className="p-6 text-center">
+              <Card className="group cursor-pointer border-gray-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-blue-200 hover:bg-white/95 hover:shadow-lg">
+                <CardContent className="relative p-6 text-center">
                   <div className="mb-3 text-4xl">📍</div>
                   <h3 className="mb-2 font-bold text-gray-800 text-lg">会場</h3>
-                  {renderResponsiveText(
-                    data.eventInfo.venue,
-                    'text-gray-700 text-lg',
-                    'p'
-                  )}
-                  <p className="mt-2 text-gray-500 text-xs">
-                    クリックでアクセス情報を見る
+                  <p className="mx-auto block w-fit rounded-full border-4 border-[#a8dee9] bg-[#6cb7c7] px-4 py-2 font-extrabold text-4xl text-white drop-shadow-lg">
+                    幕張メッセ
                   </p>
+
+                  {/* 目立つクリックヒント（控えめ） */}
+                  <div className="relative mt-3">
+                    <p className="relative rounded-lg border-2 border-blue-400 bg-blue-100 px-3 py-1 font-bold text-blue-700 text-sm shadow-md">
+                      📍 アクセス情報を見る
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             </DialogTrigger>
             <DialogContent className="!max-w-5xl !w-[95vw] sm:!max-w-5xl max-h-[90vh] overflow-hidden p-0">
               <div className="max-h-[85vh] overflow-y-auto p-6">
                 <AccessInfoDialog data={accessInfoData} />
+              </div>
+            </DialogContent>
+          </Dialog>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Card className="group relative transform cursor-pointer border-2 border-orange-300 bg-gradient-to-br from-orange-400 to-orange-600 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-orange-200 hover:shadow-3xl">
+                <CardContent className="relative overflow-hidden p-6 text-center">
+                  {/* キラキラエフェクト */}
+                  <div className="-skew-x-12 absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-[100%]" />
+
+                  <div className="mb-3 animate-bounce text-4xl">🏪</div>
+                  <h3 className="mb-2 font-bold text-lg text-white">
+                    ブース番号
+                  </h3>
+                  <p className="mx-auto block w-fit rounded-full border-4 border-[#a8dee9] bg-[#6cb7c7] px-4 py-2 font-extrabold text-4xl text-white drop-shadow-lg group-hover:animate-pulse">
+                    M-14
+                  </p>
+
+                  {/* 目立つクリックヒント */}
+                  <div className="relative mt-3">
+                    <div className="absolute inset-0 animate-ping rounded-lg bg-yellow-300/30" />
+                    <p className="relative rounded-lg border-2 border-yellow-400 bg-yellow-300 px-3 py-1 font-bold text-orange-800 text-sm shadow-lg">
+                      📍 位置を確認する
+                    </p>
+                  </div>
+
+                  {/* 矢印アイコン */}
+                  <div className="mt-2 animate-bounce">
+                    <span className="text-2xl text-white">👆</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </DialogTrigger>
+            <DialogContent className="!max-w-4xl !w-[95vw] sm:!max-w-4xl max-h-[90vh] overflow-hidden p-0">
+              <div className="p-6">
+                <div className="mb-4 text-center">
+                  <h2 className="mb-2 font-bold text-2xl text-gray-800">
+                    ブース位置案内
+                  </h2>
+                  <p className="text-gray-600">
+                    M-14ブースの位置をご確認いただけます
+                  </p>
+                </div>
+                <div className="relative overflow-hidden rounded-lg">
+                  <img
+                    alt="M-14ブース位置案内図"
+                    className="h-auto max-h-[70vh] w-full object-contain"
+                    src="/images/booth.png"
+                  />
+                </div>
               </div>
             </DialogContent>
           </Dialog>
